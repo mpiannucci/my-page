@@ -1,0 +1,6 @@
+$def with (posts)
+
+$for post in posts:
+    <h1>$post.title</h1>
+    $datestr(post.posted_on)<br/>
+    $post.content

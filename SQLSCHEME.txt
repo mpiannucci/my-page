@@ -1,0 +1,16 @@
+SQL sqema used
+
+CREATE TABLE entries (
+    id INT AUTO_INCREMENT,
+    title TEXT,
+    content TEXT,
+    posted_on DATETIME,
+    primary key (id)
+);
+
+CREATE TABLE users (
+	id INT AUTO_INCREMENT,
+	username TEXT,
+	password TEXT,
+	primary key (id)
+);

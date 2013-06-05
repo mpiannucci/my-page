@@ -1,0 +1,8 @@
+$def with (login_form)
+
+<h1>Admin Login</h1>
+<form action="" method="post">
+$:login_form.render()
+</form>
+
+

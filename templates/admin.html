@@ -1,0 +1,22 @@
+$def with (user, posts)
+
+<div id="adminContainer">
+	<h3>Edit the blog entries</h3>
+	<ul>
+		$for post in posts:
+    		<li>
+        		<a href="/view/$post.id">$post.title</a> 
+        		from $datestr(post.posted_on) 
+        		<a href="/edit/$post.id">Edit</a>
+        		<form action="/delete/$post.id" method="post">
+            		<input type="submit" value="Delete post"/>
+        		</form>
+    		</li>
+	</ul>
+	<div id="bottomAdmin" class="links">
+    	<a href="/new">New Post</a></li>
+    	<br/><br/>
+        <p>Logged in as $user</p>
+    	<a href="/logout">Log Out</a>
+	</div>
+</div>

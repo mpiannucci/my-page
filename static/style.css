@@ -1,0 +1,160 @@
+/* Global Settings */
+body {
+    background-color:#f4f4f4;
+	font-family:"Helvetica";
+}
+
+h1 {
+	font-family:"Helvetica";
+	font-color:#000000;
+}
+
+/* Link settings */
+h1 a:link {
+	text-decoration:none;
+	color:#000000;
+} 
+
+h1 a:hover {
+	background-color:#33B5E5;
+	cursor:pointer;
+}
+
+h1 a:visited {
+	color:#000000;
+}
+
+h1 a:active {
+	color:#000000;
+}
+
+/* Side column content settings */
+#menu {
+    width:200px;
+}
+
+#sideTitle {
+	font-family:"Helvetica";
+	font-size:70px;
+	-webkit-transform: rotate(303deg);
+	-moz-transform: rotate(303deg);
+	-o-transform: rotate(303deg);
+	writing-mode: tb-rl;
+}
+
+/* Header settings */
+#header {
+	background:#f4f4f4;
+	font-size:30px;
+	padding:0px;
+	height:60px;
+}
+
+/* Footer settings */
+#footer {
+	background:#eee;
+	font-size:12px;
+	padding:0px;
+}
+
+#copyright h3 {
+	padding:0px;
+}
+
+#siteinfo p {
+	font-size:12px;
+	padding:0px;
+}
+
+/* Column container settings */ 
+.colmask {
+	position:relative;	/* This fixes the IE7 overflow hidden bug */
+	clear:both;
+	float:left;
+	width:100%;			/* width of whole page */
+	overflow:hidden;		/* This chops off any overhanging divs */
+}
+/* Common column settings */
+.colright,
+.colmid,
+.colleft {
+	float:left;
+	width:100%;			/* width of page */
+	position:relative;
+}
+.col1,
+.col2,
+.col3 {
+	float:left;
+	position:relative;
+	padding:0 0 1em 0;	/* no left and right padding on columns, we just make them narrower instead 
+					only padding top and bottom is included here, make it whatever value you need */
+	overflow:hidden;
+}
+/* 3 Column settings */
+.threecol {
+	background:#eee;		/* right column background colour */
+}
+.threecol .colmid {
+	right:25%;			/* width of the right column */
+	background:#f4f4f4;		/* center column background colour */
+}
+.threecol .colleft {
+	right:50%;			/* width of the middle column */
+	background:#f4f4f4;	/* left column background colour */
+}
+.threecol .col1 {
+	width:46%;			/* width of center column content (column width minus padding on either side) */
+	left:102%;			/* 100% plus left padding of center column */
+}
+.threecol .col2 {
+	width:21%;			/* Width of left column content (column width minus padding on either side) */
+	left:31%;			/* width of (right column) plus (center column left and right padding) plus (left column left padding) */
+}
+.threecol .col3 {
+	width:21%;			/* Width of right column content (column width minus padding on either side) */
+	left:85%;			/* Please make note of the brackets here:
+					(100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
+}
+
+/* Home page settings */
+#welcomeFoot {
+	text-align: right;
+}
+
+/* Blog page settings */
+.postDisp h3 {
+	font-size:16;
+	font-style: italic;
+}
+
+.links a:link {
+	text-decoration: none;
+	color:#000000;
+	font-weight: bold;
+}
+
+.links a:hover {
+	color:#000000;
+	background-color:#33B5E5;
+	font-weight: bold;
+}
+
+.links a:active {
+	color:#000000;
+	font-weight: bold;
+}
+
+.links a:visited {
+	color:#000000;
+	font-weight: bold;
+}
+
+/* Projects page settings */
+
+/* Bio page settings */
+
+/* Admin page settings */
+#failedlogin {
+    font-color:"red";
+}

@@ -1,0 +1,11 @@
+$def with (user, form)
+
+<p>You are not logged in.</p>
+	<p>
+    	<form name="login" method="POST"> 
+    	$:form.render()
+    	<input type="submit" name="button" value="Login" />
+    	</form>
+    </p>
+    <p> user: $user</p>
+

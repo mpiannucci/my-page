@@ -1,0 +1,17 @@
+APP TO DO LIST:
+
+FRONT-END
+1. Make a collage on the home page.
+2. Add detailing to both the project and bio pages. 
+4. Recreate the blog so that only a specific number of posts
+   show per page
+5. Like and dislike buttons on specific blog posts
+
+BACKEND
+1. Store usernames and passwords in a database. 
+2. Create database for likes and dislikes. 
+
+========================================================================================
+FUTURE
+
+1. Add fields to blog post database in order to make them click through for more info

@@ -1,0 +1,20 @@
+$def with (posts)
+
+<div id="blogContainer">
+	<div id="blogTitle">
+		<h1>Blog</h1>
+	</div>
+	<hr>
+	<div id="postStream" class="postDisp">
+		<!-- Loop thourgh all posts in the database and display them as declared below -->
+		$for post in posts:
+			<h2>$post.title</h2>
+			<h3>$datestr(post.posted_on)</h3>
+			<div id="postContent">
+				$:post.content
+			</div>
+			<div id="links" class="links">
+				<a href="/view/$post.id">Link</a>
+			</div>
+	</div>
+</div>

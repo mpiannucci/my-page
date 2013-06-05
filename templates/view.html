@@ -1,0 +1,13 @@
+$def with (post)
+
+<div id="viewContainer" class="postDisp">
+	<h1>$post.title</h1>
+	<h3>$datestr(post.posted_on)</h3>
+	<div id="viewContent">
+		$:post.content 
+	</div>
+	<br/>
+	<div id="viewLinks" class="links">
+		<a href="/blog">Back</a>
+	</div>
+</div>
