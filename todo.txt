@@ -6,10 +6,10 @@ FRONT-END
 4. Recreate the blog so that only a specific number of posts
    show per page
 5. Like and dislike buttons on specific blog posts
+6. Make a template for 404 errors
 
-BACKEND
-1. Store usernames and passwords in a database. 
-2. Create database for likes and dislikes. 
+BACKEND 
+1. Create database for likes and dislikes. 
 
 ========================================================================================
 FUTURE

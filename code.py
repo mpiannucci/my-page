@@ -16,7 +16,9 @@ urls = (
     '/projects', 'Projects',
     '/about', 'About',
     '/contact', 'Contact',
-    '/logout', 'Logout'
+    '/logout', 'Logout',
+    '/like/(\d+)', 'Like',
+    '/dislike/(\d+)', 'Dislike'
 )
 
 ### Create a cryptography for the passwords
@@ -30,9 +32,6 @@ class PasswordHash(object):
 
 ### Defines the username and password to access admin interface 
 ### TO DO --  STORE IN DATABASE INSTEAD 
-#users = {
-#    'matthew' : PasswordHash('erfindexing in pythoner3')
-#}
 users = {
     
 }
@@ -71,7 +70,6 @@ signin_form = web.form.Form(web.form.Textbox('username',
                                       lambda x: users[x.username].check_password(x.password)) ])
 
 ### Start the Web page class definitions
-
 class Index:
     """ Show the home page """
     def GET(self):
@@ -81,7 +79,6 @@ class Blog:
     """ Create the layout for the blog """
     def GET(self):
         """ Show all page """
-        web.header('Content-Type','text/html; charset=utf-8')
         posts = model.get_posts()
         return render.blog(posts)
 
@@ -180,8 +177,39 @@ class About:
 
 class Contact:
     """ Create a contact page """
-    def GET(self):
+    def GET(self): 
         return render.contact()
+
+class Like:
+    """ Create the method to like a post """
+    def GET(self, id):
+        post = model.get_post(int(id))
+        like = post.likes
+        model.like_post(int(id), int(like))
+        raise web.seeother('/blog')
+
+class Dislike:
+    """ Create the method to dislike a post """
+    def GET(self, id):
+        post = model.get_post(int(id))
+        dlike = post.dislikes
+        model.dislike_post(int(id), int(dlike))
+        raise web.seeother('/blog')
+
+def notfound():
+    """ Create the not found page """
+    return web.notfound("Sorry, the page you were looking for was not found.")
+    # You can use template result like below, either is ok:
+    #return web.notfound(render.notfound())
+    #return web.notfound(str(render.notfound()))
+
+def internalerror():
+    """ Create the internal error page """
+    return web.internalerror("The server says: No soup for you!")
+
+### Create the not found app
+app.notfound = notfound
+app.internalerror = internalerror
 
 if __name__ == '__main__':
     app.run()

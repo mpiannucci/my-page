@@ -14,7 +14,20 @@ $def with (posts)
 				$:post.content
 			</div>
 			<div id="links" class="links">
-				<a href="/view/$post.id">Link</a>
+				<table class="linkTable">
+					<tr>
+						<td>
+							<a href="/view/$post.id">Link</a>
+						</td>
+						<td>
+							$post.likes<a href="/like/$post.id">Like</a>
+						</td>
+						<td>
+							$post.dislikes<a href="/dislike/$post.id">Dislike</a>
+						</td>
+					</tr>
+				</table>
 			</div>
+			<hr>
 	</div>
 </div>

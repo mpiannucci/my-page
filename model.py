@@ -15,7 +15,7 @@ def get_post(id):
         return None
 
 def new_post(title, text):
-    db.insert('entries', title=title, content=text, posted_on=datetime.datetime.utcnow())
+    db.insert('entries', title=title, content=text, posted_on=datetime.datetime.utcnow(), likes=0, dislikes=0)
 
 def del_post(id):
     db.delete('entries', where="id=$id", vars=locals())
@@ -23,3 +23,9 @@ def del_post(id):
 def update_post(id, title, text):
     db.update('entries', where="id=$id", vars=locals(),
         title=title, content=text)
+
+def like_post(id, like):
+    db.update('entries', where="id=$id", vars=locals(), likes=like+1)
+
+def dislike_post(id, dlike):
+    db.update('entries', where="id=$id", vars=locals(), dislikes=dlike+1)
