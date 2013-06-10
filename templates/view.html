@@ -7,6 +7,22 @@ $def with (post)
 		$:post.content 
 	</div>
 	<br/>
+	<div id="links" class="links">
+		<table class="linkTable">
+			<tr>
+				<td>
+					<a href="/view/$post.id">Link</a>
+				</td>
+				<td>
+					$post.likes &nbsp; <a href="/like/$post.id">Like</a>
+				</td>
+				<td>
+					$post.dislikes &nbsp; <a href="/dislike/$post.id">Dislike</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<br/>
 	<div id="viewLinks" class="links">
 		<a href="/blog">Back</a>
 	</div>
