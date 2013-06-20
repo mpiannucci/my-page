@@ -18,7 +18,8 @@ urls = (
     '/contact', 'Contact',
     '/logout', 'Logout',
     '/like/(\d+)', 'Like',
-    '/dislike/(\d+)', 'Dislike'
+    '/dislike/(\d+)', 'Dislike',
+    '/resume', 'Resume'
 )
 
 ### Create a cryptography for the passwords
@@ -166,14 +167,14 @@ class Logout:
         raise web.seeother('/blog')
 
 class Projects:
-    """ Create the projects page """
+    """ Redirect to Github """
     def GET(self):
-        return render.projects()
+        raise web.seeother('https://github.com/rhodysurf')
 
-class About:
-    """ Create the bio page """
+class Resume:
+    """ Serve the resume """
     def GET(self):
-        return render.about()
+        raise web.seeother('/static/MatthewIannucciResume.pdf')
 
 class Contact:
     """ Create a contact page """

@@ -1,6 +1,6 @@
 /* Global Settings */
 body {
-    background-color:#f4f4f4;
+    background-color:#ffffff;
 	font-family:"Helvetica";
 }
 
@@ -44,15 +44,20 @@ h1 a:active {
 
 /* Header settings */
 #header {
-	background:#f4f4f4;
+	background:#ffffff;
 	font-size:30px;
 	padding:0px;
 	height:60px;
 }
 
+#header a:hover {
+	background-color:#ffffff;
+	cursor:pointer;
+}
+
 /* Footer settings */
 #footer {
-	background:#eee;
+	background:#ffffff;
 	font-size:12px;
 	padding:0px;
 }
@@ -93,15 +98,15 @@ h1 a:active {
 }
 /* 3 Column settings */
 .threecol {
-	background:#eee;		/* right column background colour */
+	background:#ffffff;		/* right column background colour */
 }
 .threecol .colmid {
 	right:25%;			/* width of the right column */
-	background:#f4f4f4;		/* center column background colour */
+	background:#ffffff;		/* center column background colour */
 }
 .threecol .colleft {
 	right:50%;			/* width of the middle column */
-	background:#f4f4f4;	/* left column background colour */
+	background:#ffffff;	/* left column background colour */
 }
 .threecol .col1 {
 	width:46%;			/* width of center column content (column width minus padding on either side) */
