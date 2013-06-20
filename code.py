@@ -14,7 +14,6 @@ urls = (
     '/edit/(\d+)', 'Edit',
     '/admin', 'Admin',
     '/projects', 'Projects',
-    '/about', 'About',
     '/contact', 'Contact',
     '/logout', 'Logout',
     '/like/(\d+)', 'Like',
@@ -92,7 +91,7 @@ class View:
 
 
 class New:
-    """ Create the import form """
+    """ Create the new post form """
     form = web.form.Form(
         web.form.Textbox('title', web.form.notnull, 
             size=30,

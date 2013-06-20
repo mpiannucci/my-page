@@ -8,7 +8,7 @@ $def with (posts)
 	<div id="postStream" class="postDisp">
 		<!-- Loop thourgh all posts in the database and display them as declared below -->
 		$for post in posts:
-			<h2>$post.title</h2>
+			<h2 class="links"><a href="/view/$post.id">$post.title</a></h2>
 			<h3>$datestr(post.posted_on)</h3>
 			<div id="postContent">
 				$:post.content

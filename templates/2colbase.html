@@ -1,0 +1,51 @@
+$def with (page)
+
+<html>
+<head>
+    <title>Matthew Iannucci</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+</head>
+<body>
+	<!-- Define the header for the page -->
+	<div id="header">
+		<h1><a href="/">Matthew Iannucci</a></h1>
+	</div>
+	<!-- Create the two coloumn layout.-->
+	<div class="colmask rightmenu">
+		<div class="colleft">
+			<div class="col1">
+				<!-- Column 1 start -->
+				<!-- Get the data from python -->
+				$:page
+				<!-- Column 1 end -->
+			</div>
+			<div class="col2">
+				<!-- Column 2 start -->
+	            <div id="menu">
+		           	<h1><a href="/">Home</a></h1>
+		           	<h1><a href="/blog">Blog</a></h1>
+		           	<h1><a href="/projects">Github</a></h1>
+		           	<h1><a href="/resume">Resume</a></h1>
+		           	<h1><a href="/contact">Contact</a></h1>
+	            </div>
+				<!-- Column 2 end -->
+			</div>
+		</div>
+	</div>
+	<!-- Ends the three column layout-->
+	<!-- Define the footer for the page -->
+	<div id="footer">
+		<center>	
+			<div id="copyright">
+				<h3>Copyright 2013, Matthew Iannucci</h3>
+			</div>
+			<div id="siteinfo">
+				<p>Site created with the web.py framework, version 0.3 <br/>Last updated June 4, 2013</p>
+			</div>
+		</center>
+	</div>
+</div>
+<!-- End the page layout -->
+</body>
+</html>

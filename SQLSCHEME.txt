@@ -5,8 +5,8 @@ CREATE TABLE entries (
     title TEXT,
     content TEXT,
     posted_on DATETIME,
-    primary key (id)
-    likes INT
+    primary key (id),
+    likes INT,
     dislikes INT
 );
 
