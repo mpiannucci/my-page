@@ -13,7 +13,8 @@ urls = (
     '/delete/(\d+)', 'Delete',
     '/edit/(\d+)', 'Edit',
     '/admin', 'Admin',
-    '/projects', 'Projects',
+    '/apps', 'Apps',
+    '/github', 'Github',
     '/contact', 'Contact',
     '/logout', 'Logout',
     '/like/(\d+)', 'Like',
@@ -165,7 +166,7 @@ class Logout:
         session.kill()
         raise web.seeother('/blog')
 
-class Projects:
+class Github:
     """ Redirect to Github """
     def GET(self):
         raise web.seeother('https://github.com/rhodysurf')
@@ -179,6 +180,11 @@ class Contact:
     """ Create a contact page """
     def GET(self): 
         return render.contact()
+
+class Apps:
+    """ Create the apps page """
+    def GET(self):
+        return render.apps()
 
 class Like:
     """ Create the method to like a post """
