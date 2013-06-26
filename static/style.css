@@ -1,4 +1,6 @@
-/* Global Settings */
+/***************************************************************************
+Global Styles
+***************************************************************************/
 body {
     background-color:#ffffff;
 	font-family:"Helvetica";
@@ -28,18 +30,54 @@ h1 a:active {
 	color:#000000;
 }
 
+h2 {
+	font-family:"Helvetica";
+	font-color:#000000;
+}
+
+/* Link settings */
+h2 a:link {
+	text-decoration:none;
+	color:#000000;
+} 
+
+h2 a:hover {
+	background-color:#33B5E5;
+	cursor:pointer;
+}
+
+h2 a:visited {
+	color:#000000;
+}
+
+h2 a:active {
+	color:#000000;
+}
+
+/***************************************************************************
+Specific Styles
+***************************************************************************/
+
 /* Side column content settings */
 #menu {
     width:200px;
 }
 
+/*
 #sideTitle {
 	font-family:"Helvetica";
-	font-size:70px;
-	-webkit-transform: rotate(303deg);
-	-moz-transform: rotate(303deg);
-	-o-transform: rotate(303deg);
+	font-size:40px;
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
 	writing-mode: tb-rl;
+	height:200px;
+	width:200px;
+}
+*/
+
+#sideTitle {
+	color:#33B5E5;
 }
 
 /* Header settings */
