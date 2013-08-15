@@ -1,3 +1,6 @@
+#!/usr/bin/env python2.5
+import sys
+sys.path.append('/home/mpiannucci/py_libs/')
 """ Basic blog using webpy 0.3 """
 import web
 import model
@@ -176,12 +179,12 @@ class Logout:
 class Github:
     """ Redirect to Github """
     def GET(self):
-        raise web.seeother('https://github.com/rhodysurf')
+        raise web.redirect('https://github.com/rhodysurf')
 
 class Resume:
     """ Serve the resume """
     def GET(self):
-        raise web.seeother('/static/MatthewIannucciResume.pdf')
+        raise web.redirect('http://mpiannucci.com/static/MatthewIannucciResume.pdf')
 
 class Contact:
     """ Create a contact page """
