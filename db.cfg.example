@@ -1,0 +1,5 @@
+[blog-database]
+db-name = <your-db-name>
+db-user = <your-db-user>
+db-pass = <your-db-password>
+db-host = <your-db-hostname>
