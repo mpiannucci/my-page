@@ -17,22 +17,16 @@ $def with (posts, pageNum, next, prev)
 			<div id="links" class="links">
 				<table class="linkTable">
 					<tr>
-						<td>
-							<a href="/view/$post.id">Link</a>
-						</td>
-						<td>
-							$post.likes &nbsp; <a href="/like/$post.id">Like</a>
-						</td>
-						<td>
-							$post.dislikes &nbsp; <a href="/dislike/$post.id">Dislike</a>
-						</td>
+						<td><a href="/view/$post.id">Link</a></td>
+						<td>$post.likes &nbsp; <a href="/like/$post.id">Like</a></td>
+						<td>$post.dislikes &nbsp; <a href="/dislike/$post.id">Dislike</a></td>
 					</tr>
 				</table>
 			</div>
 			<hr>
 	</div>
 	<div id="links" class="links">
-		$if int(pageNum) == 1:
+		$if pageNum == 1:
 			<table> 
 				<tr>
 					<td>Page $pageNum</td>
@@ -40,7 +34,7 @@ $def with (posts, pageNum, next, prev)
 					<td><a href="/archive">Archive</a></td>
 				</tr>
 			</table>
-		$elif int(pageNum) == 3:
+		$elif pageNum == 3:
 			<table> 
 				<tr>
 					<td><a href="/blog/$prev">Previous</a></td>

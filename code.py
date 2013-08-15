@@ -81,7 +81,12 @@ class Blog:
     """ Create the layout for the blog """
     def GET(self, pageNum):
         """ Show all page """
-        posts = model.get_posts()
+        if int(pageNum) == 1:
+            posts = model.get_posts(0)
+        elif int(pageNum) == 2:
+            posts = model.get_posts(6)
+        elif int(pageNum) == 3:
+            posts = model.get_posts(12)
         next = int(pageNum) + 1
         prev = int(pageNum) - 1
         return render.blog(posts, int(pageNum), int(next), int(prev))
@@ -90,7 +95,7 @@ class Archive:
     """ Create the archive """
     def GET(self):
         """ Get all the posts """
-        posts = model.get_posts()
+        posts = model.get_all_posts()
         return render.archive(posts)
 
 class View:
@@ -122,14 +127,14 @@ class New:
         if not form.validates():
             return render.new(form)
         model.new_post(form.d.title, form.d.content)
-        posts = model.get_posts()
+        posts = model.get_all_posts()
         return render.admin(session.user, posts)
 
 class Delete:
     """ Create the method to delete posts """
     def POST(self, id):
         model.del_post(int(id))
-        posts = model.get_posts()
+        posts = model.get_all_posts()
         return render.admin(session.user, posts)
 
 class Edit:
@@ -147,14 +152,14 @@ class Edit:
         if not form.validates():
             return render.edit(post, form)
         model.update_post(int(id), form.d.title, form.d.content)
-        posts = model.get_posts()
+        posts = model.get_all_posts()
         return render.admin(session.user, posts)
 
 class Admin:
     """ Create the Admin interface """    
     def GET(self):
         if session.user != 'anonymous':
-            posts = model.get_posts()
+            posts = model.get_all_posts()
             return render.admin(session.user, posts)
         else:
             form = signin_form()
@@ -166,7 +171,7 @@ class Admin:
             return render.login(session.user, form)
         else:
             session.user = form['username'].value
-            posts = model.get_posts()
+            posts = model.get_all_posts()
             return render.admin(session.user, posts) 
 
 class Logout:

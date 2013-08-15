@@ -5,8 +5,11 @@ db = web.database(dbn='mysql', db='mblog', user='root', pw="erfer4")
 def get_users():
 	return db.select('users', order='id DESC')
 
-def get_posts():
-	return db.select('entries', order='id DESC')
+def get_posts(offsetVal):
+	return db.select('entries', order='id DESC', limit=6, offset=offsetVal)
+
+def get_all_posts():
+    return db.select('entries', order='id DESC')
 
 def get_post(id):
     try:
