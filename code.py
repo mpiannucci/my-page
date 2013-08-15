@@ -47,7 +47,8 @@ for name in names:
 
 ### Define the web templates
 t_globals = {
-    'datestr': web.datestr
+    'datestr': web.datestr,
+    'get_posts' : model.get_posts
 }
 render = web.template.render('templates', base='base', globals=t_globals)
 
@@ -81,15 +82,7 @@ class Blog:
     """ Create the layout for the blog """
     def GET(self, pageNum):
         """ Show all page """
-        if int(pageNum) == 1:
-            posts = model.get_posts(0)
-        elif int(pageNum) == 2:
-            posts = model.get_posts(6)
-        elif int(pageNum) == 3:
-            posts = model.get_posts(12)
-        next = int(pageNum) + 1
-        prev = int(pageNum) - 1
-        return render.blog(posts, int(pageNum), int(next), int(prev))
+        return render.blog(int(pageNum))
 
 class Archive:
     """ Create the archive """

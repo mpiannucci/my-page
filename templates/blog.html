@@ -1,4 +1,8 @@
-$def with (posts, pageNum, next, prev)
+$def with (pageNum)
+$ postCount = 0
+$ next = pageNum + 1
+$ prev = pageNum - 1
+$ posts = get_posts((pageNum-1)*6)
 
 <div id="blogContainer">
 	<div id="blogTitle">
@@ -8,6 +12,7 @@ $def with (posts, pageNum, next, prev)
 	<div id="postStream" class="postDisp">
 		<!-- Loop thourgh all posts in the database and display them as declared below -->
 		$for post in posts:
+			$ postCount+=1
 			<h2 class="links"><a href="/view/$post.id">$post.title</a></h2>
 			<h3>$datestr(post.posted_on)</h3>
 			<div id="postContent">
@@ -27,29 +32,38 @@ $def with (posts, pageNum, next, prev)
 	</div>
 	<div id="links" class="links">
 		$if pageNum == 1:
-			<table> 
-				<tr>
-					<td>Page $pageNum</td>
-					<td><a href="/blog/$next">Next</a></td>
-					<td><a href="/archive">Archive</a></td>
-				</tr>
-			</table>
-		$elif pageNum == 3:
-			<table> 
-				<tr>
-					<td><a href="/blog/$prev">Previous</a></td>
-					<td>Page $pageNum</td>
-					<td><a href="/archive">Archive</a></td>
-				</tr>
-			</table>
+			$if postCount < 6:
+				<table> 
+					<tr>
+						<td>Page $pageNum</td>
+						<td><a href="/archive">Archive</a></td>
+					</tr>
+				</table>
+			$else:
+				<table> 
+					<tr>
+						<td>Page $pageNum</td>
+						<td><a href="/blog/$next">Next</a></td>
+						<td><a href="/archive">Archive</a></td>
+					</tr>
+				</table>
 		$else:
-			<table> 
-				<tr>
-					<td><a href="/blog/$prev">Previous</a></td>
-					<td>Page $pageNum</td>
-					<td><a href="/blog/$next">Next</a></td>
-					<td><a href="/archive">Archive</a></td>
-				</tr>
-			</table>
+			$if postCount < 6:
+				<table> 
+					<tr>
+						<td><a href="/blog/$prev">Previous</a></td>
+						<td>Page $pageNum</td>
+						<td><a href="/archive">Archive</a></td>
+					</tr>
+				</table>
+			$else:
+				<table> 
+					<tr>
+						<td><a href="/blog/$prev">Previous</a></td>
+						<td>Page $pageNum</td>
+						<td><a href="/blog/$next">Next</a></td>
+						<td><a href="/archive">Archive</a></td>
+					</tr>
+				</table>
 	</div>
 </div>
