@@ -1,6 +1,6 @@
 import web, datetime
 
-db = web.database(dbn='mysql', db='mblog', user='root', pw="erfer4")
+db = web.database(dbn='mysql', db='mpiblog', user='mpiannucci', pw="Erfer1!", host="mysql.mpiannucci.com")
 
 def get_users():
 	return db.select('users', order='id DESC')
