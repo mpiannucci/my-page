@@ -1,0 +1,21 @@
+$def with (posts)
+
+<div id="archiveContainer">
+    <div id="archiveTitle">
+        <h1>Archive</h1>
+    </div>
+    <hr>
+    <div id="postList">
+        <table class="archive">
+            $for post in posts:
+                <tr>
+                    <td>
+                        <h3 class="links"><a href="/view/$post.id">$post.title</a></h3> 
+                    </td>
+                    <td>
+                        <h3 id="archiveTime">&nbsp; $datestr(post.posted_on)</h3>
+                    </td>
+                </tr>
+        </table>
+    </div>
+</div>

@@ -216,3 +216,8 @@ Specific Styles
 #failedlogin {
     font-color:"red";
 }
+
+/* Archive page settigns */
+#archiveTime {
+	font-weight:normal;
+}

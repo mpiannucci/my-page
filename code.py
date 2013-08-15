@@ -7,7 +7,7 @@ from hashlib import sha1
 ### Map out the urls
 urls = (
     '/', 'Index',
-    '/blog', 'Blog',
+    '/blog/(\d+)', 'Blog',
     '/view/(\d+)', 'View',
     '/new', 'New',
     '/delete/(\d+)', 'Delete',
@@ -19,7 +19,8 @@ urls = (
     '/logout', 'Logout',
     '/like/(\d+)', 'Like',
     '/dislike/(\d+)', 'Dislike',
-    '/resume', 'Resume'
+    '/resume', 'Resume',
+    '/archive', 'Archive'
 )
 
 ### Create a cryptography for the passwords
@@ -78,18 +79,26 @@ class Index:
 
 class Blog:
     """ Create the layout for the blog """
-    def GET(self):
+    def GET(self, pageNum):
         """ Show all page """
         posts = model.get_posts()
-        return render.blog(posts)
+        next = int(pageNum) + 1
+        prev = int(pageNum) - 1
+        return render.blog(posts, int(pageNum), int(next), int(prev))
+
+class Archive:
+    """ Create the archive """
+    def GET(self):
+        """ Get all the posts """
+        posts = model.get_posts()
+        return render.archive(posts)
 
 class View:
-    """ Create a simgle post view for testing """
+    """ Create a single post view for testing """
     def GET(self, id):
         """ View single post """
         post = model.get_post(int(id))
         return render.view(post)
-
 
 class New:
     """ Create the new post form """
