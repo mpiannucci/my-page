@@ -1,6 +1,8 @@
-import web, datetime
+import web, datetime, ConfigParser
+config = ConfigParser.RawConfigParser()
+config.read('db.cfg')
 
-db = web.database(dbn='mysql', db='mpiblog', user='mpiannucci', pw="Erfer1!", host="mysql.mpiannucci.com")
+db = web.database(dbn='mysql', db=config.get('blog-database', 'db-name'), user=config.get('blog-database', 'db-user'), pw=config.get('blog-database', 'db-pass'), host=config.get('blog-database', 'db-host')
 
 def get_users():
 	return db.select('users', order='id DESC')
