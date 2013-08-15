@@ -1,6 +1,0 @@
-APP TO DO LIST:
-
-1. Make a collage on the home page. 
-2. Recraft the blog so that only a specific number of posts
-   show per page
-3. Make a template for 404 errors
