@@ -187,7 +187,7 @@ class Logout:
     """Create the log out method"""
     def GET(self):
         session.kill()
-        raise web.seeother('/blog')
+        raise web.seeother('/blog/1')
 
 class Github:
     """ Redirect to Github """
@@ -197,7 +197,7 @@ class Github:
 class Resume:
     """ Serve the resume """
     def GET(self):
-        raise web.redirect('http://mpiannucci.com/static/MatthewIannucciResume.pdf')
+        raise web.seeother('/static/MatthewIannucciResume.pdf')
 
 class Contact:
     """ Create a contact page """
@@ -215,6 +215,8 @@ class Like:
         post = model.get_post(int(id))
         like = post.likes
         model.like_post(int(id), int(like))
+        # This defaults to the first page. In the future it should 
+        # redirect to the same page the user was on. 
         raise web.seeother('/blog/1')
 
 class Dislike:
@@ -223,6 +225,8 @@ class Dislike:
         post = model.get_post(int(id))
         dlike = post.dislikes
         model.dislike_post(int(id), int(dlike))
+        # This defaults to the first page. In the future it should 
+        # redirect to the same page the user was on. 
         raise web.seeother('/blog/1')
 
 def notfound():
