@@ -76,7 +76,22 @@ Specific Styles
 }
 */
 
-#sideTitle {
+/* Link settings */
+.leftBar h2 a:link {
+	text-decoration:none;
+	color:#33B5E5;
+} 
+
+.leftBar h2 a:hover {
+	background-color:#000000;
+	cursor:pointer;
+}
+
+.leftBar h2 a:visited {
+	color:#33B5E5;
+}
+
+.leftBar h2 a:active {
 	color:#33B5E5;
 }
 
