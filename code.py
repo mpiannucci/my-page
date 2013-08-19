@@ -209,7 +209,7 @@ class Like:
         post = model.get_post(int(id))
         like = post.likes
         model.like_post(int(id), int(like))
-        raise web.seeother('/blog/')
+        raise web.seeother('/blog/1')
 
 class Dislike:
     """ Create the method to dislike a post """
