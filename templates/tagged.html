@@ -1,0 +1,69 @@
+$def with (tag, posts)
+$ postCount = 0
+$ next = pageNum + 1
+$ prev = pageNum - 1
+$ posts = get_posts((pageNum-1)*6)
+
+<div id="blogContainer">
+    <div id="blogTitle">
+        <h1>Posts Tagged "$tag"</h1>
+    </div>
+    <hr>
+    <div id="postStream" class="postDisp">
+        <!-- Loop thourgh all posts in the database and display them as declared below -->
+        $for post in posts:
+            $ postCount+=1
+            <h2 class="links"><a href="/view/$post.id">$post.title</a></h2>
+            <h3>$datestr(post.posted_on)</h3>
+            <div id="postContent">
+                $:post.content
+            </div>
+            <br/>
+            <div id="links" class="links">
+                <table class="linkTable">
+                    <tr>
+                        <td><a href="/view/$post.id">Link</a></td>
+                        <td>$post.likes &nbsp; <a href="/like/$post.id">Like</a></td>
+                        <td>$post.dislikes &nbsp; <a href="/dislike/$post.id">Dislike</a></td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+    </div>
+    <div id="links" class="links">
+        $if pageNum == 1:
+            $if postCount < 6:
+                <table> 
+                    <tr>
+                        <td>Page $pageNum</td>
+                        <td><a href="/archive">Archive</a></td>
+                    </tr>
+                </table>
+            $else:
+                <table> 
+                    <tr>
+                        <td>Page $pageNum</td>
+                        <td><a href="/blog/$next">Next</a></td>
+                        <td><a href="/archive">Archive</a></td>
+                    </tr>
+                </table>
+        $else:
+            $if postCount < 6:
+                <table> 
+                    <tr>
+                        <td><a href="/blog/$prev">Previous</a></td>
+                        <td>Page $pageNum</td>
+                        <td><a href="/archive">Archive</a></td>
+                    </tr>
+                </table>
+            $else:
+                <table> 
+                    <tr>
+                        <td><a href="/blog/$prev">Previous</a></td>
+                        <td>Page $pageNum</td>
+                        <td><a href="/blog/$next">Next</a></td>
+                        <td><a href="/archive">Archive</a></td>
+                    </tr>
+                </table>
+    </div>
+</div>

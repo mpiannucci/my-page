@@ -19,6 +19,9 @@ def get_post(id):
     except IndexError:
         return None
 
+def get_tagged_posts(tag):
+    return db.select('entries', where='tag=$tag', vars=locals(), order='id DESC')
+
 def new_post(title, text):
     db.insert('entries', title=title, content=text, posted_on=datetime.datetime.utcnow(), likes=0, dislikes=0)
 

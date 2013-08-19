@@ -23,7 +23,8 @@ urls = (
     '/like/(\d+)', 'Like',
     '/dislike/(\d+)', 'Dislike',
     '/resume', 'Resume',
-    '/archive', 'Archive'
+    '/archive', 'Archive',
+    '/tag/(\d+)', 'Tagged'
 )
 
 ### Create a cryptography for the passwords
@@ -100,6 +101,12 @@ class View:
         """ View single post """
         post = model.get_post(int(id))
         return render.view(post)
+
+class Tagged:
+    """ Display posts with a specific tag """
+    def GET(self, tag):
+        posts = model.get_tagged_posts(tag)
+        return render.tagged(tag, posts)
 
 class New:
     """ Create the new post form """

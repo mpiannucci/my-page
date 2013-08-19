@@ -5,7 +5,8 @@ CREATE TABLE entries (
     posted_on DATETIME,
     primary key (id),
     likes INT,
-    dislikes INT
+    dislikes INT,
+    tag TEXT
 );
 
 CREATE TABLE users (
