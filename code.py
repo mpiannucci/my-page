@@ -30,7 +30,7 @@ urls = (
     '/dislike/(\d+)', 'Dislike',
     '/resume', 'Resume',
     '/archive', 'Archive',
-    '/tag/(\d+)', 'Tagged'
+    '/tag/(.+)', 'Tagged'
 )
 
 ### Create a cryptography for the passwords
