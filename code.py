@@ -84,7 +84,7 @@ class Index:
 
 class Blog:
     """ Create the layout for the blog """
-    def GET(self, pageNum):
+    def GET(self, pageNum=1):
         """ Show all page """
         return render.blog(int(pageNum))
 
