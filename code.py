@@ -2,10 +2,16 @@
 import sys
 sys.path.append('/home/mpiannucci/py_libs/')
 """ Basic blog using webpy 0.3 """
+import os
 import web
 import model
 import random
 from hashlib import sha1
+
+### Change some environment variables
+home = '/code'
+os.environ["SCRIPT_NAME"] = home
+os.environ["REAL_SCRIPT_NAME"] = home
 
 ### Map out the urls
 urls = (
