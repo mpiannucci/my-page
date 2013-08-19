@@ -9,7 +9,7 @@ import random
 from hashlib import sha1
 
 ### Change some environment variables
-home = '/'
+home = ''
 os.environ["SCRIPT_NAME"] = home
 os.environ["REAL_SCRIPT_NAME"] = home
 
