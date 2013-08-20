@@ -112,10 +112,18 @@ h2 a:active {
     text-align: center;
 }
 
+#homeImage {
+    width: 50%;
+}
+
 /* Blog page settings */
 .postDisp h3 {
     font-size:16;
     font-style: italic;
+}
+
+.linkTable {
+    font-size:16;
 }
 
 .links a:link {
