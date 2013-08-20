@@ -1,6 +1,5 @@
-/***************************************************************************
-Global Styles
-***************************************************************************/
+/**** General Styles ****/
+
 body {
     background-color:#ffffff;
 	font-family:"Helvetica";
@@ -54,16 +53,9 @@ h2 a:active {
 	color:#000000;
 }
 
-/***************************************************************************
-Specific Styles
-***************************************************************************/
+/**** Layout Specific Styles ****/
 
-/* Side column content settings */
-#menu {
-    width:200px;
-}
-
-/* Link settings */
+/* Tag Link settings */
 .leftBar h2 a:link {
 	text-decoration:none;
 	color:#33B5E5;
