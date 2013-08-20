@@ -104,14 +104,18 @@ h2 a:active {
 
 #siteinfo p {
     font-size:12px;
+
     padding:0px;
 }
 
 /* Home page settings */
 #welcomeFoot {
-    text-align: center;
+    text-align: right;
 }
 
+#homeImage {
+    width: 50%;
+}
 
 /* Blog page settings */
 .postDisp h3 {

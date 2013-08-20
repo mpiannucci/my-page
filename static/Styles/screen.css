@@ -169,6 +169,10 @@ h2 a:active {
 	text-align: right;
 }
 
+#homeImage {
+	width: 100%;
+}
+
 /* Blog page settings */
 .postDisp h3 {
 	font-size:16;
