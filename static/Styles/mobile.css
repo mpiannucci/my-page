@@ -123,10 +123,6 @@ h2 a:active {
     font-style: italic;
 }
 
-.linkTable {
-    font-size:32;
-}
-
 .links a:link {
     text-decoration: none;
     color:#000000;
@@ -152,6 +148,7 @@ h2 a:active {
 .linkTable {
     border:0;
     width:100%;
+    font-size:32;
 }
 
 /* Projects page settings */

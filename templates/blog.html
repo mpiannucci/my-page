@@ -34,14 +34,14 @@ $ posts = get_posts((pageNum-1)*6)
 	<div id="links" class="links">
 		$if pageNum == 1:
 			$if postCount < 6:
-				<table> 
+				<table class="linkTable"> 
 					<tr>
 						<td>Page $pageNum</td>
 						<td><a href="/archive">Archive</a></td>
 					</tr>
 				</table>
 			$else:
-				<table> 
+				<table class="linkTable"> 
 					<tr>
 						<td>Page $pageNum</td>
 						<td><a href="/blog/$next">Next</a></td>
@@ -50,7 +50,7 @@ $ posts = get_posts((pageNum-1)*6)
 				</table>
 		$else:
 			$if postCount < 6:
-				<table> 
+				<table class="linkTable"> 
 					<tr>
 						<td><a href="/blog/$prev">Previous</a></td>
 						<td>Page $pageNum</td>
@@ -58,7 +58,7 @@ $ posts = get_posts((pageNum-1)*6)
 					</tr>
 				</table>
 			$else:
-				<table> 
+				<table class="linkTable"> 
 					<tr>
 						<td><a href="/blog/$prev">Previous</a></td>
 						<td>Page $pageNum</td>

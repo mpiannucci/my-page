@@ -199,7 +199,7 @@ class Github:
 class Resume:
     """ Serve the resume """
     def GET(self):
-        raise web.seeother('/static/MatthewIannucciResume.pdf')
+        raise web.seeother('/static/Docs/MatthewIannucciResume.pdf')
 
 class Contact:
     """ Create a contact page """
