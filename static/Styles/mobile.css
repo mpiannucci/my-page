@@ -2,7 +2,7 @@
 Handheld (Mobile) Device Style
 ******************************************************************************************************/
 
-@media (max-width: 760px) {
+@media (max-device-width: 760px) {
 
 
 /* End mobile layout definition */
