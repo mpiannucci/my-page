@@ -22,15 +22,15 @@ def get_post(id):
 def get_tagged_posts(tag):
     return db.select('entries', where='tag=$tag', vars=locals(), order='id DESC')
 
-def new_post(title, text):
-    db.insert('entries', title=title, content=text, posted_on=datetime.datetime.utcnow(), likes=0, dislikes=0)
+def new_post(title, text, tag):
+    db.insert('entries', title=title, content=text, tag=tag, posted_on=datetime.datetime.utcnow(), likes=0, dislikes=0)
 
 def del_post(id):
     db.delete('entries', where="id=$id", vars=locals())
 
-def update_post(id, title, text):
+def update_post(id, title, text, tag):
     db.update('entries', where="id=$id", vars=locals(),
-        title=title, content=text)
+        title=title, content=text, tag=tag)
 
 def like_post(id, like):
     db.update('entries', where="id=$id", vars=locals(), likes=like+1)

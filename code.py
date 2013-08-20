@@ -120,6 +120,9 @@ class New:
         web.form.Textbox('title', web.form.notnull, 
             size=30,
             description="Post title:"),
+        web.form.Textbox('tag', web.form.notnull,
+            size=30,
+            description="Post tag")
         web.form.Textarea('content', web.form.notnull, 
             rows=30, cols=60,
             description="Post content:"),
@@ -135,7 +138,7 @@ class New:
         form = self.form()
         if not form.validates():
             return render.new(form)
-        model.new_post(form.d.title, form.d.content)
+        model.new_post(form.d.title, form.d.content, form.d.tag)
         posts = model.get_all_posts()
         return render.admin(session.user, posts)
 
@@ -154,13 +157,12 @@ class Edit:
         form.fill(post)
         return render.edit(post, form)
 
-
     def POST(self, id):
         form = New.form()
         post = model.get_post(int(id))
         if not form.validates():
             return render.edit(post, form)
-        model.update_post(int(id), form.d.title, form.d.content)
+        model.update_post(int(id), form.d.title, form.d.content, form.d.tag)
         posts = model.get_all_posts()
         return render.admin(session.user, posts)
 
