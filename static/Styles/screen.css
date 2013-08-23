@@ -208,8 +208,6 @@ h2 a:active {
 
 /* Projects page settings */
 
-/* Bio page settings */
-
 /* Admin page settings */
 #failedlogin {
     font-color:"red";
@@ -219,3 +217,9 @@ h2 a:active {
 #archiveTime {
 	font-weight:normal;
 }
+
+/* Contact Page settings */
+#contactBody a {
+	text-decoration: underline;
+}
+/* End Screen Layout */
