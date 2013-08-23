@@ -206,6 +206,10 @@ h2 a:active {
 	width:100%;
 }
 
+.navTable {
+	border:0;
+}
+
 /* Projects page settings */
 
 /* Admin page settings */
