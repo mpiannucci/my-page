@@ -1,7 +1,7 @@
 #!/usr/bin/env python2.5
 import sys
 sys.path.append('/home/mpiannucci/py_libs/')
-""" Basic blog using webpy 0.3 """
+
 import os
 import web
 import model
