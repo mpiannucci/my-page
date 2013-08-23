@@ -17,6 +17,7 @@ os.environ["REAL_SCRIPT_NAME"] = home
 urls = (
     '/', 'Index',
     '/blog/(\d+)', 'Blog',
+    '/blog', 'Blog',
     '/view/(\d+)', 'View',
     '/new', 'New',
     '/delete/(\d+)', 'Delete',
@@ -228,7 +229,7 @@ class Like:
         model.like_post(int(id), int(like))
         # This defaults to the first page. In the future it should 
         # redirect to the same page the user was on. 
-        raise web.seeother('/blog/1')
+        raise web.seeother('/view/' + str(id))
 
 class Dislike:
     """ Create the method to dislike a post """
@@ -238,7 +239,7 @@ class Dislike:
         model.dislike_post(int(id), int(dlike))
         # This defaults to the first page. In the future it should 
         # redirect to the same page the user was on. 
-        raise web.seeother('/blog/1')
+        raise web.seeother('/view/' + str(id))
 
 def notfound():
     """ Create the not found page """
