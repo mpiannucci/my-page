@@ -131,8 +131,11 @@ class New:
 
     """ Create the page used to create new blog posts """
     def GET(self):
-        form = self.form()
-        return render.new(form)
+        if session.user != 'anonymous':
+            form = self.form()
+            return render.new(form)
+        else:
+            raise web.seeother('/admin')
 
     def POST(self):
         form = self.form()
@@ -145,17 +148,23 @@ class New:
 class Delete:
     """ Create the method to delete posts """
     def POST(self, id):
-        model.del_post(int(id))
-        posts = model.get_all_posts()
-        return render.admin(session.user, posts)
+        if session.user != 'anonymous':
+            model.del_post(int(id))
+            posts = model.get_all_posts()
+            return render.admin(session.user, posts)
+        else:
+            raise web.seeother('/admin')
 
 class Edit:
     """ Create the method to edit posts """
     def GET(self, id):
-        post = model.get_post(int(id))
-        form = New.form()
-        form.fill(post)
-        return render.edit(post, form)
+        if session.user != 'anonymous':
+            post = model.get_post(int(id))
+            form = New.form()
+            form.fill(post)
+            return render.edit(post, form)
+        else:
+            raise web.seeother('/admin')
 
     def POST(self, id):
         form = New.form()
