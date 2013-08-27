@@ -211,15 +211,6 @@ h2 a:active {
 }
 
 /* Apps page settings */
-#simpleSolverTitle {
-	float:left;
-}
-
-#simpleSolverLogo {
-	float:center;
-	padding:0px 20px;
-	width:8%;
-}
 
 /* Admin page settings */
 #failedlogin {
