@@ -210,7 +210,16 @@ h2 a:active {
 	border:0;
 }
 
-/* Projects page settings */
+/* Apps page settings */
+#simpleSolverTitle {
+	float:left;
+}
+
+#simpleSolverLogo {
+	float:center;
+	padding:0px 20px;
+	width:8%;
+}
 
 /* Admin page settings */
 #failedlogin {

@@ -79,11 +79,24 @@ h2 a:active {
     color:#33B5E5;
 }
 
+#sideTitle {
+    padding-top: 25px;
+}
+
+#sideTitle h2 {
+    display: inline;
+    font-size: 300%;
+}
+
+#menu h2 {
+    display: inline;
+    font-size: 300%;
+}
+
 /* Header settings */
 #header {
     background:#ffffff;
-    font-size:25px;
-    height:60px;
+    font-size:200%;
 }
 
 #header a:hover {
@@ -94,8 +107,8 @@ h2 a:active {
 /* Footer settings */
 #footer {
     background:#ffffff;
-    font-size:12px;
-    padding:0px;
+    font-size:73%;
+    padding-top:45px;
 }
 
 #copyright h3 {
@@ -103,7 +116,7 @@ h2 a:active {
 }
 
 #siteinfo p {
-    font-size:12px;
+    font-size:70%;
 
     padding:0px;
 }
@@ -111,6 +124,7 @@ h2 a:active {
 /* Home page settings */
 #welcomeFoot {
     text-align: right;
+    font-size: 170%;
 }
 
 #homeImage {
@@ -119,7 +133,7 @@ h2 a:active {
 
 /* Blog page settings */
 .postDisp h3 {
-    font-size:16;
+    font-size:100%;
     font-style: italic;
 }
 
@@ -148,15 +162,27 @@ h2 a:active {
 .linkTable {
     border:0;
     width:100%;
-    font-size:32;
+    font-size:230%;
 }
 
 .navTable {
     border:0;
-    font-size:32;
+    font-size:210%;
 }
 
 /* Projects page settings */
+#simpleSolverLogo {
+    width:0px;
+    float:center;
+}
+
+#googlePlayBadge {
+    width:33%;
+}
+
+.screenshots {
+    width:35%;
+}
 
 /* Admin page settings */
 #failedlogin {
