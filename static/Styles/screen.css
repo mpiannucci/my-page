@@ -175,7 +175,7 @@ h2 a:active {
 
 /* Blog page settings */
 .postDisp h3 {
-	font-size:100%
+	font-size:100%;
 	font-style: italic;
 }
 
@@ -211,6 +211,9 @@ h2 a:active {
 }
 
 /* Apps page settings */
+.screenshots {
+	width:35%;
+}
 
 /* Admin page settings */
 #failedlogin {
