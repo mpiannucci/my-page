@@ -226,7 +226,9 @@ h2 a:active {
 }
 
 /* Contact Page settings */
-#contactBody a {
-	text-decoration: underline;
+#contactLinks h3 {
+	display: inline;
+	padding-right: 15px;
 }
+
 /* End Screen Layout */
