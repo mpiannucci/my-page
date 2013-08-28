@@ -86,11 +86,13 @@ h2 a:active {
 #sideTitle h2 {
     display: inline;
     font-size: 300%;
+    padding-right: 20px;
 }
 
 #menu h2 {
     display: inline;
     font-size: 300%;
+    padding-right: 20px;
 }
 
 /* Header settings */
@@ -117,7 +119,6 @@ h2 a:active {
 
 #siteinfo p {
     font-size:70%;
-
     padding:0px;
 }
 
@@ -191,8 +192,10 @@ h2 a:active {
 }
 
 /* Contact page settings */
-#contactBody a {
-    text-decoration: underline;
+#contactLinks h3 {
+    display: inline;
+    padding-right: 15px;
+    font-size: 300%;
 }
 
 /**** End Mobile Styles ****/
