@@ -231,4 +231,12 @@ h2 a:active {
 	padding-right: 15px;
 }
 
+#bioPhoto {
+	float: right;
+}
+#bioPic {
+	width:88%;
+	padding-left: 20px;
+}
+
 /* End Screen Layout */
