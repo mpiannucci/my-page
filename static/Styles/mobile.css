@@ -2,7 +2,7 @@
 Handheld (Mobile) Device Style
 ******************************************************************************************************/
 
-@media only screen and (max-device-width: 767px) and (min-device-width: 321px) {
+@media only screen and (max-device-width: 767px) {
 
 /**** General Styles ****/
 body {

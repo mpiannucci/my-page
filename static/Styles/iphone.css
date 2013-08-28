@@ -2,7 +2,7 @@
 Iphone Layout 
 ******************************************************************************************************************/
 
-@media only screen and (max-device-width: 320px)_ {
+@media only screen and (max-width:320px) {
 /**** General Styles ****/
 body {
     background-color:#ffffff;
