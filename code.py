@@ -25,7 +25,7 @@ urls = (
     '/admin', 'Admin',
     '/apps', 'Apps',
     '/github', 'Github',
-    '/contact', 'Contact',
+    '/bio', 'Bio',
     '/logout', 'Logout',
     '/like/(\d+)', 'Like',
     '/dislike/(\d+)', 'Dislike',
@@ -211,10 +211,10 @@ class Resume:
     def GET(self):
         raise web.seeother('/static/Docs/MatthewIannucciResume.pdf')
 
-class Contact:
+class Bio:
     """ Create a contact page """
     def GET(self): 
-        return render.contact()
+        return render.bio()
 
 class Apps:
     """ Create the apps page """
