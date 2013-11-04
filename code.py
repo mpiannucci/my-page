@@ -28,7 +28,6 @@ urls = (
     '/bio', 'Bio',
     '/logout', 'Logout',
     '/like/(\d+)', 'Like',
-    '/dislike/(\d+)', 'Dislike',
     '/resume', 'Resume',
     '/archive', 'Archive',
     '/tag/(.+)', 'Tagged'
@@ -202,7 +201,7 @@ class Logout:
 class Github:
     """ Redirect to Github """
     def GET(self):
-        raise web.redirect('https://github.com/rhodysurf')
+        raise web.redirect('https://github.com/mpiannucci')
 
 class Resume:
     """ Serve the resume """
