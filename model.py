@@ -34,6 +34,3 @@ def update_post(id, title, text, tag):
 
 def like_post(id, like):
     db.update('entries', where="id=$id", vars=locals(), likes=like+1)
-
-def dislike_post(id, dlike):
-    db.update('entries', where="id=$id", vars=locals(), dislikes=dlike+1)

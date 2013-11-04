@@ -42,9 +42,7 @@ class PasswordHash(object):
     def check_password(self, password_):
         """checks if the password is correct"""
         return self.saltedpw == sha1(password_ + self.salt).hexdigest()
-
-### Defines the username and password to access admin interface 
-### TO DO --  STORE IN DATABASE INSTEAD 
+ 
 users = {
     
 }
@@ -227,16 +225,6 @@ class Like:
         post = model.get_post(int(id))
         like = post.likes
         model.like_post(int(id), int(like))
-        # This defaults to the first page. In the future it should 
-        # redirect to the same page the user was on. 
-        raise web.seeother('/view/' + str(id))
-
-class Dislike:
-    """ Create the method to dislike a post """
-    def GET(self, id):
-        post = model.get_post(int(id))
-        dlike = post.dislikes
-        model.dislike_post(int(id), int(dlike))
         # This defaults to the first page. In the future it should 
         # redirect to the same page the user was on. 
         raise web.seeother('/view/' + str(id))
