@@ -41,9 +41,9 @@ class PasswordHash(object):
     def check_password(self, password_):
         """checks if the password is correct"""
         return self.saltedpw == sha1(password_ + self.salt).hexdigest()
- 
+
 users = {
-    
+
 }
 
 names = model.get_users()
@@ -101,9 +101,9 @@ class Archive:
 
 class View:
     """ Create a single post view for testing """
-    def GET(self, id):
+    def GET(self, ident):
         """ View single post """
-        post = model.get_post(int(id))
+        post = model.get_post(int(ident))
         return render.view(post)
 
 class Tagged:
@@ -115,13 +115,13 @@ class Tagged:
 class New:
     """ Create the new post form """
     form = web.form.Form(
-        web.form.Textbox('title', web.form.notnull, 
+        web.form.Textbox('title', web.form.notnull,
             size=30,
             description="Post title:"),
         web.form.Textbox('tag', web.form.notnull,
             size=30,
             description="Post tag"),
-        web.form.Textarea('content', web.form.notnull, 
+        web.form.Textarea('content', web.form.notnull,
             rows=30, cols=60,
             description="Post content:"),
         web.form.Button('Post entry'),
@@ -145,9 +145,9 @@ class New:
 
 class Delete:
     """ Create the method to delete posts """
-    def POST(self, id):
+    def POST(self, ident):
         if session.user != 'anonymous':
-            model.del_post(int(id))
+            model.del_post(int(ident))
             posts = model.get_all_posts()
             return render.admin(session.user, posts)
         else:
@@ -155,26 +155,26 @@ class Delete:
 
 class Edit:
     """ Create the method to edit posts """
-    def GET(self, id):
+    def GET(self, ident):
         if session.user != 'anonymous':
-            post = model.get_post(int(id))
+            post = model.get_post(int(ident))
             form = New.form()
             form.fill(post)
             return render.edit(post, form)
         else:
             raise web.seeother('/admin')
 
-    def POST(self, id):
+    def POST(self, ident):
         form = New.form()
-        post = model.get_post(int(id))
+        post = model.get_post(int(ident))
         if not form.validates():
             return render.edit(post, form)
-        model.update_post(int(id), form.d.title, form.d.content, form.d.tag)
+        model.update_post(int(ident), form.d.title, form.d.content, form.d.tag)
         posts = model.get_all_posts()
         return render.admin(session.user, posts)
 
 class Admin:
-    """ Create the Admin interface """    
+    """ Create the Admin interface """
     def GET(self):
         if session.user != 'anonymous':
             posts = model.get_all_posts()
@@ -182,15 +182,15 @@ class Admin:
         else:
             form = signin_form()
             return render.login(session.user, form)
-    
+
     def POST(self):
         form = signin_form()
-        if not form.validates(): 
+        if not form.validates():
             return render.login(session.user, form)
         else:
             session.user = form['username'].value
             posts = model.get_all_posts()
-            return render.admin(session.user, posts) 
+            return render.admin(session.user, posts)
 
 class Logout:
     """Create the log out method"""
@@ -210,7 +210,7 @@ class Resume:
 
 class Bio:
     """ Create a contact page """
-    def GET(self): 
+    def GET(self):
         return render.bio()
 
 class Apps:
@@ -220,13 +220,13 @@ class Apps:
 
 class Like:
     """ Create the method to like a post """
-    def GET(self, id):
-        post = model.get_post(int(id))
+    def GET(self, ident):
+        post = model.get_post(int(ident))
         like = post.likes
-        model.like_post(int(id), int(like))
-        # This defaults to the first page. In the future it should 
-        # redirect to the same page the user was on. 
-        raise web.seeother('/view/' + str(id))
+        model.like_post(int(ident), int(like))
+        # This defaults to the first page. In the future it should
+        # redirect to the same page the user was on.
+        raise web.seeother('/view/' + str(ident))
 
 def notfound():
     """ Create the not found page """
