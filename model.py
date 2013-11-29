@@ -5,17 +5,17 @@ config.read('db.cfg')
 db = web.database(dbn='mysql', db=config.get('blog-database', 'db-name'), user=config.get('blog-database', 'db-user'), pw=config.get('blog-database', 'db-pass'), host=config.get('blog-database', 'db-host'))
 
 def get_users():
-	return db.select('users', order='id DESC')
+    return db.select('users', order='id DESC')
 
 def get_posts(offsetVal):
-	return db.select('entries', order='id DESC', limit=6, offset=offsetVal)
+    return db.select('entries', order='id DESC', limit=6, offset=offsetVal)
 
 def get_all_posts():
     return db.select('entries', order='id DESC')
 
 def get_post(id):
     try:
-    	return db.select('entries', where='id=$id', vars=locals())[0]
+        return db.select('entries', where='id=$id', vars=locals())[0]
     except IndexError:
         return None
 
