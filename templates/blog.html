@@ -23,7 +23,6 @@ $ posts = get_posts((pageNum-1)*6)
         <table class="linkTable">
           <tr>
             <td><a href="/view/$post.id">Comment</a></td>
-            <td>$post.likes &nbsp; <a href="/like/$post.id">Like</a></td>
             <td>Tagged &nbsp; <a href="/tag/$post.tag">$post.tag</a></td>
           </tr>
         </table>

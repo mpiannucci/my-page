@@ -27,7 +27,6 @@ urls = (
     '/github', 'Github',
     '/bio', 'Bio',
     '/logout', 'Logout',
-    '/like/(\d+)', 'Like',
     '/resume', 'Resume',
     '/archive', 'Archive',
     '/tag/(.+)', 'Tagged'
@@ -217,16 +216,6 @@ class Apps:
     """ Create the apps page """
     def GET(self):
         return render.apps()
-
-class Like:
-    """ Create the method to like a post """
-    def GET(self, ident):
-        post = model.get_post(int(ident))
-        like = post.likes
-        model.like_post(int(ident), int(like))
-        # This defaults to the first page. In the future it should
-        # redirect to the same page the user was on.
-        raise web.seeother('/view/' + str(ident))
 
 def notfound():
     """ Create the not found page """

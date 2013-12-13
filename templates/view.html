@@ -4,14 +4,13 @@ $def with (post)
 	<h1>$post.title</h1>
 	<h3>$datestr(post.posted_on)</h3>
 	<div id="viewContent">
-		$:post.content 
+		$:post.content
 	</div>
 	<br/>
 	<div id="links" class="links">
 		<table class="linkTable">
 			<tr>
 				<td><a href="/view/$post.id">Link</a></td>
-				<td>$post.likes &nbsp; <a href="/like/$post.id">Like</a></td>
 				<td>Tagged &nbsp; <a href="/tag/$post.tag">$post.tag</a></td>
 			</tr>
 		</table>
