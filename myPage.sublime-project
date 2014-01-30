@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/home/matthew/Development/myPage",
+            "folder_exclude_pattern": "sessions"
+		}
+	]
+}
