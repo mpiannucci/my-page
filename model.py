@@ -1,4 +1,7 @@
-import web, datetime, ConfigParser
+import web
+import datetime
+import ConfigParser
+
 config = ConfigParser.RawConfigParser()
 config.read('db.cfg')
 
