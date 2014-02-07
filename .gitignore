@@ -2,3 +2,4 @@ db.cfg
 *.html~
 *.pyc
 sessions/*
+*.sublime-workspace
