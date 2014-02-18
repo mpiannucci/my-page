@@ -8,4 +8,8 @@
             "file_exclude_patterns": [".project", ".pydevproject"]
 		}
 	],
+    "SublimeLinter":
+    {
+        "@python": 2
+    }
 }

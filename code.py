@@ -55,7 +55,7 @@ for name in names:
 ### Define the web templates
 t_globals = {
     'datestr': web.datestr,
-    'get_posts' : model.get_posts
+    'get_posts': model.get_posts
 }
 render = web.template.render('templates', base='base', globals=t_globals)
 
@@ -77,7 +77,7 @@ signin_form = web.form.Form(web.form.Textbox('username',
                         web.form.Password('password',
                                       description='Password:'),
                         validators = [web.form.Validator("Username and password didn't match.",
-                                      lambda x: users[x.username].check_password(x.password)) ])
+                                      lambda x: users[x.username].check_password(x.password))])
 
 ### Start the Web page class definitions
 class Index:
