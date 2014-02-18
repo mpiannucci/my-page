@@ -119,7 +119,7 @@ class New:
             description="Post title:"),
         web.form.Textbox('tag', web.form.notnull,
             size=30,
-            description="Post tag"),
+            description="Post tags"),
         web.form.Textarea('content', web.form.notnull,
             rows=30, cols=60,
             description="Post content:"),

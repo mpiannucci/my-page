@@ -23,7 +23,7 @@ def get_post(id):
         return None
 
 def get_tagged_posts(tag):
-    return db.select('entries', where='tag=$tag', vars=locals(), order='id DESC')
+    return db.select('entries', where='tag LIKE $tag', vars=locals(), order='id DESC')
 
 def new_post(title, text, tag):
     db.insert('entries', title=title, content=text, tag=tag, posted_on=datetime.datetime.utcnow(), likes=0, dislikes=0)
