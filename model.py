@@ -1,36 +1,52 @@
-import web
-import datetime
-import ConfigParser
+from google.appengine.ext import ndb
 
-config = ConfigParser.RawConfigParser()
-config.read('db.cfg')
+BLOG_NAME = 'mattsblog'
 
-db = web.database(dbn='mysql', db=config.get('blog-database', 'db-name'), user=config.get('blog-database', 'db-user'), pw=config.get('blog-database', 'db-pass'), host=config.get('blog-database', 'db-host'))
+def blog_key(blog_name=BLOG_NAME):
+    '''Constructs a Datastore key for a blog entity with blog_name'''
+    return ndb.key('mattsBlog', blog_name)
 
-def get_users():
-    return db.select('users', order='id DESC')
-
-def get_posts(offsetVal):
-    return db.select('entries', order='id DESC', limit=6, offset=offsetVal)
+class BlogPost(ndb.model):
+    '''Blog post entries with title, content, date, and tags'''
+    author = ndb.UserProperty()
+    title = ndb.StringPropert(indexed=False)
+    content = ndb.StringProperty(indexed=False)
+    tag = ndb.StringProperty(indexed=False)
+    date = ndb.DateTimeProperty()
 
 def get_all_posts():
-    return db.select('entries', order='id DESC')
+    '''Return all of the blog posts'''
+    blog_query = BlogPost.query(
+            ancestor=blog_key(BLOG_NAME)).order(-BlogPost.date)
+    return blog_query.fetch() 
 
-def get_post(id):
-    try:
-        return db.select('entries', where='id=$id', vars=locals())[0]
-    except IndexError:
-        return None
+def get_post(key):
+    '''Return a post with a given key'''
+    blog_query = BlogPost.query(
+            ancestor=blog_key(BLOG_NAME)).order(-BlogPost.date)
+    return blog_query.filter(BlogPost.key==key)
+
+def get_posts(num):
+    '''Return a post with a given key'''
+    blog_query = BlogPost.query(
+            ancestor=blog_key(BLOG_NAME)).order(-BlogPost.date)
+    return blog_query(num)
 
 def get_tagged_posts(tag):
-    return db.select('entries', where='tag LIKE $tag', vars=locals(), order='id DESC')
+    '''Return all of the blog posts with a given tag'''
+    blog_query = BlogPost.query(
+            ancestor=blog_key(BLOG_NAME)).order(-BlogPost.date)
+    return blog_query.filter(BlogPost.tag==tag)
 
-def new_post(title, text, tag):
-    db.insert('entries', title=title, content=text, tag=tag, posted_on=datetime.datetime.utcnow(), likes=0, dislikes=0)
+def update_post(post_key, author, title, content, tag):
+    '''Update the given blog post entry'''
+    blog_query = BlogPost.query(
+            ancestor=blog_key(BLOG_NAME)).order(-BlogPost.date)
+    blog_query.filter(BlogPost.key==post_key)
 
-def del_post(id):
-    db.delete('entries', where="id=$id", vars=locals())
-
-def update_post(id, title, text, tag):
-    db.update('entries', where="id=$id", vars=locals(),
-        title=title, content=text, tag=tag)
+def del_post(key):
+    '''Delete the given blog post'''
+    blog_query = BlogPost.query(
+            ancestor=blog_key(BLOG_NAME)).order(-BlogPost.date)
+    blog_query.filter(BlogPost.key==key)
+    blog_query.delete()
