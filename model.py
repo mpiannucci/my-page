@@ -6,13 +6,13 @@ def blog_key(blog_name=BLOG_NAME):
     '''Constructs a Datastore key for a blog entity with blog_name'''
     return ndb.key('mattsBlog', blog_name)
 
-class BlogPost(ndb.model):
+class BlogPost(ndb.Model):
     '''Blog post entries with title, content, date, and tags'''
     author = ndb.UserProperty()
-    title = ndb.StringPropert(indexed=False)
+    title = ndb.StringProperty()
     content = ndb.StringProperty(indexed=False)
-    tag = ndb.StringProperty(indexed=False)
-    date = ndb.DateTimeProperty()
+    tag = ndb.StringProperty()
+    date = ndb.DateTimeProperty(auto_now_add=True)
 
 def get_all_posts():
     '''Return all of the blog posts'''

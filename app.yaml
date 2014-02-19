@@ -1,11 +1,11 @@
-application: MattIannucciBlog
+application: #Matthew Iannucci's Blog
 version: 1
 runtime: python27
 api_version: 1
-threadsafe: true
+threadsafe: no
 
 handlers:
 - url: /static 
   static_dir: static
 - url: /.*
-  script: code.app
+  script: code.py

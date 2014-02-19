@@ -35,9 +35,6 @@ t_globals = {
 }
 render = web.template.render('templates', base='base', globals=t_globals)
 
-### Create the web app and the sessions
-app = web.application(urls, globals())
-
 ### Start the Web page class definitions
 class Index:
     """ Show the home page """
@@ -174,8 +171,12 @@ def internalerror():
     """ Create the internal error page """
     return web.internalerror("The server says: No soup for you!")
 
+### Create the web app and the sessions
+app = web.application(urls, globals())
+
 ### Create the not found app
 app.notfound = notfound
 app.internalerror = internalerror
 
-app.gaerun()
+if __name__ == '__main__':
+    main = app.cgirun()
