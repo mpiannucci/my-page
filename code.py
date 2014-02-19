@@ -141,7 +141,7 @@ class Admin:
             else:
                 raise web.redirect(users.create_login_url(self.request.uri))
         else:
-            raise web.redirect(users.create_login_url(self.request.uri))
+            raise web.redirect(users.create_login_url(self.request.uri))g
 
 class Github:
     """ Redirect to Github """
@@ -178,5 +178,4 @@ def internalerror():
 app.notfound = notfound
 app.internalerror = internalerror
 
-if __name__ == '__main__':
-    app.gaerun()
+app.gaerun()
