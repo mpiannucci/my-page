@@ -61,7 +61,7 @@ class View:
     """ Create a single post view for testing """
     def GET(self, ident):
         """ View single post """
-        post = model.get_post(int(ident))
+        post = model.get_post(ident)
         return render.view(post)
 
 class Tagged:
@@ -113,9 +113,9 @@ class Delete:
 
 class Edit:
     """ Create the method to edit posts """
-    def GET(self, ident):
+    def GET(self, key):
         if users.is_current_user_admin():
-            post = model.get_post(int(ident))
+            post = model.get_post(key)
             form = New.form()
             form.fill(post)
             return render.edit(post, form)
@@ -141,7 +141,7 @@ class Admin:
             else:
                 raise web.redirect(users.create_login_url(self.request.uri))
         else:
-            raise web.redirect(users.create_login_url(self.request.uri))g
+            raise web.redirect(users.create_login_url(self.request.uri))
 
 class Github:
     """ Redirect to Github """
