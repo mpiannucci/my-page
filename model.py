@@ -3,7 +3,7 @@ from google.appengine.ext import db
 class BlogPost(db.Model):
     '''Blog post entries with title, content, date, and tags'''
     title = db.StringProperty()
-    content = db.StringProperty(indexed=False)
+    content = db.TextProperty()
     tag = db.StringProperty()
     date = db.DateTimeProperty(auto_now_add=True)
     url = db.StringProperty()
