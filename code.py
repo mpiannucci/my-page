@@ -1,7 +1,9 @@
 import web
 import model
+import settings
 
-from google.appengine.api import users
+from hashlib import sha1
+import random
 
 ### Map out the urls
 urls = (
@@ -22,8 +24,19 @@ urls = (
     '/tag/(.+)', 'Tagged'
 )
 
-# Get the user info
-user = users.get_current_user()
+### Create a cryptography for the passwords
+class PasswordHash(object):
+    def __init__(self, password_):
+        self.salt = "".join(chr(random.randint(33,127)) for x in xrange(64))
+        self.saltedpw = sha1(password_ + self.salt).hexdigest()
+    def check_password(self, password_):
+        """checks if the password is correct"""
+        return self.saltedpw == sha1(password_ + self.salt).hexdigest()
+
+users = {
+
+}
+users[settings.ADMIN_USER] = PasswordHash(settings.ADMIN_PASSWORD)
 
 ### Toggle the web debug (to test sessions)
 #web.config.debug = False
@@ -34,6 +47,26 @@ t_globals = {
     'get_posts': model.get_posts
 }
 render = web.template.render('templates', base='base', globals=t_globals)
+
+### Create the web app and the sessions
+app = web.application(urls, globals())
+
+### Create the session
+if web.config.get('_session') is None:
+    session = web.session.Session(app, web.session.GoogleStore('sessions'),
+                              initializer={'user': 'anonymous'})
+    web.config._session = session
+else:
+    session = web.config._session
+
+signin_form = web.form.Form(web.form.Textbox('username',
+                                     web.form.Validator('Unknown username.',
+                                                    lambda x: x in users.keys()),
+                                     description='Username:'),
+                        web.form.Password('password',
+                                      description='Password:'),
+                        validators = [web.form.Validator("Username and password didn't match.",
+                                      lambda x: users[x.username].check_password(x.password))])
 
 ### Start the Web page class definitions
 class Index:
@@ -84,7 +117,7 @@ class New:
 
     """ Create the page used to create new blog posts """
     def GET(self):
-        if users.is_current_user_admin():
+        if session.user is not 'anonymous':
             form = self.form()
             return render.new(form)
         else:
@@ -96,15 +129,15 @@ class New:
             return render.new(form)
         model.new_post(form.d.title, form.d.content, form.d.tag)
         posts = model.get_all_posts()
-        return render.admin(users.nickname(), posts)
+        return render.admin(session.user, posts)
 
 class Delete:
     """ Create the method to delete posts """
-    def POST(self, ident):
-        if users.is_current_user_admin():
-            model.del_post(int(ident))
+    def POST(self, key):
+        if session.user is not 'anonymous':
+            model.del_post(key)
             posts = model.get_all_posts()
-            return render.admin(user.nickname(), posts)
+            return render.admin(session.user, posts)
         else:
             raise web.seeother('/admin')
 
@@ -119,26 +152,39 @@ class Edit:
         else:
             raise web.seeother('/admin')
 
-    def POST(self, ident):
+    def POST(self, key):
         form = New.form()
-        post = model.get_post(int(ident))
+        post = model.get_post(key)
         if not form.validates():
             return render.edit(post, form)
-        model.update_post(int(ident), form.d.title, form.d.content, form.d.tag)
+        model.update_post(key, form.d.title, form.d.content, form.d.tag)
         posts = model.get_all_posts()
-        return render.admin(user.nickname(), posts)
+        return render.admin(session.user, posts)
 
 class Admin:
     """ Create the Admin interface """
     def GET(self):
-        if user:
-            if users.is_current_user_admin():
-                posts = model.get_all_posts()
-                return render.admin(user.nickname(), posts)
-            else:
-                raise web.redirect(users.create_login_url(self.request.uri))
+        if session.user is not 'anonymous':
+            posts = model.get_all_posts()
+            return render.admin(session.user, posts)
         else:
-            raise web.redirect(users.create_login_url(self.request.uri))
+            form = signin_form()
+            return render.login(session.user, form)
+
+    def POST(self):
+        form = signin_form()
+        if not form.validates():
+            return render.login(session.user, form)
+        else:
+            session.user = form['username'].value
+            posts = model.get_all_posts()
+            return render.admin(session.user, posts)
+
+class Logout:
+    """Create the log out method"""
+    def GET(self):
+        session.kill()
+        raise web.seeother('/blog/1')l
 
 class Github:
     """ Redirect to Github """
@@ -170,9 +216,6 @@ def notfound():
 def internalerror():
     """ Create the internal error page """
     return web.internalerror("The server says: No soup for you!")
-
-### Create the web app and the sessions
-app = web.application(urls, globals())
 
 ### Create the not found app
 app.notfound = notfound

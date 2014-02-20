@@ -6,6 +6,8 @@ Session Management
 import os, time, datetime, random, base64
 import os.path
 from copy import deepcopy
+from google.appengine.ext import db
+
 try:
     import cPickle as pickle
 except ImportError:
@@ -28,8 +30,8 @@ __all__ = [
 web.config.session_parameters = utils.storage({
     'cookie_name': 'webpy_session_id',
     'cookie_domain': None,
-    'cookie_path' : None,
-    'timeout': 86400, #24 * 60 * 60, # 24 hours in seconds
+    'cookie_path': None,
+    'timeout': 86400,  # 24 * 60 * 60, # 24 hours in seconds
     'ignore_expiry': True,
     'ignore_change_ip': True,
     'secret_key': 'fLjUfxqXtfNoIldA0A0J',
@@ -317,6 +319,39 @@ class DBStore(Store):
         timeout = datetime.timedelta(timeout/(24.0*60*60)) #timedelta takes numdays as arg
         last_allowed_time = datetime.datetime.now() - timeout
         self.db.delete(self.table, where="$last_allowed_time > atime", vars=locals())
+
+CLEANUP_BATCH_SIZE = 20
+
+class WebpySession(db.Model):
+    data = db.BlobProperty()
+    atime = db.DateTimeProperty(auto_now=True)
+
+class GoogleStore(Store):
+    """Google Datastore"""
+    def __init__(self, prefix="p"):
+        self.prefix=prefix
+
+    def __contains__(self, key):
+        return WebpySession.get_by_key_name(self.prefix+key) is not None
+
+    def __getitem__(self, key):
+        try:
+            return pickle.loads(WebpySession.get_by_key_name(self.prefix+key).data)
+        except AttributeError:
+            raise KeyError, key
+
+    def __setitem__(self, key, value):
+        r = WebpySession.get_or_insert(self.prefix+key)
+        r.data = pickle.dumps(value)
+        r.put()
+
+    def __delitem__(self, key):
+        try:
+            WebpySession.get_by_key_name(self.prefix+key).delete()
+        except AttributeError:
+            pass
+    def cleanup(self, timeout):
+        db.delete(WebpySession.all().filter('atime <', datetime.datetime.now()-datetime.timedelta(seconds=timeout)).fetch(CLEANUP_BATCH_SIZE))
 
 class ShelfStore:
     """Store for saving session using `shelve` module.
