@@ -5,10 +5,10 @@ $def with (user, posts)
 	<ul>
 		$for post in posts:
     		<li>
-        		<a href="/view/$post.id">$post.title</a> 
-        		from $datestr(post.posted_on) 
-        		<a href="/edit/$post.id">Edit</a>
-        		<form action="/delete/$post.id" method="post">
+        		<a href="/view/$post.url">$post.title</a> 
+        		from $datestr(post.date) 
+        		<a href="/edit/$post.url">Edit</a>
+        		<form action="/delete/$post.url" method="post">
             		<input type="submit" value="Delete post"/>
         		</form>
     		</li>

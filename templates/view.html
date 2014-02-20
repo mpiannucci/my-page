@@ -2,7 +2,7 @@ $def with (post)
 
 <div id="viewContainer" class="postDisp">
 	<h1>$post.title</h1>
-	<h3>$datestr(post.posted_on)</h3>
+	<h3>$datestr(post.date)</h3>
 	<div id="viewContent">
 		$:post.content
 	</div>
@@ -10,7 +10,7 @@ $def with (post)
 	<div id="links" class="links">
 		<table class="linkTable">
 			<tr>
-				<td><a href="/view/$post.id">Link</a></td>
+				<td><a href="/view/$post.url">Link</a></td>
 				<td>Tagged &nbsp; <a href="/tag/$post.tag">$post.tag</a></td>
 			</tr>
 		</table>
