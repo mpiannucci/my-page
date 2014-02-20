@@ -1,52 +1,40 @@
-from google.appengine.ext import ndb
+from google.appengine.ext import db
 
-BLOG_NAME = 'mattsblog'
-
-def blog_key(blog_name=BLOG_NAME):
-    '''Constructs a Datastore key for a blog entity with blog_name'''
-    return ndb.key('mattsBlog', blog_name)
-
-class BlogPost(ndb.Model):
+class BlogPost(db.Model):
     '''Blog post entries with title, content, date, and tags'''
-    author = ndb.UserProperty()
-    title = ndb.StringProperty()
-    content = ndb.StringProperty(indexed=False)
-    tag = ndb.StringProperty()
-    date = ndb.DateTimeProperty(auto_now_add=True)
+    author = db.UserProperty()
+    title = db.StringProperty()
+    content = db.StringProperty(indexed=False)
+    tag = db.StringProperty()
+    date = db.DateTimeProperty(auto_now_add=True)
 
 def get_all_posts():
     '''Return all of the blog posts'''
-    blog_query = BlogPost.query(
-            ancestor=blog_key(BLOG_NAME)).order(-BlogPost.date)
-    return blog_query.fetch() 
+    blog_query = db.Query(BlogPost).order('-date')
+    return blog_query
 
 def get_post(key):
     '''Return a post with a given key'''
-    blog_query = BlogPost.query(
-            ancestor=blog_key(BLOG_NAME)).order(-BlogPost.date)
-    return blog_query.filter(BlogPost.key==key)
+    blog_query = db.Query(BlogPost).order('-date')
+    return blog_query.filter('key =', key)
 
-def get_posts(num):
+def get_posts(offsetNum):
     '''Return a post with a given key'''
-    blog_query = BlogPost.query(
-            ancestor=blog_key(BLOG_NAME)).order(-BlogPost.date)
-    return blog_query(num)
+    blog_query = db.Query(BlogPost).order('-date')
+    return blog_query.fetch(6, offset=offsetNum)
 
 def get_tagged_posts(tag):
     '''Return all of the blog posts with a given tag'''
-    blog_query = BlogPost.query(
-            ancestor=blog_key(BLOG_NAME)).order(-BlogPost.date)
-    return blog_query.filter(BlogPost.tag==tag)
+    blog_query = db.Query(BlogPost)
+    return blog_query.filter('tag =', tag)
 
 def update_post(post_key, author, title, content, tag):
     '''Update the given blog post entry'''
-    blog_query = BlogPost.query(
-            ancestor=blog_key(BLOG_NAME)).order(-BlogPost.date)
-    blog_query.filter(BlogPost.key==post_key)
+    blog_query = db.Query(BlogPost)
+    blog_query.filter('key =', post_key)
 
 def del_post(key):
     '''Delete the given blog post'''
-    blog_query = BlogPost.query(
-            ancestor=blog_key(BLOG_NAME)).order(-BlogPost.date)
-    blog_query.filter(BlogPost.key==key)
+    blog_query = db.Query(BlogPost)
+    blog_query.filter('key =', key)
     blog_query.delete()
