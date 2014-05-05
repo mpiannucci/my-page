@@ -3,7 +3,7 @@ import model
 
 from google.appengine.api import users
 
-### Map out the urls
+# Map out the urls
 urls = (
     '/', 'Index',
     '/blog/(\d+)', 'Blog',
@@ -22,20 +22,20 @@ urls = (
     '/tag/(.+)', 'Tagged'
 )
 
-### Toggle the web debug (to test sessions)
-#web.config.debug = False
+# Toggle the web debug (to test sessions)
+# web.config.debug = False
 
-### Define the web templates
+# Define the web templates
 t_globals = {
     'datestr': web.datestr,
     'get_posts': model.get_posts
 }
 render = web.template.render('templates', base='base', globals=t_globals)
 
-### Create the web app and the sessions
+# Create the web app and the sessions
 app = web.application(urls, globals())
 
-### Start the Web page class definitions
+# Start the Web page class definitions
 class Index:
     """ Show the home page """
     def GET(self):
@@ -170,14 +170,14 @@ def notfound():
     """ Create the not found page """
     return web.notfound("Sorry, the page you were looking for was not found.")
     # You can use template result like below, either is ok:
-    #return web.notfound(render.notfound())
-    #return web.notfound(str(render.notfound()))
+    # return web.notfound(render.notfound())
+    # return web.notfound(str(render.notfound()))
 
 def internalerror():
     """ Create the internal error page """
     return web.internalerror("The server says: No soup for you!")
 
-### Create the not found app
+# Create the not found app
 app.notfound = notfound
 app.internalerror = internalerror
 
