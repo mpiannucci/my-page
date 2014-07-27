@@ -15,7 +15,7 @@ $ posts = get_posts((pageNum-1)*6)
       $ postCount+=1
       <h2 class="links"><a href="/view/$post.url">$post.title</a></h2>
       <h3>$datestr(post.date)</h3>
-      <div id="postContent">
+      <div class="links" id="postContent">
         $:post.content
       </div>
       <br/>
