@@ -2,22 +2,175 @@ from web.template import CompiledTemplate, ForLoop, TemplateResult
 
 
 # coding: utf-8
-def login_fail (form):
+def admin (user, posts):
     __lineoffset__ = -4
     loop = ForLoop()
     self = TemplateResult(); extend_ = self.extend
     extend_([u'\n'])
-    extend_([u'<h1>Admin Login</h1>\n'])
-    extend_([u'<form action="" method="post">\n'])
-    extend_([escape_(form.render(), False), u'\n'])
-    extend_([u'</form>\n'])
-    extend_([u'<hr>\n'])
-    extend_([u'<div id="failedlogin"><h2><font color="red">Invalid Username or Password</font></div>\n'])
+    extend_([u'<div id="adminContainer">\n'])
+    extend_([u'        <h3>Edit the blog entries</h3>\n'])
+    extend_([u'        <ul>\n'])
+    for post in loop.setup(posts):
+        extend_(['                ', u'<li>\n'])
+        extend_(['                ', u'        <a href="/view/', escape_(post.url, True), u'">', escape_(post.title, True), u'</a> \n'])
+        extend_(['                ', u'        from ', escape_(datestr(post.date), True), u' \n'])
+        extend_(['                ', u'        <a href="/edit/', escape_(post.url, True), u'">Edit</a>\n'])
+        extend_(['                ', u'        <form action="/delete/', escape_(post.url, True), u'" method="post">\n'])
+        extend_(['                ', u'        <input type="submit" value="Delete post"/>\n'])
+        extend_(['                ', u'        </form>\n'])
+        extend_(['                ', u'</li>\n'])
+    extend_([u'        </ul>\n'])
+    extend_([u'        <div id="bottomAdmin" class="links">\n'])
+    extend_([u'        <a href="/new">New Post</a></li>\n'])
+    extend_([u'        <br/><br/>\n'])
+    extend_([u'        <p>Logged in as ', escape_(user, True), u'</p>\n'])
+    extend_([u'        <a href="/logout">Log Out</a>\n'])
+    extend_([u'        </div>\n'])
+    extend_([u'</div>\n'])
 
     return self
 
-login_fail = CompiledTemplate(login_fail, 'templates/login_fail.html')
-join_ = login_fail._join; escape_ = login_fail._escape
+admin = CompiledTemplate(admin, 'templates/admin.html')
+join_ = admin._join; escape_ = admin._escape
+
+# coding: utf-8
+def base (page):
+    __lineoffset__ = -4
+    loop = ForLoop()
+    self = TemplateResult(); extend_ = self.extend
+    extend_([u'\n'])
+    extend_([u'<html>\n'])
+    extend_([u'<head>\n'])
+    extend_([u'    <meta name="google-site-verification" content="-azLgyDbTQ6EY0zdkcRBc8Q5f0jSV4cd552gcq44N98" />\n'])
+    extend_([u'    <title>Matthew Iannucci</title>\n'])
+    extend_([u'    <link rel="stylesheet" type="text/css" href="/static/Styles/mobile.css" media="only screen and (max-device-width: 767px)" />\n'])
+    extend_([u'    <link rel="stylesheet" type="text/css" href="/static/Styles/screen.css" media="only screen and (min-device-width: 768px)" />\n'])
+    extend_([u'    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />\n'])
+    extend_([u'</head>\n'])
+    extend_([u'<body>\n'])
+    extend_([u'        <!-- Define the header for the page -->\n'])
+    extend_([u'        <div id="header">\n'])
+    extend_([u'                <h1><a href="/">Matthew Iannucci</a></h1>\n'])
+    extend_([u'        </div>\n'])
+    extend_([u'        <!-- Create the three coloumn layout.-->\n'])
+    extend_([u'        <div class="colmask threecol">\n'])
+    extend_([u'                <div class="colmid">\n'])
+    extend_([u'                        <div class="colleft">\n'])
+    extend_([u'                                <div class="col1">\n'])
+    extend_([u'                                        <!-- Column 1 start -->\n'])
+    extend_([u'                                        <!-- Get the page data as declared in code.py -->\n'])
+    extend_([u'                                        ', escape_(page, False), u'\n'])
+    extend_([u'                                        <!-- Column 1 end -->\n'])
+    extend_([u'                                </div>\n'])
+    extend_([u'                                <div class="col2">\n'])
+    extend_([u'                                        <!-- Column 2 start -->\n'])
+    extend_([u'                        <div id="menu">\n'])
+    extend_([u'                                <h2><a href="/">Home</a></h2>\n'])
+    extend_([u'                                <h2><a href="/blog/1">Blog</a></h2>\n'])
+    extend_([u'                                <h2><a href="/apps">Apps</a></h2>\n'])
+    extend_([u'                                <h2><a href="/bio">Bio</a></h2>\n'])
+    extend_([u'                            </div>\n'])
+    extend_([u'                                        <div id="sideTitle" class="leftBar">\n'])
+    extend_([u'                                                <h2><a href="/archive">Archive</a></h2>\n'])
+    extend_([u'                                                <h2><a href="/tag/surf">Surf</a></h2>\n'])
+    extend_([u'                                                <h2><a href="/tag/software">Software</a></h2>\n'])
+    extend_([u'                                                <h2><a href="/tag/electronics">Electronics</a></h2>\n'])
+    extend_([u'                                                <h2><a href="/tag/else">Else</a></h2>\n'])
+    extend_([u'                        </div>\n'])
+    extend_([u'                                        <!-- Column 2 end -->\n'])
+    extend_([u'                                </div>\n'])
+    extend_([u'                                <div class="col3">\n'])
+    extend_([u'                                        <!-- Column 3 start -->\n'])
+    extend_([u'                                        <!-- Column 3 end -->\n'])
+    extend_([u'                                </div>\n'])
+    extend_([u'                        </div>\n'])
+    extend_([u'                </div>\n'])
+    extend_([u'        </div>\n'])
+    extend_([u'        <!-- Ends the three column layout-->\n'])
+    extend_([u'        <!-- Define the footer for the page -->\n'])
+    extend_([u'        <div id="footer">\n'])
+    extend_([u'                <center>        \n'])
+    extend_([u'                        <div id="copyright">\n'])
+    extend_([u'                                <h3>Copyright 2013, Matthew Iannucci</h3>\n'])
+    extend_([u'                        </div>\n'])
+    extend_([u'                        <div id="siteinfo">\n'])
+    extend_([u'                                <p>Site created with web.py, version 0.3 <br/>Updated August 2014</p>\n'])
+    extend_([u'                        </div>\n'])
+    extend_([u'                </center>\n'])
+    extend_([u'        </div>\n'])
+    extend_([u'</div>\n'])
+    extend_([u'<!-- End the page layout -->\n'])
+    extend_([u'</body>\n'])
+    extend_([u'</html>\n'])
+
+    return self
+
+base = CompiledTemplate(base, 'templates/base.html')
+join_ = base._join; escape_ = base._escape
+
+# coding: utf-8
+def tagged (tag, posts):
+    __lineoffset__ = -4
+    loop = ForLoop()
+    self = TemplateResult(); extend_ = self.extend
+    extend_([u'\n'])
+    extend_([u'<div id="archiveContainer">\n'])
+    extend_([u'    <div id="archiveTitle">\n'])
+    extend_([u'        <h1>Posts tagged "', escape_(tag, True), u'"</h1>\n'])
+    extend_([u'    </div>\n'])
+    extend_([u'    <hr>\n'])
+    extend_([u'    <div id="postList">\n'])
+    extend_([u'        <table class="archive">\n'])
+    for post in loop.setup(posts):
+        extend_(['            ', u'<tr>\n'])
+        extend_(['            ', u'    <td>\n'])
+        extend_(['            ', u'        <h3 class="links"><a href="/view/', escape_(post.url, True), u'">', escape_(post.title, True), u'</a></h3> \n'])
+        extend_(['            ', u'    </td>\n'])
+        extend_(['            ', u'    <td>\n'])
+        extend_(['            ', u'        <h3 id="archiveTime">&nbsp; ', escape_(datestr(post.date), True), u'</h3>\n'])
+        extend_(['            ', u'    </td>\n'])
+        extend_(['            ', u'</tr>\n'])
+    extend_([u'        </table>\n'])
+    extend_([u'    </div>\n'])
+    extend_([u'</div>\n'])
+
+    return self
+
+tagged = CompiledTemplate(tagged, 'templates/tagged.html')
+join_ = tagged._join; escape_ = tagged._escape
+
+# coding: utf-8
+def bio():
+    __lineoffset__ = -5
+    loop = ForLoop()
+    self = TemplateResult(); extend_ = self.extend
+    extend_([u'<div id="contactContainer">\n'])
+    extend_([u'        <div id="contactTitle">\n'])
+    extend_([u'                <h1>Bio</h1>\n'])
+    extend_([u'        </div>\n'])
+    extend_([u'        <hr/>\n'])
+    extend_([u'        <div id="contactBody">\n'])
+    extend_([u'                <div id="bioPhoto">\n'])
+    extend_([u'                        <img id="bioPic" src="/static/Images/melaptop.png" alt="bioPic" />\n'])
+    extend_([u'                </div>\n'])
+    extend_([u'                <div id="bioText">\n'])
+    extend_([u'                        <h2>About Me</h2>\n'])
+    extend_([u"                        <p>Hello, my name is Matthew Iannucci. I am an Engineer from Rhode Island with a Bachelor's of Science in Ocean Engineering from the University of Rhode Island. I focused on software development and robotics. I currently work as an Engineer at Navatek, Ltd.</p>\n"])
+    extend_([u'                        <p>I enjoy surfing and skiing in my free time, as well as working on many different software projects.</p>\n'])
+    extend_([u'                </div>\n'])
+    extend_([u'                <div id="contactLinks" class="links">\n'])
+    extend_([u'                        <h3><a href="/resume">Resume</a></h3>\n'])
+    extend_([u'                        <h3><a href="/github">Github</a></h3>\n'])
+    extend_([u'                        <h3><a href="mailto:rhodysurf13@gmail.com">Email</a></h3>\n'])
+    extend_([u'                        <h3><a href="http://www.linkedin.com/pub/matthew-iannucci/7a/884/64a/">LinkedIn</a></h3>\n'])
+    extend_([u'                </div>\n'])
+    extend_([u'        </div>\n'])
+    extend_([u'</div>\n'])
+
+    return self
+
+bio = CompiledTemplate(bio, 'templates/bio.html')
+join_ = bio._join; escape_ = bio._escape
 
 # coding: utf-8
 def blog (pageNum):
@@ -98,6 +251,24 @@ blog = CompiledTemplate(blog, 'templates/blog.html')
 join_ = blog._join; escape_ = blog._escape
 
 # coding: utf-8
+def login_fail (form):
+    __lineoffset__ = -4
+    loop = ForLoop()
+    self = TemplateResult(); extend_ = self.extend
+    extend_([u'\n'])
+    extend_([u'<h1>Admin Login</h1>\n'])
+    extend_([u'<form action="" method="post">\n'])
+    extend_([escape_(form.render(), False), u'\n'])
+    extend_([u'</form>\n'])
+    extend_([u'<hr>\n'])
+    extend_([u'<div id="failedlogin"><h2><font color="red">Invalid Username or Password</font></div>\n'])
+
+    return self
+
+login_fail = CompiledTemplate(login_fail, 'templates/login_fail.html')
+join_ = login_fail._join; escape_ = login_fail._escape
+
+# coding: utf-8
 def edit (post, form):
     __lineoffset__ = -4
     loop = ForLoop()
@@ -119,6 +290,22 @@ def edit (post, form):
 
 edit = CompiledTemplate(edit, 'templates/edit.html')
 join_ = edit._join; escape_ = edit._escape
+
+# coding: utf-8
+def new (form):
+    __lineoffset__ = -4
+    loop = ForLoop()
+    self = TemplateResult(); extend_ = self.extend
+    extend_([u'\n'])
+    extend_([u'<h1>New Blog Post</h1>\n'])
+    extend_([u'<form action="" method="post">\n'])
+    extend_([escape_(form.render(), False), u'\n'])
+    extend_([u'</form>\n'])
+
+    return self
+
+new = CompiledTemplate(new, 'templates/new.html')
+join_ = new._join; escape_ = new._escape
 
 # coding: utf-8
 def view (post):
@@ -166,85 +353,56 @@ view = CompiledTemplate(view, 'templates/view.html')
 join_ = view._join; escape_ = view._escape
 
 # coding: utf-8
-def bio():
-    __lineoffset__ = -5
-    loop = ForLoop()
-    self = TemplateResult(); extend_ = self.extend
-    extend_([u'<div id="contactContainer">\n'])
-    extend_([u'        <div id="contactTitle">\n'])
-    extend_([u'                <h1>Bio</h1>\n'])
-    extend_([u'        </div>\n'])
-    extend_([u'        <hr/>\n'])
-    extend_([u'        <div id="contactBody">\n'])
-    extend_([u'                <div id="bioPhoto">\n'])
-    extend_([u'                        <img id="bioPic" src="/static/Images/melaptop.png" alt="bioPic" />\n'])
-    extend_([u'                </div>\n'])
-    extend_([u'                <div id="bioText">\n'])
-    extend_([u'                        <h2>About Me</h2>\n'])
-    extend_([u"                        <p>Hello, my name is Matthew Iannucci. I am an Engineer from Rhode Island with a Bachelor's of Science in Ocean Engineering from the University of Rhode Island. I focused on software development and robotics. I currently work as an Engineer at Navatek, Ltd.</p>\n"])
-    extend_([u'                        <p>I enjoy surfing and skiing in my free time, as well as working on many different software projects.</p>\n'])
-    extend_([u'                </div>\n'])
-    extend_([u'                <div id="contactLinks" class="links">\n'])
-    extend_([u'                        <h3><a href="/resume">Resume</a></h3>\n'])
-    extend_([u'                        <h3><a href="/github">Github</a></h3>\n'])
-    extend_([u'                        <h3><a href="mailto:rhodysurf13@gmail.com">Email</a></h3>\n'])
-    extend_([u'                        <h3><a href="http://www.linkedin.com/pub/matthew-iannucci/7a/884/64a/">LinkedIn</a></h3>\n'])
-    extend_([u'                </div>\n'])
-    extend_([u'        </div>\n'])
-    extend_([u'</div>\n'])
-
-    return self
-
-bio = CompiledTemplate(bio, 'templates/bio.html')
-join_ = bio._join; escape_ = bio._escape
-
-# coding: utf-8
-def new (form):
+def archive (posts):
     __lineoffset__ = -4
     loop = ForLoop()
     self = TemplateResult(); extend_ = self.extend
     extend_([u'\n'])
-    extend_([u'<h1>New Blog Post</h1>\n'])
-    extend_([u'<form action="" method="post">\n'])
-    extend_([escape_(form.render(), False), u'\n'])
-    extend_([u'</form>\n'])
-
-    return self
-
-new = CompiledTemplate(new, 'templates/new.html')
-join_ = new._join; escape_ = new._escape
-
-# coding: utf-8
-def admin (user, posts):
-    __lineoffset__ = -4
-    loop = ForLoop()
-    self = TemplateResult(); extend_ = self.extend
-    extend_([u'\n'])
-    extend_([u'<div id="adminContainer">\n'])
-    extend_([u'        <h3>Edit the blog entries</h3>\n'])
-    extend_([u'        <ul>\n'])
+    extend_([u'<div id="archiveContainer">\n'])
+    extend_([u'    <div id="archiveTitle">\n'])
+    extend_([u'        <h1>Archive</h1>\n'])
+    extend_([u'    </div>\n'])
+    extend_([u'    <hr>\n'])
+    extend_([u'    <div id="postList">\n'])
+    extend_([u'        <table class="archive">\n'])
     for post in loop.setup(posts):
-        extend_(['                ', u'<li>\n'])
-        extend_(['                ', u'        <a href="/view/', escape_(post.url, True), u'">', escape_(post.title, True), u'</a> \n'])
-        extend_(['                ', u'        from ', escape_(datestr(post.date), True), u' \n'])
-        extend_(['                ', u'        <a href="/edit/', escape_(post.url, True), u'">Edit</a>\n'])
-        extend_(['                ', u'        <form action="/delete/', escape_(post.url, True), u'" method="post">\n'])
-        extend_(['                ', u'        <input type="submit" value="Delete post"/>\n'])
-        extend_(['                ', u'        </form>\n'])
-        extend_(['                ', u'</li>\n'])
-    extend_([u'        </ul>\n'])
-    extend_([u'        <div id="bottomAdmin" class="links">\n'])
-    extend_([u'        <a href="/new">New Post</a></li>\n'])
-    extend_([u'        <br/><br/>\n'])
-    extend_([u'        <p>Logged in as ', escape_(user, True), u'</p>\n'])
-    extend_([u'        <a href="/logout">Log Out</a>\n'])
-    extend_([u'        </div>\n'])
+        extend_(['            ', u'<tr>\n'])
+        extend_(['            ', u'    <td>\n'])
+        extend_(['            ', u'        <h3 class="links"><a href="/view/', escape_(post.url, True), u'">', escape_(post.title, True), u'</a></h3> \n'])
+        extend_(['            ', u'    </td>\n'])
+        extend_(['            ', u'    <td>\n'])
+        extend_(['            ', u'        <h3 id="archiveTime">&nbsp; ', escape_(datestr(post.date), True), u'</h3>\n'])
+        extend_(['            ', u'    </td>\n'])
+        extend_(['            ', u'</tr>\n'])
+    extend_([u'        </table>\n'])
+    extend_([u'    </div>\n'])
     extend_([u'</div>\n'])
 
     return self
 
-admin = CompiledTemplate(admin, 'templates/admin.html')
-join_ = admin._join; escape_ = admin._escape
+archive = CompiledTemplate(archive, 'templates/archive.html')
+join_ = archive._join; escape_ = archive._escape
+
+# coding: utf-8
+def login (user, form):
+    __lineoffset__ = -4
+    loop = ForLoop()
+    self = TemplateResult(); extend_ = self.extend
+    extend_([u'\n'])
+    extend_([u'<p>You are not logged in.</p>\n'])
+    extend_([u'        <p>\n'])
+    extend_([u'        <form name="login" method="POST"> \n'])
+    extend_([u'        ', escape_(form.render(), False), u'\n'])
+    extend_([u'        <input type="submit" name="button" value="Login" />\n'])
+    extend_([u'        </form>\n'])
+    extend_([u'    </p>\n'])
+    extend_([u'    <p> user: ', escape_(user, True), u'</p>\n'])
+    extend_([u'\n'])
+
+    return self
+
+login = CompiledTemplate(login, 'templates/login.html')
+join_ = login._join; escape_ = login._escape
 
 # coding: utf-8
 def apps():
@@ -322,162 +480,4 @@ def index():
 
 index = CompiledTemplate(index, 'templates/index.html')
 join_ = index._join; escape_ = index._escape
-
-# coding: utf-8
-def base (page):
-    __lineoffset__ = -4
-    loop = ForLoop()
-    self = TemplateResult(); extend_ = self.extend
-    extend_([u'\n'])
-    extend_([u'<html>\n'])
-    extend_([u'<head>\n'])
-    extend_([u'    <meta name="google-site-verification" content="-azLgyDbTQ6EY0zdkcRBc8Q5f0jSV4cd552gcq44N98" />\n'])
-    extend_([u'    <title>Matthew Iannucci</title>\n'])
-    extend_([u'    <link rel="stylesheet" type="text/css" href="/static/Styles/mobile.css" media="only screen and (max-device-width: 767px)" />\n'])
-    extend_([u'    <link rel="stylesheet" type="text/css" href="/static/Styles/screen.css" media="only screen and (min-device-width: 768px)" />\n'])
-    extend_([u'    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />\n'])
-    extend_([u'</head>\n'])
-    extend_([u'<body>\n'])
-    extend_([u'        <!-- Define the header for the page -->\n'])
-    extend_([u'        <div id="header">\n'])
-    extend_([u'                <h1><a href="/">Matthew Iannucci</a></h1>\n'])
-    extend_([u'        </div>\n'])
-    extend_([u'        <!-- Create the three coloumn layout.-->\n'])
-    extend_([u'        <div class="colmask threecol">\n'])
-    extend_([u'                <div class="colmid">\n'])
-    extend_([u'                        <div class="colleft">\n'])
-    extend_([u'                                <div class="col1">\n'])
-    extend_([u'                                        <!-- Column 1 start -->\n'])
-    extend_([u'                                        <!-- Get the page data as declared in code.py -->\n'])
-    extend_([u'                                        ', escape_(page, False), u'\n'])
-    extend_([u'                                        <!-- Column 1 end -->\n'])
-    extend_([u'                                </div>\n'])
-    extend_([u'                                <div class="col2">\n'])
-    extend_([u'                                        <!-- Column 2 start -->\n'])
-    extend_([u'                        <div id="menu">\n'])
-    extend_([u'                                <h2><a href="/">Home</a></h2>\n'])
-    extend_([u'                                <h2><a href="/blog/1">Blog</a></h2>\n'])
-    extend_([u'                                <h2><a href="/apps">Apps</a></h2>\n'])
-    extend_([u'                                <h2><a href="/bio">Bio</a></h2>\n'])
-    extend_([u'                            </div>\n'])
-    extend_([u'                                        <div id="sideTitle" class="leftBar">\n'])
-    extend_([u'                                                <h2><a href="/archive">Archive</a></h2>\n'])
-    extend_([u'                                                <h2><a href="/tag/surf">Surf</a></h2>\n'])
-    extend_([u'                                                <h2><a href="/tag/software">Software</a></h2>\n'])
-    extend_([u'                                                <h2><a href="/tag/electronics">Electronics</a></h2>\n'])
-    extend_([u'                                                <h2><a href="/tag/else">Else</a></h2>\n'])
-    extend_([u'                        </div>\n'])
-    extend_([u'                                        <!-- Column 2 end -->\n'])
-    extend_([u'                                </div>\n'])
-    extend_([u'                                <div class="col3">\n'])
-    extend_([u'                                        <!-- Column 3 start -->\n'])
-    extend_([u'                                        <!-- Column 3 end -->\n'])
-    extend_([u'                                </div>\n'])
-    extend_([u'                        </div>\n'])
-    extend_([u'                </div>\n'])
-    extend_([u'        </div>\n'])
-    extend_([u'        <!-- Ends the three column layout-->\n'])
-    extend_([u'        <!-- Define the footer for the page -->\n'])
-    extend_([u'        <div id="footer">\n'])
-    extend_([u'                <center>        \n'])
-    extend_([u'                        <div id="copyright">\n'])
-    extend_([u'                                <h3>Copyright 2013, Matthew Iannucci</h3>\n'])
-    extend_([u'                        </div>\n'])
-    extend_([u'                        <div id="siteinfo">\n'])
-    extend_([u'                                <p>Site created with web.py, version 0.3 <br/>Updated August 2014</p>\n'])
-    extend_([u'                        </div>\n'])
-    extend_([u'                </center>\n'])
-    extend_([u'        </div>\n'])
-    extend_([u'</div>\n'])
-    extend_([u'<!-- End the page layout -->\n'])
-    extend_([u'</body>\n'])
-    extend_([u'</html>\n'])
-
-    return self
-
-base = CompiledTemplate(base, 'templates/base.html')
-join_ = base._join; escape_ = base._escape
-
-# coding: utf-8
-def archive (posts):
-    __lineoffset__ = -4
-    loop = ForLoop()
-    self = TemplateResult(); extend_ = self.extend
-    extend_([u'\n'])
-    extend_([u'<div id="archiveContainer">\n'])
-    extend_([u'    <div id="archiveTitle">\n'])
-    extend_([u'        <h1>Archive</h1>\n'])
-    extend_([u'    </div>\n'])
-    extend_([u'    <hr>\n'])
-    extend_([u'    <div id="postList">\n'])
-    extend_([u'        <table class="archive">\n'])
-    for post in loop.setup(posts):
-        extend_(['            ', u'<tr>\n'])
-        extend_(['            ', u'    <td>\n'])
-        extend_(['            ', u'        <h3 class="links"><a href="/view/', escape_(post.url, True), u'">', escape_(post.title, True), u'</a></h3> \n'])
-        extend_(['            ', u'    </td>\n'])
-        extend_(['            ', u'    <td>\n'])
-        extend_(['            ', u'        <h3 id="archiveTime">&nbsp; ', escape_(datestr(post.date), True), u'</h3>\n'])
-        extend_(['            ', u'    </td>\n'])
-        extend_(['            ', u'</tr>\n'])
-    extend_([u'        </table>\n'])
-    extend_([u'    </div>\n'])
-    extend_([u'</div>\n'])
-
-    return self
-
-archive = CompiledTemplate(archive, 'templates/archive.html')
-join_ = archive._join; escape_ = archive._escape
-
-# coding: utf-8
-def tagged (tag, posts):
-    __lineoffset__ = -4
-    loop = ForLoop()
-    self = TemplateResult(); extend_ = self.extend
-    extend_([u'\n'])
-    extend_([u'<div id="archiveContainer">\n'])
-    extend_([u'    <div id="archiveTitle">\n'])
-    extend_([u'        <h1>Posts tagged "', escape_(tag, True), u'"</h1>\n'])
-    extend_([u'    </div>\n'])
-    extend_([u'    <hr>\n'])
-    extend_([u'    <div id="postList">\n'])
-    extend_([u'        <table class="archive">\n'])
-    for post in loop.setup(posts):
-        extend_(['            ', u'<tr>\n'])
-        extend_(['            ', u'    <td>\n'])
-        extend_(['            ', u'        <h3 class="links"><a href="/view/', escape_(post.url, True), u'">', escape_(post.title, True), u'</a></h3> \n'])
-        extend_(['            ', u'    </td>\n'])
-        extend_(['            ', u'    <td>\n'])
-        extend_(['            ', u'        <h3 id="archiveTime">&nbsp; ', escape_(datestr(post.date), True), u'</h3>\n'])
-        extend_(['            ', u'    </td>\n'])
-        extend_(['            ', u'</tr>\n'])
-    extend_([u'        </table>\n'])
-    extend_([u'    </div>\n'])
-    extend_([u'</div>\n'])
-
-    return self
-
-tagged = CompiledTemplate(tagged, 'templates/tagged.html')
-join_ = tagged._join; escape_ = tagged._escape
-
-# coding: utf-8
-def login (user, form):
-    __lineoffset__ = -4
-    loop = ForLoop()
-    self = TemplateResult(); extend_ = self.extend
-    extend_([u'\n'])
-    extend_([u'<p>You are not logged in.</p>\n'])
-    extend_([u'        <p>\n'])
-    extend_([u'        <form name="login" method="POST"> \n'])
-    extend_([u'        ', escape_(form.render(), False), u'\n'])
-    extend_([u'        <input type="submit" name="button" value="Login" />\n'])
-    extend_([u'        </form>\n'])
-    extend_([u'    </p>\n'])
-    extend_([u'    <p> user: ', escape_(user, True), u'</p>\n'])
-    extend_([u'\n'])
-
-    return self
-
-login = CompiledTemplate(login, 'templates/login.html')
-join_ = login._join; escape_ = login._escape
 
