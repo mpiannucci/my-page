@@ -6,9 +6,9 @@ My personal web site and blog.
 Created Using the web.py framework for python 2.7 and the Google App Engine.
 
 Dependencies: <br/>
-	- python 2.7 <br/>
-	- web.py module <br/>
-	- GAE
+	* python 2.7 <br/>
+	* web.py module <br/>
+	* GAE
 
 Getting the Python Dependencies
 -----------------------
