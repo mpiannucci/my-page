@@ -37,55 +37,55 @@ app = web.application(urls, globals())
 
 # Start the Web page class definitions
 class Index:
-    """ Show the home page """
+    ''' Show the home page '''
     def GET(self):
         return render.index()
 
 class Blog:
-    """ Create the layout for the blog """
+    ''' Create the layout for the blog '''
     def GET(self, pageNum=1):
-        """ Show all page """
+        ''' Show all page '''
         return render.blog(int(pageNum))
 
 class Archive:
-    """ Create the archive """
+    ''' Create the archive '''
     def GET(self):
-        """ Get all the posts """
+        ''' Get all the posts '''
         posts = model.get_all_posts()
         return render.archive(posts)
 
 class View:
-    """ Create a single post view for testing """
+    ''' Create a single post view for testing '''
     def GET(self, post_url):
-        """ View single post """
+        ''' View single post '''
         post = model.get_post(post_url)
         return render.view(post)
 
 class Tagged:
-    """ Display posts with a specific tag """
+    ''' Display posts with a specific tag '''
     def GET(self, tag):
         posts = model.get_tagged_posts(tag)
         return render.tagged(tag, posts)
 
 class New:
-    """ Create the new post form """
+    ''' Create the new post form '''
     form = web.form.Form(
         web.form.Textbox('title', web.form.notnull,
             size=30,
-            description="Post title:"),
+            description='Post title:'),
         web.form.Textbox('tag', web.form.notnull,
             size=30,
-            description="Post tags"),
+            description='Post tags'),
         web.form.Textbox('url', web.form.notnull,
             size=30,
-            description="Post url"),
+            description='Post url'),
         web.form.Textarea('content', web.form.notnull,
             rows=30, cols=60,
-            description="Post content:"),
+            description='Post content:'),
         web.form.Button('Post entry'),
     )
 
-    """ Create the page used to create new blog posts """
+    ''' Create the page used to create new blog posts '''
     def GET(self):
         user = users.get_current_user()
         if user and users.is_current_user_admin():
@@ -102,7 +102,7 @@ class New:
         raise web.seeother('/admin')
 
 class Delete:
-    """ Create the method to delete posts """
+    ''' Create the method to delete posts '''
     def POST(self, post_url):
         user = users.get_current_user()
         if user and users.is_current_user_admin():
@@ -112,7 +112,7 @@ class Delete:
             raise web.seeother('/admin')
 
 class Edit:
-    """ Create the method to edit posts """
+    ''' Create the method to edit posts '''
     def GET(self, post_url):
         user = users.get_current_user()
         if user and users.is_current_user_admin():
@@ -132,7 +132,7 @@ class Edit:
         raise web.seeother('/admin')
 
 class Admin:
-    """ Create the Admin interface """
+    ''' Create the Admin interface '''
     def GET(self):
         user = users.get_current_user()
         if user and users.is_current_user_admin(): 
@@ -142,40 +142,40 @@ class Admin:
             raise web.redirect(users.create_login_url('/admin'))
 
 class Logout:
-    """ Create the logout method """
+    ''' Create the logout method '''
     def GET(self):
         raise web.redirect(users.create_logout_url('/'))
 
 class Github:
-    """ Redirect to Github """
+    ''' Redirect to Github '''
     def GET(self):
         raise web.redirect('https://github.com/mpiannucci')
 
 class Resume:
-    """ Serve the resume """
+    ''' Serve the resume '''
     def GET(self):
         raise web.seeother('/static/Docs/MatthewIannucciResume.pdf')
 
 class Bio:
-    """ Create a contact page """
+    ''' Create a contact page '''
     def GET(self):
         return render.bio()
 
 class Apps:
-    """ Create the apps page """
+    ''' Create the apps page '''
     def GET(self):
         return render.apps()
 
 def notfound():
-    """ Create the not found page """
-    return web.notfound("Sorry, the page you were looking for was not found.")
+    ''' Create the not found page '''
+    return web.notfound('Sorry, the page you were looking for was not found.')
     # You can use template result like below, either is ok:
     # return web.notfound(render.notfound())
     # return web.notfound(str(render.notfound()))
 
 def internalerror():
-    """ Create the internal error page """
-    return web.internalerror("The server says: No soup for you!")
+    ''' Create the internal error page '''
+    return web.internalerror('The server says: No soup for you!')
 
 # Create the not found app
 app.notfound = notfound
