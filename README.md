@@ -10,6 +10,15 @@ Dependencies: <br/>
 	- web.py module <br/>
 	- GAE
 
+Getting the Python Dependencies
+-----------------------
+
+Download the web.py Python module:
+
+    cd myPage/
+    pip install web.py -t .
+    rm -r web.py-0.37.egg-info/
+
 Running the Webapp
 ------------------
 
@@ -20,12 +29,3 @@ First, compile the templates used by web.py:
 Then, run the development web server
 
     dev_appserver.py app.yaml
-
-Updating the Webapp
---------------------
-
-Simply use the following command to upload the newest version of the app to the App Engine. But first, dont forget to update your templates!!
-
-    ./CompileTemplates
-    appconfig.py update .
-
