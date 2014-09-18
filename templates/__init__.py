@@ -469,7 +469,7 @@ def index():
     self = TemplateResult(); extend_ = self.extend
     extend_([u'<div id="homeContainer"> \n'])
     extend_([u'        <div id="topImageRow">\n'])
-    extend_([u'        <img id="homeImage" src="/static/Images/bigturn.jpg">\n'])
+    extend_([u'        <img id="homeImage" src="/static/Images/stillsurf.jpg">\n'])
     extend_([u'    </div>\n'])
     extend_([u'    <div id="welcomeFoot">\n'])
     extend_([u'        <h2>Welcome..</h2>\n'])
