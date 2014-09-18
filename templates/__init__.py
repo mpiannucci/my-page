@@ -150,7 +150,7 @@ def bio():
     extend_([u'        <hr/>\n'])
     extend_([u'        <div id="contactBody">\n'])
     extend_([u'                <div id="bioPhoto">\n'])
-    extend_([u'                        <img id="bioPic" src="/static/Images/melaptop.png" alt="bioPic" />\n'])
+    extend_([u'                        <img id="bioPic" src="/static/Images/mecomp.jpg" alt="bioPic" />\n'])
     extend_([u'                </div>\n'])
     extend_([u'                <div id="bioText">\n'])
     extend_([u'                        <h2>About Me</h2>\n'])
