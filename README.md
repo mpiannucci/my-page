@@ -1,19 +1,19 @@
 myPage
 ======
 
-My personal web site and blog.
+My personal web site and blog, [mpiannucci.com](http://mpiannucci.com).
 
-Created Using the web.py framework for python 2.7 and the Google App Engine.
+Created using the [web.py](https://github.com/webpy/webpy) framework for python 2.7 and the [Google App Engine](https://cloud.google.com/appengine/docs/python/gettingstartedpython27/introduction).
 
-Dependencies: <br/>
-* python 2.7 <br/>
-* web.py module <br/>
-* GAE
+Dependencies:
+* Python 2.7
+* Web.py
+* Google App Engine
 
 Getting the Python Dependencies
 -----------------------
 
-Download the web.py Python module:
+Download the `web.py` Python module:
 
     cd myPage/
     pip install web.py -t .
@@ -22,7 +22,7 @@ Download the web.py Python module:
 Running the Webapp
 ------------------
 
-First, compile the templates used by web.py:
+First, compile the templates used by `web.py`:
 
     ./CompileTemplates
 
