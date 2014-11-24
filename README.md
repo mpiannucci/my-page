@@ -5,7 +5,7 @@ My personal web site and blog, [mpiannucci.com](http://mpiannucci.com).
 
 Created using the [web.py](https://github.com/webpy/webpy) framework for python 2.7 and the [Google App Engine](https://cloud.google.com/appengine/docs/python/gettingstartedpython27/introduction).
 
-Dependencies:
+**Dependencies:**
 * Python 2.7
 * Web.py
 * Google App Engine
