@@ -34,6 +34,102 @@ admin = CompiledTemplate(admin, 'templates/admin.html')
 join_ = admin._join; escape_ = admin._escape
 
 # coding: utf-8
+def apps():
+    __lineoffset__ = -5
+    loop = ForLoop()
+    self = TemplateResult(); extend_ = self.extend
+    extend_([u'<div id="projectContainer">\n'])
+    extend_([u'        <div id="projectTitle">\n'])
+    extend_([u'                <h1>Apps</h1>\n'])
+    extend_([u'        </div>\n'])
+    extend_([u'        <hr>\n'])
+    extend_([u'        <div id="project1">\n'])
+    extend_([u'                <h2>HackWinds</h2>\n'])
+    extend_([u'                <p class="links">Viewing the surf camera for Narragansett, RI has always proved to be tedious on a smartphone. I I started a project to make viewing the surf camera out of conviencence. Now I have made it into a fully featured application. The app shows the live HD stream straight from the beach. It shows forecast info from <a href="http://magicseaweed.com">MagicSeaweed</a>, tide information from <a href="http://www.wunderground.com/?apiref=b80661e4fc362f50">Wunderground</a>, and live buoy data from NOAA. It\'s all of the tools you need to check the surf quickly in Rhode Island.</p> \n'])
+    extend_([u'                <p class="links">The Android app is available on Google Play now, and the iOS app is awaiting review! Finally, feel free to check out the source on my Github by following the links below. Pray for waves!</p>\n'])
+    extend_([u'                <center>\n'])
+    extend_([u'                        <!-- This is the iOS app screenshots -->\n'])
+    extend_([u'                        <img class="ios_screenshots" id="HWios1" src="/static/Images/Hackwinds-ios1.png" alt="Hackwindsios1" />\n'])
+    extend_([u'                        <img class="ios_screenshots" id="HWios2" src="/static/Images/Hackwinds-ios2.png" alt="Hackwindsios2" />\n'])
+    extend_([u'                        <img class="ios_screenshots" id="HWios3" src="/static/Images/Hackwinds-ios3.png" alt="Hackwindsios3" />\n'])
+    extend_([u'                        <img class="ios_screenshots" id="HWios4" src="/static/Images/Hackwinds-ios4.png" alt="Hackwindsios4" />\n'])
+    extend_([u'                        <br/>\n'])
+    extend_([u'                        <!-- This is the Android app screenshots -->\n'])
+    extend_([u'                        <img class="android_screenshots" id="HWscreen1" src="/static/Images/hack2liveScreen_framed.png" alt="Hackwindsdroid1" />\n'])
+    extend_([u'                        <img class="android_screenshots" id="HWscreen2" src="/static/Images/hack2forcScreen_framed.png" alt="Hackwindsdroid2" />\n'])
+    extend_([u'                        <img class="android_screenshots" id="HWscreen3" src="/static/Images/hack2tideScreen_framed.png" alt="Hackwindsdroid3" />\n'])
+    extend_([u'                        <br/>\n'])
+    extend_([u'                        <a href="https://play.google.com/store/apps/details?id=com.nucc.hackwinds">\n'])
+    extend_([u'                                <img id="googlePlayBadge" alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />\n'])
+    extend_([u'                        </a>\n'])
+    extend_([u'                        <br/>\n'])
+    extend_([u'                        <h3 class="links"><a href="https://github.com/mpiannucci/HackWinds">Android Source Here</a></h3>\n'])
+    extend_([u'                        <h3 class="links"><a href="https://github.com/mpiannucci/HackWinds-iOS">iOS Source Here</a></h3>\n'])
+    extend_([u'                </center>\n'])
+    extend_([u'        </div>\n'])
+    extend_([u'        <div id="project2">\n'])
+    extend_([u'                <h2 id="simpleSolverTitle">SimpleSolver</h2>\n'])
+    extend_([u'                <p>As an engineering student, it has frustrated me that were no quadratic equation solving applications with an elegant user interface. I strived to create a simple, but useful app with a user interface that matched these characteristics. Thus, SimpleSolver for Android was born. This application is now available on Google Play for free.</p>\n'])
+    extend_([u'                <center>\n'])
+    extend_([u'                        <!-- This is the app screenshots -->\n'])
+    extend_([u'                        <img class="android_screenshots" id="SSscreen2" src="/static/Images/SSscreen2.png" alt="SimpleSolver2" />\n'])
+    extend_([u'                        <img class="android_screenshots" id="SSscreen1" src="/static/Images/SSscreen1.png" alt="SimpleSolver1" />\n'])
+    extend_([u'                        <br/>\n'])
+    extend_([u'                        <!-- This is the Google Play button -->\n'])
+    extend_([u'                        <a href="https://play.google.com/store/apps/details?id=com.nucc.simplesolver">\n'])
+    extend_([u'                                <img id="googlePlayBadge" alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />\n'])
+    extend_([u'                        </a>\n'])
+    extend_([u'                </center>\n'])
+    extend_([u'        </div>\n'])
+    extend_([u'        <div id="project3">\n'])
+    extend_([u'                <h2>Other</h2>\n'])
+    extend_([u'                <p>To view many of my smaller projects and meddlings of mine, feel free to browse my projects on Github.</p>\n'])
+    extend_([u'                <center>\n'])
+    extend_([u'                        <h3 class="links"><a href="/github">View My Github Here</a></h3>\n'])
+    extend_([u'                </center>\n'])
+    extend_([u'                <center>\n'])
+    extend_([u'                        <h3 class="links"><a href="https://play.google.com/store/apps/developer?id=Matthew%20Iannucci&hl=en">View My Android Apps Here</a></h3>\n'])
+    extend_([u'                </center>       \n'])
+    extend_([u'        </div>\n'])
+    extend_([u'</div>\n'])
+
+    return self
+
+apps = CompiledTemplate(apps, 'templates/apps.html')
+join_ = apps._join; escape_ = apps._escape
+
+# coding: utf-8
+def archive (posts):
+    __lineoffset__ = -4
+    loop = ForLoop()
+    self = TemplateResult(); extend_ = self.extend
+    extend_([u'\n'])
+    extend_([u'<div id="archiveContainer">\n'])
+    extend_([u'    <div id="archiveTitle">\n'])
+    extend_([u'        <h1>Archive</h1>\n'])
+    extend_([u'    </div>\n'])
+    extend_([u'    <hr>\n'])
+    extend_([u'    <div id="postList">\n'])
+    extend_([u'        <table class="archive">\n'])
+    for post in loop.setup(posts):
+        extend_(['            ', u'<tr>\n'])
+        extend_(['            ', u'    <td>\n'])
+        extend_(['            ', u'        <h3 class="links"><a href="/view/', escape_(post.url, True), u'">', escape_(post.title, True), u'</a></h3> \n'])
+        extend_(['            ', u'    </td>\n'])
+        extend_(['            ', u'    <td>\n'])
+        extend_(['            ', u'        <h3 id="archiveTime">&nbsp; ', escape_(datestr(post.date), True), u'</h3>\n'])
+        extend_(['            ', u'    </td>\n'])
+        extend_(['            ', u'</tr>\n'])
+    extend_([u'        </table>\n'])
+    extend_([u'    </div>\n'])
+    extend_([u'</div>\n'])
+
+    return self
+
+archive = CompiledTemplate(archive, 'templates/archive.html')
+join_ = archive._join; escape_ = archive._escape
+
+# coding: utf-8
 def base (page):
     __lineoffset__ = -4
     loop = ForLoop()
@@ -106,37 +202,6 @@ def base (page):
 
 base = CompiledTemplate(base, 'templates/base.html')
 join_ = base._join; escape_ = base._escape
-
-# coding: utf-8
-def tagged (tag, posts):
-    __lineoffset__ = -4
-    loop = ForLoop()
-    self = TemplateResult(); extend_ = self.extend
-    extend_([u'\n'])
-    extend_([u'<div id="archiveContainer">\n'])
-    extend_([u'    <div id="archiveTitle">\n'])
-    extend_([u'        <h1>Posts tagged "', escape_(tag, True), u'"</h1>\n'])
-    extend_([u'    </div>\n'])
-    extend_([u'    <hr>\n'])
-    extend_([u'    <div id="postList">\n'])
-    extend_([u'        <table class="archive">\n'])
-    for post in loop.setup(posts):
-        extend_(['            ', u'<tr>\n'])
-        extend_(['            ', u'    <td>\n'])
-        extend_(['            ', u'        <h3 class="links"><a href="/view/', escape_(post.url, True), u'">', escape_(post.title, True), u'</a></h3> \n'])
-        extend_(['            ', u'    </td>\n'])
-        extend_(['            ', u'    <td>\n'])
-        extend_(['            ', u'        <h3 id="archiveTime">&nbsp; ', escape_(datestr(post.date), True), u'</h3>\n'])
-        extend_(['            ', u'    </td>\n'])
-        extend_(['            ', u'</tr>\n'])
-    extend_([u'        </table>\n'])
-    extend_([u'    </div>\n'])
-    extend_([u'</div>\n'])
-
-    return self
-
-tagged = CompiledTemplate(tagged, 'templates/tagged.html')
-join_ = tagged._join; escape_ = tagged._escape
 
 # coding: utf-8
 def bio():
@@ -250,24 +315,6 @@ blog = CompiledTemplate(blog, 'templates/blog.html')
 join_ = blog._join; escape_ = blog._escape
 
 # coding: utf-8
-def login_fail (form):
-    __lineoffset__ = -4
-    loop = ForLoop()
-    self = TemplateResult(); extend_ = self.extend
-    extend_([u'\n'])
-    extend_([u'<h1>Admin Login</h1>\n'])
-    extend_([u'<form action="" method="post">\n'])
-    extend_([escape_(form.render(), False), u'\n'])
-    extend_([u'</form>\n'])
-    extend_([u'<hr>\n'])
-    extend_([u'<div id="failedlogin"><h2><font color="red">Invalid Username or Password</font></div>\n'])
-
-    return self
-
-login_fail = CompiledTemplate(login_fail, 'templates/login_fail.html')
-join_ = login_fail._join; escape_ = login_fail._escape
-
-# coding: utf-8
 def edit (post, form):
     __lineoffset__ = -4
     loop = ForLoop()
@@ -291,6 +338,64 @@ edit = CompiledTemplate(edit, 'templates/edit.html')
 join_ = edit._join; escape_ = edit._escape
 
 # coding: utf-8
+def index():
+    __lineoffset__ = -5
+    loop = ForLoop()
+    self = TemplateResult(); extend_ = self.extend
+    extend_([u'<div id="homeContainer"> \n'])
+    extend_([u'        <div id="topImageRow">\n'])
+    extend_([u'        <img id="homeImage" src="/static/Images/stillsurf.jpg">\n'])
+    extend_([u'    </div>\n'])
+    extend_([u'    <div id="welcomeFoot">\n'])
+    extend_([u'        <h2>Welcome..</h2>\n'])
+    extend_([u'    </div>\n'])
+    extend_([u'</div>\n'])
+
+    return self
+
+index = CompiledTemplate(index, 'templates/index.html')
+join_ = index._join; escape_ = index._escape
+
+# coding: utf-8
+def login (user, form):
+    __lineoffset__ = -4
+    loop = ForLoop()
+    self = TemplateResult(); extend_ = self.extend
+    extend_([u'\n'])
+    extend_([u'<p>You are not logged in.</p>\n'])
+    extend_([u'        <p>\n'])
+    extend_([u'        <form name="login" method="POST"> \n'])
+    extend_([u'        ', escape_(form.render(), False), u'\n'])
+    extend_([u'        <input type="submit" name="button" value="Login" />\n'])
+    extend_([u'        </form>\n'])
+    extend_([u'    </p>\n'])
+    extend_([u'    <p> user: ', escape_(user, True), u'</p>\n'])
+    extend_([u'\n'])
+
+    return self
+
+login = CompiledTemplate(login, 'templates/login.html')
+join_ = login._join; escape_ = login._escape
+
+# coding: utf-8
+def login_fail (form):
+    __lineoffset__ = -4
+    loop = ForLoop()
+    self = TemplateResult(); extend_ = self.extend
+    extend_([u'\n'])
+    extend_([u'<h1>Admin Login</h1>\n'])
+    extend_([u'<form action="" method="post">\n'])
+    extend_([escape_(form.render(), False), u'\n'])
+    extend_([u'</form>\n'])
+    extend_([u'<hr>\n'])
+    extend_([u'<div id="failedlogin"><h2><font color="red">Invalid Username or Password</font></div>\n'])
+
+    return self
+
+login_fail = CompiledTemplate(login_fail, 'templates/login_fail.html')
+join_ = login_fail._join; escape_ = login_fail._escape
+
+# coding: utf-8
 def new (form):
     __lineoffset__ = -4
     loop = ForLoop()
@@ -305,6 +410,37 @@ def new (form):
 
 new = CompiledTemplate(new, 'templates/new.html')
 join_ = new._join; escape_ = new._escape
+
+# coding: utf-8
+def tagged (tag, posts):
+    __lineoffset__ = -4
+    loop = ForLoop()
+    self = TemplateResult(); extend_ = self.extend
+    extend_([u'\n'])
+    extend_([u'<div id="archiveContainer">\n'])
+    extend_([u'    <div id="archiveTitle">\n'])
+    extend_([u'        <h1>Posts tagged "', escape_(tag, True), u'"</h1>\n'])
+    extend_([u'    </div>\n'])
+    extend_([u'    <hr>\n'])
+    extend_([u'    <div id="postList">\n'])
+    extend_([u'        <table class="archive">\n'])
+    for post in loop.setup(posts):
+        extend_(['            ', u'<tr>\n'])
+        extend_(['            ', u'    <td>\n'])
+        extend_(['            ', u'        <h3 class="links"><a href="/view/', escape_(post.url, True), u'">', escape_(post.title, True), u'</a></h3> \n'])
+        extend_(['            ', u'    </td>\n'])
+        extend_(['            ', u'    <td>\n'])
+        extend_(['            ', u'        <h3 id="archiveTime">&nbsp; ', escape_(datestr(post.date), True), u'</h3>\n'])
+        extend_(['            ', u'    </td>\n'])
+        extend_(['            ', u'</tr>\n'])
+    extend_([u'        </table>\n'])
+    extend_([u'    </div>\n'])
+    extend_([u'</div>\n'])
+
+    return self
+
+tagged = CompiledTemplate(tagged, 'templates/tagged.html')
+join_ = tagged._join; escape_ = tagged._escape
 
 # coding: utf-8
 def view (post):
@@ -350,133 +486,4 @@ def view (post):
 
 view = CompiledTemplate(view, 'templates/view.html')
 join_ = view._join; escape_ = view._escape
-
-# coding: utf-8
-def archive (posts):
-    __lineoffset__ = -4
-    loop = ForLoop()
-    self = TemplateResult(); extend_ = self.extend
-    extend_([u'\n'])
-    extend_([u'<div id="archiveContainer">\n'])
-    extend_([u'    <div id="archiveTitle">\n'])
-    extend_([u'        <h1>Archive</h1>\n'])
-    extend_([u'    </div>\n'])
-    extend_([u'    <hr>\n'])
-    extend_([u'    <div id="postList">\n'])
-    extend_([u'        <table class="archive">\n'])
-    for post in loop.setup(posts):
-        extend_(['            ', u'<tr>\n'])
-        extend_(['            ', u'    <td>\n'])
-        extend_(['            ', u'        <h3 class="links"><a href="/view/', escape_(post.url, True), u'">', escape_(post.title, True), u'</a></h3> \n'])
-        extend_(['            ', u'    </td>\n'])
-        extend_(['            ', u'    <td>\n'])
-        extend_(['            ', u'        <h3 id="archiveTime">&nbsp; ', escape_(datestr(post.date), True), u'</h3>\n'])
-        extend_(['            ', u'    </td>\n'])
-        extend_(['            ', u'</tr>\n'])
-    extend_([u'        </table>\n'])
-    extend_([u'    </div>\n'])
-    extend_([u'</div>\n'])
-
-    return self
-
-archive = CompiledTemplate(archive, 'templates/archive.html')
-join_ = archive._join; escape_ = archive._escape
-
-# coding: utf-8
-def login (user, form):
-    __lineoffset__ = -4
-    loop = ForLoop()
-    self = TemplateResult(); extend_ = self.extend
-    extend_([u'\n'])
-    extend_([u'<p>You are not logged in.</p>\n'])
-    extend_([u'        <p>\n'])
-    extend_([u'        <form name="login" method="POST"> \n'])
-    extend_([u'        ', escape_(form.render(), False), u'\n'])
-    extend_([u'        <input type="submit" name="button" value="Login" />\n'])
-    extend_([u'        </form>\n'])
-    extend_([u'    </p>\n'])
-    extend_([u'    <p> user: ', escape_(user, True), u'</p>\n'])
-    extend_([u'\n'])
-
-    return self
-
-login = CompiledTemplate(login, 'templates/login.html')
-join_ = login._join; escape_ = login._escape
-
-# coding: utf-8
-def apps():
-    __lineoffset__ = -5
-    loop = ForLoop()
-    self = TemplateResult(); extend_ = self.extend
-    extend_([u'<div id="projectContainer">\n'])
-    extend_([u'        <div id="projectTitle">\n'])
-    extend_([u'                <h1>Apps</h1>\n'])
-    extend_([u'        </div>\n'])
-    extend_([u'        <hr>\n'])
-    extend_([u'        <div id="project1">\n'])
-    extend_([u'                <h2>HackWinds</h2>\n'])
-    extend_([u'                <p class="links">Viewing the surf camera for Narragansett, RI has always proved to be tedious on a phone, especially Android. I started a project to make viewing the surf camera out of conviencence. Now I have made it into a fully featured application. The app shows the live HD stream straight from the beach. It also shows forecast info from both <a href="http://magicseaweed.com">MagicSeaweed</a> and <a href="http://swellinfo.com">SwellInfo</a>. Last, it displays tide information from <a href="http://www.wunderground.com/?apiref=b80661e4fc362f50">Wunderground</a>.</p>\n'])
-    extend_([u'                <p class="links">It is available on Google Play now! Future features include realtime buoy data and animated swell and wind charts. I have also started to develop an accompanying iOS app. Finally, feel free to check out the source on my <a href="https://github.com/mpiannucci/HackWinds">Github</a>. Pray for waves!</p>\n'])
-    extend_([u'                <center>\n'])
-    extend_([u'                        <!-- This is the app screenshots -->\n'])
-    extend_([u'                        <img class="screenshots" id="HWscreen1" src="/static/Images/hack2liveScreen_framed.png" alt="HWscreen1" />\n'])
-    extend_([u'                        <img class="screenshots" id="HWscreen2" src="/static/Images/hack2forcScreen_framed.png" alt="HWscreen2" />\n'])
-    extend_([u'                        <img class="screenshots" id="HWscreen3" src="/static/Images/hack2tideScreen_framed.png" alt="HWscreen3" />\n'])
-    extend_([u'                        <br/>\n'])
-    extend_([u'                        <a href="https://play.google.com/store/apps/details?id=com.nucc.hackwinds">\n'])
-    extend_([u'                                <img id="googlePlayBadge" alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />\n'])
-    extend_([u'                        </a>\n'])
-    extend_([u'                        <br/>\n'])
-    extend_([u'                        <h3 class="links"><a href="https://github.com/mpiannucci/HackWinds">Source Here</a></h3>\n'])
-    extend_([u'                </center>\n'])
-    extend_([u'        </div>\n'])
-    extend_([u'        <div id="project2">\n'])
-    extend_([u'                <h2 id="simpleSolverTitle">SimpleSolver</h2>\n'])
-    extend_([u'                <p>As an engineering student, it has frustrated me that were no quadratic equation solving applications with an elegant user interface. I strived to create a simple, but useful app with a user interface that matched these characteristics. Thus, SimpleSolver for Android was born. This application is now available on Google Play for free.</p>\n'])
-    extend_([u'                <center>\n'])
-    extend_([u'                        <!-- This is the app screenshots -->\n'])
-    extend_([u'                        <img class="screenshots" id="SSscreen2" src="/static/Images/SSscreen2.png" alt="SSscreen2" />\n'])
-    extend_([u'                        <img class="screenshots" id="SSscreen1" src="/static/Images/SSscreen1.png" alt="SSscreen1" />\n'])
-    extend_([u'                        <br/>\n'])
-    extend_([u'                        <!-- This is the Google Play button -->\n'])
-    extend_([u'                        <a href="https://play.google.com/store/apps/details?id=com.nucc.simplesolver">\n'])
-    extend_([u'                                <img id="googlePlayBadge" alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />\n'])
-    extend_([u'                        </a>\n'])
-    extend_([u'                </center>\n'])
-    extend_([u'        </div>\n'])
-    extend_([u'        <div id="project3">\n'])
-    extend_([u'                <h2>Other</h2>\n'])
-    extend_([u'                <p>To view many of my smaller projects and meddlings of mine, feel free to browse my projects on Github.</p>\n'])
-    extend_([u'                <center>\n'])
-    extend_([u'                        <h3 class="links"><a href="/github">View My Github Here</a></h3>\n'])
-    extend_([u'                </center>\n'])
-    extend_([u'                <center>\n'])
-    extend_([u'                        <h3 class="links"><a href="https://play.google.com/store/apps/developer?id=Matthew%20Iannucci&hl=en">View My Android Apps Here</a></h3>\n'])
-    extend_([u'                </center>       \n'])
-    extend_([u'        </div>\n'])
-    extend_([u'</div>\n'])
-
-    return self
-
-apps = CompiledTemplate(apps, 'templates/apps.html')
-join_ = apps._join; escape_ = apps._escape
-
-# coding: utf-8
-def index():
-    __lineoffset__ = -5
-    loop = ForLoop()
-    self = TemplateResult(); extend_ = self.extend
-    extend_([u'<div id="homeContainer"> \n'])
-    extend_([u'        <div id="topImageRow">\n'])
-    extend_([u'        <img id="homeImage" src="/static/Images/stillsurf.jpg">\n'])
-    extend_([u'    </div>\n'])
-    extend_([u'    <div id="welcomeFoot">\n'])
-    extend_([u'        <h2>Welcome..</h2>\n'])
-    extend_([u'    </div>\n'])
-    extend_([u'</div>\n'])
-
-    return self
-
-index = CompiledTemplate(index, 'templates/index.html')
-join_ = index._join; escape_ = index._escape
 
