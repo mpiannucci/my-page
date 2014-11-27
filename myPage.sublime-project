@@ -3,7 +3,7 @@
 	[
 		{
 			"follow_symlinks": true,
-			"path": "/home/matthew/Development/myPage",
+			"path": ".",
             "folder_exclude_pattern": "sessions",
             "file_exclude_patterns": [".project", ".pydevproject"]
 		}
