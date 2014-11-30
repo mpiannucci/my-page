@@ -196,8 +196,12 @@ code {
     width:33%;
 }
 
-.screenshots {
-    width:32%;
+.android_screenshots {
+    width:23%;
+}
+
+.ios_screenshots {
+    width: 23%;
 }
 
 /***************************************************************************** 
