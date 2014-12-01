@@ -9,50 +9,20 @@ body {
 
 h1 {
 	font-family:"Helvetica";
-	font-color:#000000;
-}
-
-/* Link settings */
-h1 a:link {
-	text-decoration:none;
-	color:#000000;
-} 
-
-h1 a:hover {
-	background-color:#33B5E5;
-	cursor:pointer;
-}
-
-h1 a:visited {
-	color:#000000;
-}
-
-h1 a:active {
-	color:#000000;
 }
 
 h2 {
 	font-family:"Helvetica";
-	font-color:#000000;
 }
 
 /* Link settings */
 h2 a:link {
 	text-decoration:none;
-	color:#000000;
 } 
 
 h2 a:hover {
 	background-color:#33B5E5;
 	cursor:pointer;
-}
-
-h2 a:visited {
-	color:#000000;
-}
-
-h2 a:active {
-	color:#000000;
 }
 
 code {
@@ -61,41 +31,35 @@ code {
 }
 
 /*****************************************************************************
- Specific Styles 
- ****************************************************************************/
-
-/* Tag Link settings */
-.leftBar h2 a:link {
-	text-decoration:none;
-	color:#33B5E5;
-} 
-
-.leftBar h2 a:hover {
-	background-color:#000000;
-	cursor:pointer;
-}
-
-.leftBar h2 a:visited {
-	color:#33B5E5;
-}
-
-.leftBar h2 a:active {
-	color:#33B5E5;
-}
-
-/*****************************************************************************
  Header settings 
  ****************************************************************************/
 #header {
-	background:#ffffff;
+	background:#33B5E5;
 	font-size:170%;
-	padding-left:19%;
+	padding-left:20%;
 	height:10%;
 }
 
 #header a:hover {
-	background-color:#ffffff;
+	background-color:#33B5E5;
 	cursor:pointer;
+}
+
+#header a:link {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+#header a:active {
+	color: #ffffff;
+}
+
+#header a:visited {
+	color: #ffffff;
+}
+
+#mainHeader {
+	background-color: #33B5E5;
 }
 
 /*****************************************************************************
@@ -117,66 +81,64 @@ code {
 }
 
 /*****************************************************************************
+ NavBar container settings
+ ****************************************************************************/ 
+#navBar {
+	background-color: #33B5E5;
+	padding-left: 20%;
+	padding-right: 20%;
+	width: 60%
+}
+
+#navBar table {
+	border:0;
+	width:100%;
+}
+
+.navHeader a:hover {
+	background-color:#33B5E5;
+	cursor:pointer;
+}
+
+.navHeader a:link {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.navHeader a:active {
+	color: #ffffff;
+}
+
+.navHeader a:visited {
+	color: #ffffff;
+}
+
+.topicHeader a:hover {
+	background-color:#33B5E5;
+	cursor:pointer;
+}
+
+.topicHeader a:link {
+	color: #0039d1;
+	text-decoration: none;
+}
+
+.topicHeader a:active {
+	color: #0039d1;
+}
+
+.topicHeader a:visited {
+	color: #0039d1;
+}
+
+/*****************************************************************************
  Column container settings 
  ****************************************************************************/ 
-/* 'widths' sub menu */
-#layoutdims {
-	clear:both;
-	background:#fff;
-	border-top:4px solid #000;
-	margin:0;
-	padding:6px 15px !important;
-	text-align:right;
-}
-/* column container */
-.colmask {
-	position:relative;	/* This fixes the IE7 overflow hidden bug */
-	clear:both;
-	float:left;
-	width:100%;			/* width of whole page */
-	overflow:hidden;		/* This chops off any overhanging divs */
-}
-/* common column settings */
-.colright,
-.colmid,
-.colleft {
-	float:left;
-	width:100%;			/* width of page */
-	position:relative;
-}
-.col1,
-.col2,
-.col3 {
-	float:left;
-	position:relative;
-	padding:0 0 1em 0;	/* no left and right padding on columns, we just make them narrower instead 
-					only padding top and bottom is included here, make it whatever value you need */
-	overflow:hidden;
-}
-/* 3 Column settings */
-.threecol {
-	background:#fff;		/* right column background colour */
-}
-.threecol .colmid {
-	right:0%;			/* width of the right column */
-	background:#fff;		/* center column background colour */
-}
-.threecol .colleft {
-	right:65%;			/* width of the middle column */
-	background:#fff;		/* left column background colour */
-}
-.threecol .col1 {
-	width:44%;			/* width of center column content (column width minus padding on either side) */
-	left:102%;			/* 100% plus left padding of center column */
-}
-.threecol .col2 {
-	width:14%;			/* Width of left column content (column width minus padding on either side) */
-	left:40%;			/* width of (right column) plus (center column left and right padding) plus (left column left padding) */
-}
-.threecol .col3 {
-	width:0%;			/* Width of right column content (column width minus padding on either side) */
-	left:107%;			/* Please make note of the brackets here:
-					(100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
+.mainColumn {
+	padding-left: 20%;
+	padding-right: 20%;
+	padding-top: 1%;
+	width: 60%;
 }
 
 /*****************************************************************************
@@ -203,7 +165,7 @@ code {
 }
 
 .links a:hover {
-	color:#000000;
+	color:#ffffff;
 	background-color:#33B5E5;
 	font-weight: bold;
 }

@@ -1,12 +1,7 @@
-/******************************************************************************************************
-Handheld (Mobile) Device Style
-******************************************************************************************************/
-
-@media only screen and (max-device-width: 767px) {
-
 /*****************************************************************************
  General Styles 
  ****************************************************************************/
+
 body {
     background-color:#ffffff;
     font-family:"Helvetica";
@@ -14,50 +9,20 @@ body {
 
 h1 {
     font-family:"Helvetica";
-    font-color:#000000;
-}
-
-/* Link settings */
-h1 a:link {
-    text-decoration:none;
-    color:#000000;
-} 
-
-h1 a:hover {
-    background-color:#33B5E5;
-    cursor:pointer;
-}
-
-h1 a:visited {
-    color:#000000;
-}
-
-h1 a:active {
-    color:#000000;
 }
 
 h2 {
     font-family:"Helvetica";
-    font-color:#000000;
 }
 
 /* Link settings */
 h2 a:link {
     text-decoration:none;
-    color:#000000;
 } 
 
 h2 a:hover {
     background-color:#33B5E5;
     cursor:pointer;
-}
-
-h2 a:visited {
-    color:#000000;
-}
-
-h2 a:active {
-    color:#000000;
 }
 
 code {
@@ -66,64 +31,45 @@ code {
 }
 
 /*****************************************************************************
- Specific Styles 
- ****************************************************************************/
-
-/* Tag Link settings */
-.leftBar h2 a:link {
-    text-decoration:none;
-    color:#33B5E5;
-} 
-
-.leftBar h2 a:hover {
-    background-color:#000000;
-    cursor:pointer;
-}
-
-.leftBar h2 a:visited {
-    color:#33B5E5;
-}
-
-.leftBar h2 a:active {
-    color:#33B5E5;
-}
-
-#sideTitle {
-    padding-top: 25px;
-}
-
-#sideTitle h2 {
-    display: inline;
-    font-size: 300%;
-    padding-right: 20px;
-}
-
-#menu h2 {
-    display: inline;
-    font-size: 300%;
-    padding-right: 20px;
-}
-
-/*****************************************************************************
  Header settings 
  ****************************************************************************/
 #header {
-    background:#ffffff;
-    font-size:200%;
+    background:#33B5E5;
+    font-size:170%;
+    padding-left:0%;
+    height:5%;
 }
 
 #header a:hover {
-    background-color:#ffffff;
+    background-color:#33B5E5;
     cursor:pointer;
 }
+
+#header a:link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#header a:active {
+    color: #ffffff;
+}
+
+#header a:visited {
+    color: #ffffff;
+}
+
+#mainHeader {
+    background-color: #33B5E5;
+}
+
 
 /*****************************************************************************
  Footer settings 
  ****************************************************************************/
 #footer {
     background:#ffffff;
-    font-size:73%;
-    padding-top:45px;
+    font-size:65%;
+    padding:0px;
 }
 
 #copyright h3 {
@@ -131,8 +77,69 @@ code {
 }
 
 #siteinfo p {
-    font-size:70%;
+    font-size:100%;
     padding:0px;
+}
+
+/*****************************************************************************
+ NavBar container settings
+ ****************************************************************************/ 
+#navBar {
+    background-color: #33B5E5;
+    padding-left: 0%;
+    padding-right: 0%;
+    width: 100%
+}
+
+#navBar table {
+    border:0;
+    width:100%;
+}
+
+.navHeader a:hover {
+    background-color:#33B5E5;
+    cursor:pointer;
+}
+
+.navHeader a:link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navHeader a:active {
+    color: #ffffff;
+}
+
+.navHeader a:visited {
+    color: #ffffff;
+}
+
+.topicHeader a:hover {
+    background-color:#33B5E5;
+    cursor:pointer;
+}
+
+.topicHeader a:link {
+    color: #0039d1;
+    text-decoration: none;
+}
+
+.topicHeader a:active {
+    color: #0039d1;
+}
+
+.topicHeader a:visited {
+    color: #0039d1;
+}
+
+/*****************************************************************************
+ Column container settings 
+ ****************************************************************************/ 
+.mainColumn {
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-top: 1%;
+    width: 100%;
 }
 
 /*****************************************************************************
@@ -140,16 +147,13 @@ code {
  ****************************************************************************/
 #welcomeFoot {
     text-align: right;
-    font-size: 170%;
 }
 
 #homeImage {
-    width:100%;
+    width: 100%;
 }
 
-/*****************************************************************************
- Blog page settings 
- ****************************************************************************/
+/* Blog page settings */
 .postDisp h3 {
     font-size:100%;
     font-style: italic;
@@ -162,7 +166,7 @@ code {
 }
 
 .links a:hover {
-    color:#000000;
+    color:#ffffff;
     background-color:#33B5E5;
     font-weight: bold;
 }
@@ -180,22 +184,15 @@ code {
 .linkTable {
     border:0;
     width:100%;
-    font-size:230%;
 }
 
 .navTable {
     border:0;
-    font-size:210%;
 }
 
 /*****************************************************************************
- Projects page settings 
+ Apps page settings 
  ****************************************************************************/
-
-#googlePlayBadge {
-    width:33%;
-}
-
 .android_screenshots {
     width:23%;
 }
@@ -204,7 +201,7 @@ code {
     width: 23%;
 }
 
-/***************************************************************************** 
+/*****************************************************************************
  Admin page settings 
  ****************************************************************************/
 #failedlogin {
@@ -219,21 +216,20 @@ code {
 }
 
 /*****************************************************************************
- Contact page settings 
+ Bio Page settings 
  ****************************************************************************/
 #contactLinks h3 {
     display: inline;
     padding-right: 15px;
-    font-size: 300%;
 }
 
 #bioPhoto {
     float: right;
-}
-#bioPic {
-    width:88%;
-    padding-left: 20px;
+    width: 40%;
 }
 
-/**** End Base Mobile Styles ****/
+#bioPic {
+    width: 100%;
 }
+
+/* End Screen Layout */

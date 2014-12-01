@@ -9,42 +9,32 @@ $def with (page)
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
 </head>
 <body>
+	<div id="mainHeader">
 	<!-- Define the header for the page -->
 	<div id="header">
 		<h1><a href="/">Matthew Iannucci</a></h1>
 	</div>
-	<!-- Create the three coloumn layout.-->
-	<div class="colmask threecol">
-		<div class="colmid">
-			<div class="colleft">
-				<div class="col1">
-					<!-- Column 1 start -->
-					<!-- Get the page data as declared in code.py -->
-					$:page
-					<!-- Column 1 end -->
-				</div>
-				<div class="col2">
-					<!-- Column 2 start -->
-	            	<div id="menu">
-		            	<h2><a href="/">Home</a></h2>
-		            	<h2><a href="/blog/1">Blog</a></h2>
-		            	<h2><a href="/apps">Projects</a></h2>
-		            	<h2><a href="/bio">Bio</a></h2>
-		            </div>
-					<div id="sideTitle" class="leftBar">
-						<h2><a href="/archive">Archive</a></h2>
-						<h2><a href="/tag/software">Software</a></h2>
-						<h2><a href="/tag/surf">Surf</a></h2>
-						<h2><a href="/tag/else">Else</a></h2>
-	            	</div>
-					<!-- Column 2 end -->
-				</div>
-				<div class="col3">
-					<!-- Column 3 start -->
-					<!-- Column 3 end -->
-				</div>
-			</div>
-		</div>
+	<!-- Define the header bar links -->
+	<div id="navBar">
+		<table id="navBarTable">
+			<tr>
+				<td class="navHeader"><h2><a href="/">Home</a></h2></td>
+				<td class="navHeader"><h2><a href="/blog">Blog</a></h2></td>
+				<td class="navHeader"><h2><a href="/apps">Projects</a></h2></td>
+				<td class="navHeader"><h2><a href="/bio">About</a></h2></td>
+				<td class="topicHeader"><h2><a href="/tag/software">Software</a></h2></td>
+				<td class="topicHeader"><h2><a href="/tag/surfing">Surfing</a></h2></td>
+				<td class="topicHeader"><h2><a href="/tag/else">Else</a></h2></td>
+			</tr>
+		</table>
+	</div>
+	</div>
+	<!-- Create the main coloumn layout.-->
+	<div id="mainContent" class="mainColumn">
+		<!-- Main column start -->
+		<!-- Get the page data as declared in code.py -->
+		$:page
+		<!-- Main column end -->
 	</div>
 	<!-- Ends the three column layout-->
 	<!-- Define the footer for the page -->
