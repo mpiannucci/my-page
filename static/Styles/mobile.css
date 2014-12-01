@@ -26,8 +26,15 @@ h2 a:hover {
 }
 
 code {
-    background-color:#e5e5e5;
-    color:#000000;
+    background-color:#0039d1;
+    color:#ffffff;
+}
+
+pre {
+    background-color:#0039d1;
+    color:#ffffff;
+    padding:2%;
+    white-space: pre-wrap;
 }
 
 /*****************************************************************************

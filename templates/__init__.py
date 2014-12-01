@@ -144,7 +144,7 @@ def base (page):
     extend_([u'    <link rel="stylesheet" type="text/css" href="/static/Styles/screen.css" media="only screen and (min-device-width: 768px)" />\n'])
     extend_([u'    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />\n'])
     extend_([u'</head>\n'])
-    extend_([u'<body>\n'])
+    extend_([u'<body> \n'])
     extend_([u'        <div id="mainHeader">\n'])
     extend_([u'        <!-- Define the header for the page -->\n'])
     extend_([u'        <div id="header">\n'])
