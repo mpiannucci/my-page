@@ -103,6 +103,7 @@ pre {
 }
 
 .navHeader a:hover {
+	color: #0039d1 !important;
 	background-color:#33B5E5;
 	cursor:pointer;
 }
@@ -113,7 +114,7 @@ pre {
 }
 
 .navHeader a:active {
-	color: #ffffff;
+	color: #0039d1 !important;
 }
 
 .navHeader a:visited {
@@ -121,6 +122,7 @@ pre {
 }
 
 .topicHeader a:hover {
+	color: #ffffff !important;
 	background-color:#33B5E5;
 	cursor:pointer;
 }
@@ -131,7 +133,7 @@ pre {
 }
 
 .topicHeader a:active {
-	color: #0039d1;
+	color: #ffffff !important;
 }
 
 .topicHeader a:visited {
@@ -172,7 +174,7 @@ pre {
 }
 
 .links a:hover {
-	color:#ffffff;
+	color:#ffffff !important; 
 	background-color:#33B5E5;
 	font-weight: bold;
 }
