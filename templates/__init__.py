@@ -64,6 +64,8 @@ def apps():
     extend_([u'                                <img id="googlePlayBadge" alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />\n'])
     extend_([u'                        </a>\n'])
     extend_([u'                        <br/>\n'])
+    extend_([u'                        <a href="https://itunes.apple.com/us/app/hackwinds/id945847570?mt=8&uo=4" target="itunes_store" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.png) no-repeat;width:135px;height:40px;@media only screen{background-image:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.svg);}"></a>\n'])
+    extend_([u'                        <br/>\n'])
     extend_([u'                        <h3 class="links"><a href="https://github.com/mpiannucci/HackWinds">Android Source Here</a></h3>\n'])
     extend_([u'                        <h3 class="links"><a href="https://github.com/mpiannucci/HackWinds-iOS">iOS Source Here</a></h3>\n'])
     extend_([u'                </center>\n'])
