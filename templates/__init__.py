@@ -46,7 +46,7 @@ def apps():
     extend_([u'        <div id="project1">\n'])
     extend_([u'                <h2>HackWinds</h2>\n'])
     extend_([u'                <p class="links">Viewing the surf camera for Narragansett, RI has always proved to be tedious on a smartphone. I I started a project to make viewing the surf camera out of conviencence. Now I have made it into a fully featured application. The app shows the live HD stream straight from the beach. It shows forecast info from <a href="http://magicseaweed.com">MagicSeaweed</a>, tide information from <a href="http://www.wunderground.com/?apiref=b80661e4fc362f50">Wunderground</a>, and live buoy data from NOAA. It\'s all of the tools you need to check the surf quickly in Rhode Island.</p> \n'])
-    extend_([u'                <p class="links">The Android app is available on Google Play now, and the iOS app is awaiting review! Finally, feel free to check out the source on my Github by following the links below. Pray for waves!</p>\n'])
+    extend_([u'                <p class="links">The Android app is available on Google Play now, and the iOS app is available from the App Store! Finally, feel free to check out the source on my Github by following the links below. Pray for waves!</p>\n'])
     extend_([u'                <center>\n'])
     extend_([u'                        <!-- This is the iOS app screenshots -->\n'])
     extend_([u'                        <img class="ios_screenshots" id="HWios1" src="/static/Images/Hackwinds-ios1.png" alt="Hackwindsios1" />\n'])
