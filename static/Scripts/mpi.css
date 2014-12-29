@@ -10,7 +10,7 @@ body {
 }
 
 /**
- * Custom navbar color
+ * Custom navbar theming
  */
 .navbar {
   background-color: #47A3FF; /* background color will be black for all browsers */
@@ -38,4 +38,28 @@ body {
 
 .navbar .nav > li > a:active {
     color: #000000;
+}
+
+/**
+ * Home Page styles
+ */
+#homeImage {
+    width: 100%;
+}
+
+/**
+ * Blog Page styles
+ */
+
+
+/**
+ * Projects Page styles
+ */
+
+
+/**
+ * About page styles
+ */
+#bioPic {
+    width: 100%;
 }
