@@ -1,36 +1,52 @@
 $def with (page)
 
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="google-site-verification" content="-azLgyDbTQ6EY0zdkcRBc8Q5f0jSV4cd552gcq44N98" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Matthew Iannucci</title>
-    <link rel="stylesheet" type="text/css" href="/static/Styles/mobile.css" media="only screen and (max-device-width: 767px)" />
-    <link rel="stylesheet" type="text/css" href="/static/Styles/screen.css" media="only screen and (min-device-width: 768px)" />
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body> 
-	<div id="mainHeader">
-	<!-- Define the header for the page -->
-	<div id="header">
-		<h1><a href="/">Matthew Iannucci</a></h1>
-	</div>
+<div  class="container">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Matthew Iannucci</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/blog">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/apps">Projects</a>
+                    </li>
+                    <li>
+                        <a href="/bio">About</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 	<!-- Define the header bar links -->
-	<div id="navBar">
-		<table id="navBarTable">
-			<tr>
-				<td class="navHeader"><h2><a href="/">Home</a></h2></td>
-				<td class="navHeader"><h2><a href="/blog">Blog</a></h2></td>
-				<td class="navHeader"><h2><a href="/apps">Projects</a></h2></td>
-				<td class="navHeader"><h2><a href="/bio">About</a></h2></td>
-				<td class="topicHeader"><h2><a href="/tag/software">Software</a></h2></td>
-				<td class="topicHeader"><h2><a href="/tag/surfing">Surfing</a></h2></td>
-				<td class="topicHeader"><h2><a href="/tag/else">Else</a></h2></td>
-			</tr>
-		</table>
-	</div>
-	</div>
 	<!-- Create the main coloumn layout.-->
-	<div id="mainContent" class="mainColumn">
+	<div id="mainContent" class="col-sm-6">
 		<!-- Main column start -->
 		<!-- Get the page data as declared in code.py -->
 		$:page
@@ -39,14 +55,12 @@ $def with (page)
 	<!-- Ends the three column layout-->
 	<!-- Define the footer for the page -->
 	<div id="footer">
-		<center>	
-			<div id="copyright">
-				<h3>Copyright 2013, Matthew Iannucci</h3>
-			</div>
-			<div id="siteinfo">
-				<p>Site created with web.py, version 0.3 <br/>Updated August 2014</p>
-			</div>
-		</center>
+		<div id="copyright">
+			<h3>Copyright 2013, Matthew Iannucci</h3>
+		</div>
+		<div id="siteinfo">
+			<p>Site created with web.py, version 0.3 <br/>Updated August 2014</p>
+		</div>
 	</div>
 </div>
 <!-- End the page layout -->
