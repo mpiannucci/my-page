@@ -169,7 +169,7 @@ def base (page):
     extend_([u'        </div>\n'])
     extend_([u'        <!-- Ends the three column layout-->\n'])
     extend_([u'        <!-- Define the footer for the page -->\n'])
-    extend_([u'        <div class="row">\n'])
+    extend_([u'        <div id="footerRow" class="row">\n'])
     extend_([u'        <div class="col-lg-12 text-center">\n'])
     extend_([u'                <ul class="list-unstyled">\n'])
     extend_([u'                                <li>Copyright 2013, Matthew Iannucci</li>\n'])

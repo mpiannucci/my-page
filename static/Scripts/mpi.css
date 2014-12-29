@@ -65,3 +65,11 @@ body {
 #bioPic {
     width: 100%;
 }
+
+/**
+ * Footer styles
+ */
+#footerRow {
+    padding-top: 15px;
+    font-size: 80%;
+}
