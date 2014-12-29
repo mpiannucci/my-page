@@ -19,7 +19,8 @@ urls = (
     '/logout', 'Logout',
     '/resume', 'Resume',
     '/archive', 'Archive',
-    '/tag/(.+)', 'Tagged'
+    '/tag/(.+)', 'Tagged',
+    '/hackwinds', 'HackWinds'
 )
 
 # Toggle the web debug (to test sessions)
@@ -165,6 +166,11 @@ class Apps:
     ''' Create the apps page '''
     def GET(self):
         return render.apps()
+
+class HackWinds:
+    ''' Show the HackWinds page'''
+    def GET(self):
+        return render.hackwinds()
 
 def notfound():
     ''' Create the not found page '''

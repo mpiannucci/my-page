@@ -4,12 +4,13 @@ $def with (post)
     <div class="col-lg-12">
         <h1>$post.title</h1>
         <h3>$datestr(post.date)</h3>
+        <hr>
         $:post.content
         <br/>
         <div id="links" class="links">
             <ul class="list-inline">
                 <li><a href="/view/$post.url">Link</a></li>
-                <li>Tagged &nbsp; <a href="/tag/$post.tag">$post.tag</a></li>
+                <li>Tagged: &nbsp; <a href="/tag/$post.tag">$post.tag</a></li>
             </ul>
         </div>
     </div>
