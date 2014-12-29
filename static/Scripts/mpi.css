@@ -55,7 +55,9 @@ body {
 /**
  * Projects Page styles
  */
-
+.ios_screenshots {
+    width: 23%
+}
 
 /**
  * About page styles
