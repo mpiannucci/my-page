@@ -162,7 +162,7 @@ def base (page):
     extend_([u'                    <span class="icon-bar"></span>\n'])
     extend_([u'                    <span class="icon-bar"></span>\n'])
     extend_([u'                </button>\n'])
-    extend_([u'                <a class="navbar-brand" href="#">Matthew Iannucci</a>\n'])
+    extend_([u'                <a class="navbar-brand" href="/">Matthew Iannucci</a>\n'])
     extend_([u'            </div>\n'])
     extend_([u'            <!-- Collect the nav links, forms, and other content for toggling -->\n'])
     extend_([u'            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">\n'])
