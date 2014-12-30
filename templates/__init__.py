@@ -358,9 +358,8 @@ def index():
     loop = ForLoop()
     self = TemplateResult(); extend_ = self.extend
     extend_([u'<div class="row">\n'])
-    extend_([u'    <div class="col-lg-12 text-center">\n'])
-    extend_([u'        <img id="homeImage" src="/static/Images/stillsurf.jpg">\n'])
-    extend_([u'        <h2>Welcome..</h2>\n'])
+    extend_([u'    <div class="col-lg-12 jumbotron jumbotron-index">\n'])
+    extend_([u'        <h1 class="welcomeMessage">Welcome..</h1>\n'])
     extend_([u'    </div>\n'])
     extend_([u'</div>\n'])
 

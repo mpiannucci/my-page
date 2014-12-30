@@ -43,10 +43,15 @@ body {
 /**
  * Home Page styles
  */
-#homeImage {
-    width: 100%;
+.jumbotron-index {
+    background-image: url("../Images/stillsurf.jpg");
+    background-size: cover;
+    color: #FFFFFF
 }
 
+.welcomeMessage {
+    padding-top: 33%;
+}
 /**
  * Blog Page styles
  */
