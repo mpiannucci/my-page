@@ -104,3 +104,8 @@ body {
     height: 40px;
     margin-top: -33px;
 }
+
+.AppJumboIcon {
+    padding-right: 15px;
+    padding-top: 15px;
+}
