@@ -56,9 +56,10 @@ body {
  * Projects Page styles
  */
 .AppsPageScreenshot {
-    width: 13%;
+    width: 14%;
     float: left; 
     margin: 0px 0px 25px 25px;
+    padding-right: 15px
 }
 
 /**
