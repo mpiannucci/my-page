@@ -29,7 +29,8 @@ urls = (
 # Define the web templates
 t_globals = {
     'datestr': web.datestr,
-    'get_posts': model.get_posts
+    'get_posts': model.get_posts,
+    'len': len
 }
 render = web.template.render('templates', base='base', globals=t_globals)
 

@@ -170,7 +170,7 @@ def bio():
     extend_([u'<hr>\n'])
     extend_([u'<div class="row">\n'])
     extend_([u'        <div id="bioPhoto" class="col-sm-6">\n'])
-    extend_([u'                <img id="bioPic" src="/static/Images/mecomp.jpg" alt="bioPic" />\n'])
+    extend_([u'                <img id="bioPic" src="/static/Images/me_surf.jpg" alt="bioPic" />\n'])
     extend_([u'        </div>\n'])
     extend_([u'        <div id="bioText" class="col-sm-6">\n'])
     extend_([u'                <h2>About Me</h2>\n'])
@@ -209,7 +209,11 @@ def blog (pageNum):
         extend_([u'        <div class="col-lg-12">\n'])
         extend_([u'            <h2 class="links"><a href="/view/', escape_(post.url, True), u'">', escape_(post.title, True), u'</a></h2>\n'])
         extend_([u'            <h3>', escape_(datestr(post.date), True), u'</h3>\n'])
-        extend_([u'            ', escape_(post.content, False), u'\n'])
+        if len(post.content) > 500:
+            extend_(['            ', escape_(post.content[:500], False), u'\n'])
+            extend_(['            ', u'... <a href="/view/', escape_(post.url, True), u'">View Whole Post</a>\n'])
+        else:
+            extend_(['            ', escape_(post.content, False), u'\n'])
         extend_([u'            <br/>\n'])
         extend_([u'            <div id="links" class="links">\n'])
         extend_([u'                <ul class="list-inline">\n'])
@@ -359,7 +363,7 @@ def index():
     loop = ForLoop()
     self = TemplateResult(); extend_ = self.extend
     extend_([u'<div class="row">\n'])
-    extend_([u'    <div class="col-lg-12 col-sm-6 jumbotron jumbotron-index">\n'])
+    extend_([u'    <div class="col-lg-12 jumbotron jumbotron-index">\n'])
     extend_([u'        <h1 class="welcomeMessage">Welcome..</h1>\n'])
     extend_([u'    </div>\n'])
     extend_([u'</div>\n'])
