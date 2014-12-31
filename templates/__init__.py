@@ -38,11 +38,7 @@ def apps():
     __lineoffset__ = -5
     loop = ForLoop()
     self = TemplateResult(); extend_ = self.extend
-    extend_([u'<!-- <div class="container project-header">\n'])
-    extend_([u'    <h1>Projects</h1>\n'])
-    extend_([u'    <hr>\n'])
-    extend_([u'</div> -->\n'])
-    extend_([u'<div id="HackWindsCols" class="jumbotron hackwinds-jumbotron">\n'])
+    extend_([u'<div id="HackWindsCols" class="col-lg-12 jumbotron hackwinds-jumbotron">\n'])
     extend_([u'    <div class="container">\n'])
     extend_([u'        <img class="AppsPageScreenshot pull-left" src="/static/Images/Hackwinds-ios1.png" />\n'])
     extend_([u'        <h1>HackWinds</h1>\n'])
@@ -50,14 +46,14 @@ def apps():
     extend_([u'        <a href="/hackwinds" class="btn btn-primary">Learn More</a>\n'])
     extend_([u'    </div>\n'])
     extend_([u'</div>\n'])
-    extend_([u'<div id="MapgetterCols" class="jumbotron mapgetter-jumbotron">\n'])
+    extend_([u'<div id="MapgetterCols" class="col-lg-12 jumbotron mapgetter-jumbotron">\n'])
     extend_([u'    <div class="container">\n'])
     extend_([u'        <h1>MapGetter</h1>\n'])
     extend_([u'        <p>Get static images of a central area with coordinates in meters</p>\n'])
     extend_([u'        <a href="http://mapgetter.mpiannucci.com" class="btn btn-primary">Try It!</a>\n'])
     extend_([u'    </div>\n'])
     extend_([u'</div>\n'])
-    extend_([u'<div id="OtherCols" class="jumbotron github-jumbotron">\n'])
+    extend_([u'<div id="OtherCols" class="col-lg-12 jumbotron github-jumbotron">\n'])
     extend_([u'    <div class="container">\n'])
     extend_([u'        <h2>Other</h2>\n'])
     extend_([u'        <p>To view many of my smaller projects and medlings of mine, feel free to browse my projects on Github.</p>\n'])
@@ -214,17 +210,12 @@ def blog (pageNum):
     prev = pageNum - 1
     posts = get_posts((pageNum-1)*6)
     extend_([u'\n'])
-    extend_([u'<div id="blog-jumbotron" class="jumbotron">\n'])
-    extend_([u'    <div  class="container">\n'])
-    extend_([u'        <h1>Blog..</h1>\n'])
-    extend_([u'    </div>\n'])
-    extend_([u'</div>\n'])
     extend_([u'<!-- Loop thourgh all posts in the database and display them as declared below -->\n'])
     for post in loop.setup(posts):
         postCount+=1
-        extend_([u'    <div class="container">\n'])
         extend_([u'    <div class="row">\n'])
-        extend_([u'        <div class="col-lg-12">\n'])
+        extend_([u'        <div class="col-sm-12">\n'])
+        extend_([u'                <div class="container">\n'])
         extend_([u'            <h2 class="links"><a href="/view/', escape_(post.url, True), u'">', escape_(post.title, True), u'</a></h2>\n'])
         extend_([u'            <h3>', escape_(datestr(post.date), True), u'</h3>\n'])
         if len(post.content) > 500:
@@ -243,9 +234,9 @@ def blog (pageNum):
         extend_([u'    </div>\n'])
         extend_([u'    </div>\n'])
         extend_([u'    <hr>\n'])
-    extend_([u'<div class="container">\n'])
     extend_([u'<div id="blogLinks" class="row">\n'])
-    extend_([u'    <div class="col-lg-12">\n'])
+    extend_([u'    <div class="col-sm-12">\n'])
+    extend_([u'        <div class="container">\n'])
     if pageNum == 1:
         if postCount < 6:
             extend_(['        ', u'<ul class="list-inline">\n'])
@@ -272,8 +263,8 @@ def blog (pageNum):
             extend_(['        ', u'    <li><a href="/blog/', escape_(next, True), u'">Next</a></li>\n'])
             extend_(['        ', u'    <li><a href="/archive">Archive</a></li>\n'])
             extend_(['        ', u'</ul>\n'])
+    extend_([u'        </div>\n'])
     extend_([u'    </div>\n'])
-    extend_([u'</div>\n'])
     extend_([u'</div>\n'])
 
     return self
@@ -383,9 +374,11 @@ def index():
     __lineoffset__ = -5
     loop = ForLoop()
     self = TemplateResult(); extend_ = self.extend
-    extend_([u'<div class="jumbotron jumbotron-index">\n'])
-    extend_([u'    <div class="container">\n'])
-    extend_([u'        <h1 class="welcomeMessage">Welcome..</h1>\n'])
+    extend_([u'<div class="row">\n'])
+    extend_([u'    <div class="col-lg-12 jumbotron jumbotron-index">\n'])
+    extend_([u'        <div class="container">\n'])
+    extend_([u'            <h1 class="welcomeMessage">Welcome..</h1>\n'])
+    extend_([u'        </div>\n'])
     extend_([u'    </div>\n'])
     extend_([u'</div>\n'])
 
