@@ -178,6 +178,7 @@ def bio():
     extend_([u'    <div id="bioPhoto" class="col-sm-6">\n'])
     extend_([u'        <img id="bioPic" src="/static/Images/me_surf.jpg" alt="bioPic" />\n'])
     extend_([u'    </div>\n'])
+    extend_([u'    <div class="container">\n'])
     extend_([u'    <div id="bioText" class="col-sm-6">\n'])
     extend_([u'        <h2>About Me</h2>\n'])
     extend_([u"        <p>Hello, my name is Matthew Iannucci. I am an Engineer from Rhode Island with a Bachelor's of Science in Ocean Engineering from the University of Rhode Island. I focused on software development and robotics. I currently work as an Engineer at Navatek, Ltd.</p>\n"])
@@ -192,6 +193,7 @@ def bio():
     extend_([u'            <li><a href="http://www.linkedin.com/pub/matthew-iannucci/7a/884/64a/">LinkedIn</a>\n'])
     extend_([u'            </li>\n'])
     extend_([u'        </ul>\n'])
+    extend_([u'    </div>\n'])
     extend_([u'    </div>\n'])
     extend_([u'</div>\n'])
 
@@ -209,7 +211,14 @@ def blog (pageNum):
     next = pageNum + 1
     prev = pageNum - 1
     posts = get_posts((pageNum-1)*6)
-    extend_([u'\n'])
+    extend_([u'<div class="row">\n'])
+    extend_([u'<div class="col-sm-12">\n'])
+    extend_([u'    <div class="container">\n'])
+    extend_([u'        <h1>Blog</h1>\n'])
+    extend_([u'    </div>\n'])
+    extend_([u'</div>\n'])
+    extend_([u'</div>\n'])
+    extend_([u'<hr>\n'])
     extend_([u'<!-- Loop thourgh all posts in the database and display them as declared below -->\n'])
     for post in loop.setup(posts):
         postCount+=1
