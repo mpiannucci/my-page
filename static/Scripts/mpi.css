@@ -6,7 +6,7 @@
  * Need to set padding for the body so content flows beneath the navbar
  */
 body {
-    padding-top: 70px;
+    padding-top: 40px;
 }
 
 /**
@@ -18,6 +18,7 @@ body {
   background-repeat: no-repeat;
   border: #47A3FF;
   filter: none;
+  padding-bottom: 0;
 }
 
 .navbar .navbar-brand {
@@ -67,6 +68,21 @@ body {
     padding-right: 15px
 }
 
+.mapgetter-jumbotron {
+    background-image: url("http://mapgetter.mpiannucci.com/static/Assets/map_header2.jpg");
+    background-size: cover;
+    color: #FFFFFF;
+    margin-bottom: 0;
+}
+
+.github-jumbotron {
+    margin-bottom: 0;
+}
+
+.project-header {
+    margin-bottom: 0;
+}
+
 /**
  * About page styles
  */
@@ -96,13 +112,8 @@ body {
 .hackwinds-jumbotron {
     background-image: url("../Images/hackwinds_jumbo.jpg");
     background-size: cover;
-    color: #FFFFFF
-}
-
-.mapgetter-jumbotron {
-    background-image: url("http://mapgetter.mpiannucci.com/static/Assets/map_header2.jpg");
-    background-size: cover;
     color: #FFFFFF;
+    margin-bottom:0;
 }
 
 #googlePlayBadge {
