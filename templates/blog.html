@@ -4,9 +4,11 @@ $ next = pageNum + 1
 $ prev = pageNum - 1
 $ posts = get_posts((pageNum-1)*6)
 
-<!-- <div  class="container">
-<h1>Blog</h1>
-<hr> -->
+<div id="blog-jumbotron" class="jumbotron">
+    <div  class="container">
+        <h1>Blog..</h1>
+    </div>
+</div>
 <!-- Loop thourgh all posts in the database and display them as declared below -->
 $for post in posts:
     $ postCount+=1
