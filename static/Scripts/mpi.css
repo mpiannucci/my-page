@@ -99,6 +99,12 @@ body {
     color: #FFFFFF
 }
 
+.mapgetter-jumbotron {
+    background-image: url("http://mapgetter.mpiannucci.com/static/Assets/map_header2.jpg");
+    background-size: cover;
+    color: #FFFFFF;
+}
+
 #googlePlayBadge {
     width: 135px;
     height: 40px;
