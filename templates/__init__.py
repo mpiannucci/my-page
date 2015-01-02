@@ -473,6 +473,7 @@ def view (post):
     extend_([u'\n'])
     extend_([u'<div class="row">\n'])
     extend_([u'    <div class="col-lg-12">\n'])
+    extend_([u'        <div class="container">\n'])
     extend_([u'        <h1>', escape_(post.title, True), u'</h1>\n'])
     extend_([u'        <h3>', escape_(datestr(post.date), True), u'</h3>\n'])
     extend_([u'        <hr>\n'])
@@ -484,10 +485,12 @@ def view (post):
     extend_([u'                <li>Tagged: &nbsp; <a href="/tag/', escape_(post.tag, True), u'">', escape_(post.tag, True), u'</a></li>\n'])
     extend_([u'            </ul>\n'])
     extend_([u'        </div>\n'])
+    extend_([u'        </div>\n'])
     extend_([u'    </div>\n'])
     extend_([u'</div>\n'])
     extend_([u'<br/>\n'])
     extend_([u'<div id="commentSection">\n'])
+    extend_([u'    <div class="container">\n'])
     extend_([u'    <div id="disqus_thread"></div>\n'])
     extend_([u'    <script type="text/javascript">\n'])
     extend_([u'        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */\n'])
@@ -502,6 +505,7 @@ def view (post):
     extend_([u'    </script>\n'])
     extend_([u'    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>\n'])
     extend_([u'    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>\n'])
+    extend_([u'</div>\n'])
     extend_([u'</div>\n'])
 
     return self
