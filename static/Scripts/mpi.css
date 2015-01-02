@@ -116,7 +116,7 @@ body {
     background-image: url("../Images/hackwinds_jumbo.jpg");
     background-size: cover;
     color: #FFFFFF;
-    margin-bottom:0;
+    margin-bottom:20px;
 }
 
 #googlePlayBadge {
