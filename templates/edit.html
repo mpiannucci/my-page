@@ -1,13 +1,15 @@
 $def with (post, form)
 
-<h1>Edit $form.d.title</h1>
-
-<form action="" method="post">
-$:form.render()
-</form>
-
-
-<h2>Delete post</h2>
-<form action="/delete/$post.url" method="post">
-    <input type="submit" value="Delete post"/>
-</form>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="container">
+            <h1>Edit Post: $form.d.title</h1>
+            <form action="" method="post">
+                $:form.render_css()
+            </form>
+            <form action="/delete/$post.url" method="post">
+                <input type="submit" value="Delete post" class="btn btn-danger" style="margin-top:10px;" />
+            </form>
+        </div>
+    </div>
+</div>
