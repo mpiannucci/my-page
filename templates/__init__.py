@@ -438,10 +438,16 @@ def new (form):
     loop = ForLoop()
     self = TemplateResult(); extend_ = self.extend
     extend_([u'\n'])
-    extend_([u'<h1>New Blog Post</h1>\n'])
-    extend_([u'<form action="" method="post">\n'])
-    extend_([escape_(form.render(), False), u'\n'])
-    extend_([u'</form>\n'])
+    extend_([u'<div class="row">\n'])
+    extend_([u'    <div class="col-lg-12">\n'])
+    extend_([u'        <div class="container">\n'])
+    extend_([u'            <h1>New Blog Post</h1>\n'])
+    extend_([u'            <form action="" method="post">\n'])
+    extend_([u'                ', escape_(form.render_css(), False), u'\n'])
+    extend_([u'            </form>\n'])
+    extend_([u'        </div>\n'])
+    extend_([u'    </div>\n'])
+    extend_([u'</div>\n'])
 
     return self
 

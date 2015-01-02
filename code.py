@@ -74,17 +74,21 @@ class New:
     form = web.form.Form(
         web.form.Textbox('title', web.form.notnull,
             size=30,
-            description='Post title:'),
+            description='Post title:',
+            class_='form-control'),
         web.form.Textbox('tag', web.form.notnull,
             size=30,
-            description='Post tags'),
+            description='Post tags',
+            class_='form-control'),
         web.form.Textbox('url', web.form.notnull,
             size=30,
-            description='Post url'),
+            description='Post url',
+            class_='form-control'),
         web.form.Textarea('content', web.form.notnull,
-            rows=30, cols=60,
-            description='Post content:'),
-        web.form.Button('Post entry'),
+            rows=10, cols=100,
+            description='Post content:',
+            class_='form-control'),
+        web.form.Button('Submit Post', class_='btn btn-primary', style='margin-top:10px;'),
     )
 
     ''' Create the page used to create new blog posts '''
