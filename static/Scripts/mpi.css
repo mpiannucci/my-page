@@ -116,6 +116,10 @@ body {
     background-image: url("../Images/hackwinds_jumbo.jpg");
     background-size: cover;
     color: #FFFFFF;
+    margin-bottom: 0;
+}
+
+.hackwinds-landing {
     margin-bottom:20px;
 }
 
