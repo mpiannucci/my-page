@@ -214,8 +214,8 @@ def blog (pageNum):
     for post in loop.setup(posts):
         postCount+=1
         extend_([u'    <div class="row">\n'])
-        extend_([u'        <div class="col-sm-12">\n'])
-        extend_([u'                <div class="container">\n'])
+        extend_([u'        <div class="col-lg-12">\n'])
+        extend_([u'            <div class="container">\n'])
         extend_([u'            <h2 class="links"><a href="/view/', escape_(post.url, True), u'">', escape_(post.title, True), u'</a></h2>\n'])
         extend_([u'            <h3>', escape_(datestr(post.date), True), u'</h3>\n'])
         if len(post.content) > 500:
@@ -230,12 +230,12 @@ def blog (pageNum):
         extend_([u'                    <li>Tagged: &nbsp; <a href="/tag/', escape_(post.tag, True), u'">', escape_(post.tag, True), u'</a></li>\n'])
         extend_([u'                </ul>\n'])
         extend_([u'            </div>\n'])
+        extend_([u'            </div>\n'])
         extend_([u'        </div>\n'])
-        extend_([u'    </div>\n'])
         extend_([u'    </div>\n'])
         extend_([u'    <hr>\n'])
     extend_([u'<div id="blogLinks" class="row">\n'])
-    extend_([u'    <div class="col-sm-12">\n'])
+    extend_([u'    <div class="col-lg-12">\n'])
     extend_([u'        <div class="container">\n'])
     if pageNum == 1:
         if postCount < 6:

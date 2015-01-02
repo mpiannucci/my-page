@@ -8,8 +8,8 @@ $ posts = get_posts((pageNum-1)*6)
 $for post in posts:
     $ postCount+=1
         <div class="row">
-            <div class="col-sm-12">
-                    <div class="container">
+            <div class="col-lg-12">
+                <div class="container">
                 <h2 class="links"><a href="/view/$post.url">$post.title</a></h2>
                 <h3>$datestr(post.date)</h3>
                 $if len(post.content) > 500:
@@ -24,12 +24,12 @@ $for post in posts:
                         <li>Tagged: &nbsp; <a href="/tag/$post.tag">$post.tag</a></li>
                     </ul>
                 </div>
+                </div>
             </div>
-        </div>
         </div>
         <hr>
 <div id="blogLinks" class="row">
-    <div class="col-sm-12">
+    <div class="col-lg-12">
         <div class="container">
         $if pageNum == 1:
             $if postCount < 6:
