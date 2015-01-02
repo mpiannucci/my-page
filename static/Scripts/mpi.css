@@ -129,3 +129,14 @@ body {
     padding-right: 15px;
     padding-top: 15px;
 }
+
+/**
+ * Admin Page Styles
+ */
+.postlist {
+    padding-bottom: 10px;
+}
+
+.postlist p {
+    font-size: 20px;
+}
