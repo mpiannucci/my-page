@@ -1,13 +1,13 @@
 $def with (user, posts)
 
 <div id="adminContainer" class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-8">
         <div class="container">
             <h3>Edit posts</h3>
             <ul>
                 $for post in posts:
                     <li class="postlist">
-                        <p><a href="/view/$post.url">$post.title</a> from $datestr(post.date)</p>
+                        <p><a href="/view/$post.url">$post.title</a> $datestr(post.date)</p>
                         <ul class="list-inline">
                             <li><a class="btn btn-primary" href="/edit/$post.url">Edit</a></li>
                             <li><form action="/delete/$post.url" method="post">
@@ -18,7 +18,7 @@ $def with (user, posts)
             </ul>
         </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <div class="container">
             <h3>Logged in as <em>$user</em></h3>
             <a class="btn btn-primary" href="/new">New Post</a>

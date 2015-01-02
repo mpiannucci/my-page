@@ -1,13 +1,19 @@
 $def with (posts)
 
-<h1>Archive</h1>
-<hr>
 <div class="row">
     <div id="postList" class="col-lg-12">
-        <ul class="list-inline">
-            $for post in posts:
-                <li><h3 class="links"><a href="/view/$post.url">$post.title</a></h3></li>
-                <li><h3 id="archiveTime">&nbsp; $datestr(post.date)</h3></li>
-        </ul>
+        <div class="container">
+            <h1>Archive</h1>
+            <hr> 
+                $for post in posts:
+                    <ul class="list-inline">
+                        <li>
+                            <h3 class="links"><a href="/view/$post.url">$post.title</a></h3>
+                        </li>
+                        <li>
+                            <h3 id="archiveTime">&nbsp; $datestr(post.date)</h3>
+                        </li>
+                    </ul>
+        </div>
     </div>
 </div>
