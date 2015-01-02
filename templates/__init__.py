@@ -175,7 +175,7 @@ def bio():
     loop = ForLoop()
     self = TemplateResult(); extend_ = self.extend
     extend_([u'<div class="row">\n'])
-    extend_([u'    <div id="bioPhoto" class="col-sm-6">\n'])
+    extend_([u'    <div id="bioPhoto" class="col-sm-6 jumbotron">\n'])
     extend_([u'        <img id="bioPic" src="/static/Images/me_surf.jpg" alt="bioPic" />\n'])
     extend_([u'    </div>\n'])
     extend_([u'    <div id="bioText" class="col-sm-6">\n'])

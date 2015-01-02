@@ -90,6 +90,9 @@ body {
     width: 100%;
 }
 
+#bioPhoto {
+    padding: 0;
+}
 /**
  * Footer styles
  */
