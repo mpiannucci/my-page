@@ -6,7 +6,7 @@
  * Need to set padding for the body so content flows beneath the navbar
  */
 body {
-    padding-top: 40px;
+    padding-top: 50px;
 }
 
 /**
@@ -45,14 +45,21 @@ body {
  * Home Page styles
  */
 .jumbotron-index {
-    background-image: url("../Images/stillsurf.jpg");
+    background-image: url("../Images/stillsurf_bw.jpg");
     background-size: cover;
-    color: #FFFFFF
+    color: #FFFFFF;
+    margin-bottom: 0;
 }
 
 .welcomeMessage {
-    padding-top: 33%;
+    padding-bottom: 3%;
 }
+
+.bio-buttons {
+    float: left;
+    margin: 5px;
+}
+
 /**
  * Blog Page styles
  */
