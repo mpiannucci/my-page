@@ -1,5 +1,5 @@
 import web
-from views import *
+import models
 from config import urls
 
 # Toggle the web debug (to test sessions)
@@ -8,10 +8,13 @@ from config import urls
 # Define the web templates
 t_globals = {
     'datestr': web.datestr,
-    'get_posts': model.get_posts,
+    'get_posts': models.get_posts,
     'len': len
 }
-render = web.template.render('templates', base='base', globals=t_globals)
+web.render = render = web.template.render('templates', base='base', globals=t_globals)
+
+# Now that the templates are loaded, import the view controllers
+from views import *
 
 # Create the web app and the sessions
 app = web.application(urls, globals())
