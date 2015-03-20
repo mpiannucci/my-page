@@ -20,7 +20,8 @@ $for post in posts:
                 <br/>
                 <div id="links" class="links">
                     <ul class="list-inline">
-                        <li><a href="/view/$post.url">Comment</a></li>
+                        $ url = post.url + "#disqus_thread"
+                        <li><a href="/view/$url">Comment</a></li>
                         <li>Tagged: &nbsp; <a href="/tag/$post.tag">$post.tag</a></li>
                     </ul>
                 </div>
