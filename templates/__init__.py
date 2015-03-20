@@ -41,7 +41,7 @@ def apps():
     extend_([u'<div class="row">\n'])
     extend_([u'<div id="HackWindsCols" class="col-lg-12 jumbotron hackwinds-jumbotron">\n'])
     extend_([u'    <div class="container">\n'])
-    extend_([u'        <img class="AppsPageScreenshot pull-left" src="/static/Images/Hackwinds-ios1.png" />\n'])
+    extend_([u'        <img class="AppsPageScreenshot pull-left" src="/static/Images/Hackwinds-ios-live.png" />\n'])
     extend_([u'        <h1>HackWinds</h1>\n'])
     extend_([u'        <p>The easiest way to check the surf in Rhode Island</p>\n'])
     extend_([u'        <a href="/hackwinds" class="btn btn-primary">Download it Now!</a>\n'])
