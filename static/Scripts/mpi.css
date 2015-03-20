@@ -112,7 +112,8 @@ body {
  * Hackwinds Landing Page Styles
  */
 .hackwinds_landing_screenshots {
-    width: 70%
+    width: 70%;
+    margin-top: 20px;
 }
 
 #featuresHeader {
@@ -143,6 +144,11 @@ body {
 
 .hackwinds-github-button {
     margin-bottom: 5px;
+}
+
+.center-pills { 
+    display: inline-block; 
+    margin-bottom: 20px;
 }
 
 /**
