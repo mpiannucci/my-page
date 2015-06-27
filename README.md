@@ -13,11 +13,14 @@ Created using the [web.py](https://github.com/webpy/webpy) framework for python 
 Getting the Python Dependencies
 -----------------------
 
-Download the `web.py` Python module:
+Download the Python dependencie:
 
     cd myPage/
     pip install web.py -t .
-    rm -r web.py-0.37.egg-info/
+    pip install mistune -t .
+    rm -r web.py-*
+    rm -r mistune-*/
+
 
 Running the Webapp
 ------------------
