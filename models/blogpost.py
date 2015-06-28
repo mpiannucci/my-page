@@ -4,6 +4,7 @@ class BlogPost(db.Model):
     '''Blog post entries with title, content, date, and tags'''
     title = db.StringProperty()
     content = db.TextProperty()
+    editor_content = db.TextProperty()
     tag = db.StringProperty()
     date = db.DateTimeProperty(auto_now_add=True)
     url = db.StringProperty()
@@ -29,13 +30,14 @@ def get_tagged_posts(tag):
     blog_query = db.Query(BlogPost)
     return blog_query.filter('tag =', tag)
 
-def update_post(post_url, title, content, tag):
+def update_post(post_url, title, content, editor_content, tag):
     '''Update the given blog post entry'''
     blog_query = db.Query(BlogPost)
     blog_query.filter('url =', post_url)
     blog_update = blog_query.get()
     blog_update.title = title
     blog_update.content = content
+    blog_update.editor_content = editor_content
     blog_update.tag = tag 
     blog_update.put()
 
@@ -45,11 +47,12 @@ def del_post(post_url):
     blog_query.filter('url =', post_url)
     db.delete(blog_query.get())
 
-def new_post(url, title, content, tag):
+def new_post(url, title, content, editor_content, tag):
     '''Create a new blog post'''
     post = BlogPost()
     post.title = title
     post.content = content
+    post.editor_content = editor_content
     post.tag = tag
     post.url = url
     post.put()

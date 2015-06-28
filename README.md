@@ -17,9 +17,9 @@ Download the Python dependencie:
 
     cd myPage/
     pip install web.py -t .
-    pip install mistune -t .
+    pip install markdown -t .
     rm -r web.py-*
-    rm -r mistune-*/
+    rm -r markdown-*/
 
 
 Running the Webapp

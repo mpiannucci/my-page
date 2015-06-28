@@ -1,5 +1,6 @@
 import web
 import models
+import markdown
 
 from google.appengine.api import users
 
@@ -20,7 +21,7 @@ class New:
             size=30,
             description='Post url',
             class_='form-control'),
-        web.form.Textarea('content', web.form.notnull,
+        web.form.Textarea('editor_content', web.form.notnull,
             rows=10, cols=100,
             description='Post content:',
             class_='form-control'),
@@ -40,7 +41,8 @@ class New:
         form = self.form()
         if not form.validates():
             return render.new(form)
-        models.new_post(form.d.url, form.d.title, form.d.content, form.d.tag)
+        parsed_content = markdown.markdown(form.d.editor_content)
+        models.new_post(form.d.url, form.d.title, parsed_content, form.d.editor_content, form.d.tag)
         raise web.seeother('/admin')
 
 class Delete:
@@ -59,6 +61,8 @@ class Edit:
         user = users.get_current_user()
         if user and users.is_current_user_admin():
             post = models.get_post(post_url)
+            if (post.editor_content is None):
+                post.editor_content = post.content
             form = New.form()
             form.fill(post)
             return render.edit(post, form)
@@ -70,7 +74,8 @@ class Edit:
         post = models.get_post(post_url)
         if not form.validates():
             return render.edit(post, form)
-        models.update_post(post_url, form.d.title, form.d.content, form.d.tag)
+        parsed_content = markdown.markdown(form.d.editor_content)
+        models.update_post(post_url, form.d.title, parsed_content, form.d.editor_content, form.d.tag)
         raise web.seeother('/admin')
 
 class Admin:
