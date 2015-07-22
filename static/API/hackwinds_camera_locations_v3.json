@@ -13,8 +13,8 @@
       },
       "Point Judith": {
         "Image": "http://www.asergeev.com/pictures/archives/2004/372/jpeg/20.jpg",
-        "Video": "http://api.surfline.com/v1/cams/5107",
-        "Info": "Camera feed is recorded every morning in the summer around 6:30 AM. If the camera does not work, assume the feed is down and not that the app is broken."
+        "Video": "",
+        "Info": "http://api.surfline.com/v1/cams/5107"
       }
     },
     "Newport": {
