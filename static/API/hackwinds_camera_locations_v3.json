@@ -1,0 +1,45 @@
+{
+  "camera_locations": {
+    "Narragansett": {
+      "Warm Winds": {
+        "Image": "http://www.warmwinds.com/wp-content/uploads/surf-cam-stills/image00001.jpg",
+        "Video": "http://162.243.101.197:1935/surfcam/live.stream/playlist.m3u8",
+        "info": ""
+      },
+      "Town Beach South": {
+        "Image": "http://www.northeastsurfing.com/cams/narragansett/image00001.jpg",
+        "Video": "",
+        "Info": ""
+      },
+      "Point Judith": {
+        "Image": "http://www.asergeev.com/pictures/archives/2004/372/jpeg/20.jpg",
+        "Video": "http://api.surfline.com/v1/cams/5107",
+        "Info": "Camera feed is recorded every morning in the summer around 6:30 AM. If the camera does not work, assume the feed is down and not that the app is broken."
+      }
+    },
+    "Newport": {
+      "First Beach East": {
+        "Image": "http://70.184.11.182/axis-cgi/jpg/image.cgi?resolution=640x480",
+        "Video": "",
+        "Info": ""
+        },
+      "First Beach West": {
+        "Image": "http://70.184.13.116/axis-cgi/jpg/image.cgi?resolution=640x480",
+        "Video": "",
+        "Info": ""
+        }
+    },
+    "Hull": {
+      "Nantasket North": {
+        "Image": "http://173.166.108.66/axis-cgi/jpg/image.cgi?resolution=640x480",
+        "Video": "",
+        "Info"
+        },
+      "Nantasket South": {
+        "Image": "http://96.237.61.93/axis-cgi/jpg/image.cgi?resolution=640x480",
+        "Video": "",
+        "Info": ""
+        }
+    }
+  }
+}
