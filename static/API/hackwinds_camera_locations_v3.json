@@ -22,24 +22,24 @@
         "Image": "http://70.184.11.182/axis-cgi/jpg/image.cgi?resolution=640x480",
         "Video": "",
         "Info": ""
-        },
+      },
       "First Beach West": {
         "Image": "http://70.184.13.116/axis-cgi/jpg/image.cgi?resolution=640x480",
         "Video": "",
         "Info": ""
-        }
+      }
     },
     "Hull": {
       "Nantasket North": {
         "Image": "http://173.166.108.66/axis-cgi/jpg/image.cgi?resolution=640x480",
         "Video": "",
-        "Info"
-        },
+        "Info": ""
+      },
       "Nantasket South": {
         "Image": "http://96.237.61.93/axis-cgi/jpg/image.cgi?resolution=640x480",
         "Video": "",
         "Info": ""
-        }
+      }
     }
   }
 }
