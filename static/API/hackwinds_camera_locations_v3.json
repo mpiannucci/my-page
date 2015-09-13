@@ -8,51 +8,12 @@
         "Refreshable": false,
         "RefreshInterval": 0
       },
-      "Town Beach South": {
-        "Image": "http://www.northeastsurfing.com/cams/narragansett/image00001.jpg",
-        "Video": "",
-        "Info": "",
-        "Refreshable": true,
-        "RefreshInterval": 35
-      },
       "Point Judith": {
         "Image": "http://www.asergeev.com/pictures/archives/2004/372/jpeg/20.jpg",
         "Video": "",
         "Info": "http://api.surfline.com/v1/cams/5107",
         "Refreshable": false,
         "RefreshInterval": 0
-      }
-    },
-    "Newport": {
-      "First Beach East": {
-        "Image": "http://70.184.11.182/axis-cgi/jpg/image.cgi?resolution=640x480",
-        "Video": "",
-        "Info": "",
-        "Refreshable": true,
-        "RefreshInterval": 3
-      },
-      "First Beach West": {
-        "Image": "http://70.184.13.116/axis-cgi/jpg/image.cgi?resolution=640x480",
-        "Video": "",
-        "Info": "",
-        "Refreshable": true,
-        "RefreshInterval": 3
-      }
-    },
-    "Hull": {
-      "Nantasket North": {
-        "Image": "http://173.166.108.66/axis-cgi/jpg/image.cgi?resolution=640x480",
-        "Video": "",
-        "Info": "",
-        "Refreshable": true,
-        "RefreshInterval": 3
-      },
-      "Nantasket South": {
-        "Image": "http://96.237.61.93/axis-cgi/jpg/image.cgi?resolution=640x480",
-        "Video": "",
-        "Info": "",
-        "Refreshable": true,
-        "RefreshInterval": 3
       }
     }
   }
