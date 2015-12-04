@@ -11,7 +11,11 @@ $def with (post)
         <div id="links" class="links">
             <ul class="list-inline">
                 <li><a href="/view/$post.url">Link</a></li>
-                <li>Tagged: &nbsp; <a href="/tag/$post.tag">$post.tag</a></li>
+                <li>
+                    Tags: &nbsp;
+                    $for tag in post.tag:
+                        <a href="/tag/$tag">$tag</a>
+                </li>
             </ul>
         </div>
         </div>

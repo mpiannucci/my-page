@@ -15,9 +15,8 @@ def get_all_posts():
     return blog_query
 
 def get_post(post_url):
-    '''Return a post with a given key'''
-    blog_query = BlogPost.query().order(-BlogPost.date)
-    blog_query.filter('url =', post_url)
+    '''Return a post with a given url'''
+    blog_query = BlogPost.query(BlogPost.url == post_url)
     return blog_query.get()
 
 def get_posts(offsetNum):

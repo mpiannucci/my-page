@@ -249,7 +249,11 @@ def blog (pageNum):
         extend_([u'                <ul class="list-inline">\n'])
         url = post.url + "#disqus_thread"
         extend_([u'                    <li><a href="/view/', escape_(url, True), u'">Comment</a></li>\n'])
-        extend_([u'                    <li>Tagged: &nbsp; <a href="/tag/', escape_(post.tag, True), u'">', escape_([tag for tag in post.tag], True), u'</a></li>\n'])
+        extend_([u'                    <li>\n'])
+        extend_([u'                        Tags: &nbsp; \n'])
+        for tag in loop.setup(post.tag):
+            extend_(['                        ', u'<a href="/tag/', escape_(tag, True), u'">', escape_(tag, True), u'</a>\n'])
+        extend_([u'                    </li>\n'])
         extend_([u'                </ul>\n'])
         extend_([u'            </div>\n'])
         extend_([u'            </div>\n'])
@@ -594,7 +598,11 @@ def view (post):
     extend_([u'        <div id="links" class="links">\n'])
     extend_([u'            <ul class="list-inline">\n'])
     extend_([u'                <li><a href="/view/', escape_(post.url, True), u'">Link</a></li>\n'])
-    extend_([u'                <li>Tagged: &nbsp; <a href="/tag/', escape_(post.tag, True), u'">', escape_(post.tag, True), u'</a></li>\n'])
+    extend_([u'                <li>\n'])
+    extend_([u'                    Tags: &nbsp;\n'])
+    for tag in loop.setup(post.tag):
+        extend_(['                    ', u'<a href="/tag/', escape_(tag, True), u'">', escape_(tag, True), u'</a>\n'])
+    extend_([u'                </li>\n'])
     extend_([u'            </ul>\n'])
     extend_([u'        </div>\n'])
     extend_([u'        </div>\n'])

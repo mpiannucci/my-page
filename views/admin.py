@@ -64,7 +64,10 @@ class Edit:
             if (post.editor_content is None):
                 post.editor_content = post.content
             form = New.form()
-            form.fill(post)
+            form.title = post.title
+            form.tag = post.tag.join(",")
+            form.url = post.url
+            form.editor_content = post.editor_content
             return render.edit(post, form)
         else:
             raise web.seeother('/admin')
