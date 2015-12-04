@@ -249,7 +249,7 @@ def blog (pageNum):
         extend_([u'                <ul class="list-inline">\n'])
         url = post.url + "#disqus_thread"
         extend_([u'                    <li><a href="/view/', escape_(url, True), u'">Comment</a></li>\n'])
-        extend_([u'                    <li>Tagged: &nbsp; <a href="/tag/', escape_(post.tag, True), u'">', escape_(post.tag, True), u'</a></li>\n'])
+        extend_([u'                    <li>Tagged: &nbsp; <a href="/tag/', escape_(post.tag, True), u'">', escape_([tag for tag in post.tag], True), u'</a></li>\n'])
         extend_([u'                </ul>\n'])
         extend_([u'            </div>\n'])
         extend_([u'            </div>\n'])
