@@ -343,7 +343,7 @@ def hackwinds():
     extend_([u'<!-- Jumbotron Header -->\n'])
     extend_([u'<div class="row">\n'])
     extend_([u'    <div class="col-lg-12 jumbotron hackwinds-jumbotron hackwinds-landing">\n'])
-    extend_([u'        <img class="AppJumboIcon pull-left" src="https://raw.githubusercontent.com/mpiannucci/HackWinds-iOS/master/HackWinds/Resources/Images.xcassets/AppIcon.appiconset/Icon-60@3x.png" />\n'])
+    extend_([u'        <img class="AppJumboIcon pull-left" src="/static/Images/hackwinds-logo.png" />\n'])
     extend_([u'        <h1>HackWinds</h1>\n'])
     extend_([u'        <p>The easiest way to check the waves in Rhode Island</p>\n'])
     extend_([u'        <a href="https://itunes.apple.com/us/app/hackwinds/id945847570?mt=8&uo=4" target="itunes_store" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.png) no-repeat;width:135px;height:40px;@media only screen{background-image:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.svg);}"></a>\n'])
