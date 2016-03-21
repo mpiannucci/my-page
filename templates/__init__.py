@@ -415,7 +415,7 @@ def hackwinds():
     extend_([u'                    <img class="hackwinds_landing_screenshots" src="/static/Images/Screenshots/hackwinds-ios-tide.png" alt="Tide Screenshot">\n'])
     extend_([u'                    <div class="caption">\n'])
     extend_([u'                        <h3>Tide Information</h3>\n'])
-    extend_([u'                        <p>View the upcoming tides, as well as the sunrise and sunset for the day so you can plan whether to dawn patrol or leave work early.</p>\n'])
+    extend_([u'                        <p>View the upcoming tides, as well as the sunrise and sunset for the upcoming 4 days so you can plan whether to dawn patrol or leave work early.</p>\n'])
     extend_([u'                    </div>\n'])
     extend_([u'                </div>\n'])
     extend_([u'            </div>\n'])
