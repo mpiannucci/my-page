@@ -7,13 +7,6 @@
         "Info": "",
         "Refreshable": false,
         "RefreshInterval": 0
-      },
-      "Point Judith": {
-        "Image": "http://www.asergeev.com/pictures/archives/2004/372/jpeg/20.jpg",
-        "Video": "",
-        "Info": "http://api.surfline.com/v1/cams/5107",
-        "Refreshable": false,
-        "RefreshInterval": 0
       }
     }
   }
