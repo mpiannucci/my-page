@@ -125,10 +125,6 @@ body {
     margin-top: 20px;
 }
 
-#featuresHeader {
-    padding-bottom: 20px;
-}
-
 .hackwinds-jumbotron {
     background-image: url("../Images/hackwinds_jumbo.jpg");
     background-size: cover;
@@ -142,9 +138,14 @@ body {
     margin-top: -33px;
 }
 
-.AppJumboIcon {
-    padding-right: 15px;
-    padding-top: 15px;
+.hackwinds-feature-col {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%; 
+}
+
+.hackwinds-feature-col span {
+    font-size: 800%;
 }
 
 .hackwinds-github-button {
