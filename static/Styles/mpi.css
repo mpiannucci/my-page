@@ -121,7 +121,7 @@ body {
  * Hackwinds Landing Page Styles
  */
 .hackwinds_landing_screenshots {
-    width: 70%;
+    width: 100%;
     margin-top: 20px;
 }
 
@@ -134,10 +134,6 @@ body {
     background-size: cover;
     color: #FFFFFF;
     margin-bottom: 0;
-}
-
-.hackwinds-landing {
-    margin-bottom:20px;
 }
 
 #googlePlayBadge {
