@@ -16,19 +16,11 @@
         "Refreshable": true,
         "RefreshInterval": 35,
         "Premium": true
-      },
-      "Point Judith": {
-        "Image": "http://www.asergeev.com/pictures/archives/2004/372/jpeg/20.jpg",
-        "Video": "",
-        "Info": "http://api.surfline.com/v1/cams/5107",
-        "Refreshable": false,
-        "RefreshInterval": 0,
-        "Premium": true
       }
     },
     "Newport": {
       "First Beach East": {
-        "Image": "http://70.184.11.182/axis-cgi/jpg/image.cgi?resolution=640x480",
+        "Image": "http://70.167.23.252/axis-cgi/jpg/image.cgi?resolution=1280x720",
         "Video": "",
         "Info": "",
         "Refreshable": true,
@@ -36,7 +28,7 @@
         "Premium": true
       },
       "First Beach West": {
-        "Image": "http://70.184.13.116/axis-cgi/jpg/image.cgi?resolution=640x480",
+        "Image": "http://98.179.140.25/axis-cgi/jpg/image.cgi?resolution=1280x720",
         "Video": "",
         "Info": "",
         "Refreshable": true,
