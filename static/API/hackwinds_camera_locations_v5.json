@@ -50,26 +50,6 @@
         "RefreshInterval": 3,
         "Premium": true
       }
-    },
-    "Hull": {
-      "Nantasket North": {
-        "Image": "http://173.166.108.66/axis-cgi/jpg/image.cgi?resolution=640x480",
-        "Video": "",
-        "Web": "",
-        "Info": "",
-        "Refreshable": true,
-        "RefreshInterval": 3,
-        "Premium": true
-      },
-      "Nantasket South": {
-        "Image": "http://96.237.61.93/axis-cgi/jpg/image.cgi?resolution=640x480",
-        "Video": "",
-        "Web": "",
-        "Info": "",
-        "Refreshable": true,
-        "RefreshInterval": 3,
-        "Premium": true
-      }
     }
   }
 }
