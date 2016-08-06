@@ -11,12 +11,21 @@
         "Premium": false
       },
       "Town Beach South": {
-        "Image": "http://www.northeastsurfing.com/cams/narragansett/image00001.jpg",
+        "Image": "http://108.34.179.41/axis-cgi/jpg/image.cgi?resolution=1280x720",
         "Video": "",
         "Web": "",
         "Info": "",
         "Refreshable": true,
-        "RefreshInterval": 35,
+        "RefreshInterval": 3,
+        "Premium": true
+      },
+      "Point Judith": {
+        "Image": "",
+        "Video": "",
+        "Web": "http://e.cdn-surfline.com/syndication/embed/v1/player.html?id=5107",
+        "Info": "",
+        "Refreshable": false,
+        "RefreshInterval": 0,
         "Premium": true
       }
     },
