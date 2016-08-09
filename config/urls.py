@@ -15,5 +15,7 @@ urls = (
     '/resume', 'Resume',
     '/archive', 'Archive',
     '/tag/(.+)', 'Tagged',
-    '/hackwinds', 'HackWinds'
+    '/hackwinds', 'HackWinds',
+    '/hackwinds_login', 'HackWindsLogin',
+    '/hackwinds_create', 'HackWindsCreate'
 )
