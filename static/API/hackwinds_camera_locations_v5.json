@@ -19,10 +19,28 @@
         "RefreshInterval": 3,
         "Premium": true
       },
+      "Seawall": {
+        "Image": "",
+        "Video": "",
+        "Web": "http://platform.streamingmediahosting.com/embed?scheme=embedChannel&channelId=93&showChat=no",
+        "Info": "",
+        "Refreshable": false,
+        "RefreshInterval": 0,
+        "Premium": true
+      },
       "Point Judith": {
         "Image": "",
         "Video": "",
         "Web": "http://e.cdn-surfline.com/syndication/embed/v1/player.html?id=5107",
+        "Info": "",
+        "Refreshable": false,
+        "RefreshInterval": 0,
+        "Premium": true
+      },
+      "Salty Brine": {
+        "Image": "",
+        "Video": "",
+        "Web": "http://platform.streamingmediahosting.com/embed?scheme=embedChannel&channelId=91&showChat=no",
         "Info": "",
         "Refreshable": false,
         "RefreshInterval": 0,
@@ -41,6 +59,15 @@
       }
     },
     "Newport": {
+      "First Beach": {
+        "Image": "",
+        "Video": "",
+        "Web": "http://platform.streamingmediahosting.com/embed?scheme=embedChannel&channelId=92&showChat=no",
+        "Info": "",
+        "Refreshable": true,
+        "RefreshInterval": 3,
+        "Premium": true
+      },
       "First Beach East": {
         "Image": "http://70.167.23.252/axis-cgi/jpg/image.cgi?resolution=1280x720",
         "Video": "",
