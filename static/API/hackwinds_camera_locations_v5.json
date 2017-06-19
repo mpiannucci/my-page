@@ -64,10 +64,19 @@
         "Info": "",
         "Refreshable": false,
         "RefreshInterval": 0,
-        "Premium": true
+        "Premium": false
       }
     },
     "Newport": {
+      "First Beach": {
+        "Image": "",
+        "Video": "",
+        "Web": "70.166.147.46:2533/mjpg/video.mjpg",
+        "Info": "",
+        "Refreshable": false,
+        "RefreshInterval": 0,
+        "Premium": false
+      },
       "First Beach": {
         "Image": "",
         "Video": "",
