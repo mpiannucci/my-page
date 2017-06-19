@@ -28,6 +28,15 @@
         "RefreshInterval": 0,
         "Premium": true
       },
+      "Coast Guard House": {
+        "Image": "",
+        "Video": "",
+        "Web": "http://wmh1.wetmet.net/client-content/PlayerFrame.php?CAMERA=190-03-01&CFVER=WM&WIDTH=1280&HEIGHT=720",
+        "Info": "",
+        "Refreshable": false,
+        "RefreshInterval": 0,
+        "Premium": true
+      },
       "Point Judith": {
         "Image": "",
         "Video": "",
