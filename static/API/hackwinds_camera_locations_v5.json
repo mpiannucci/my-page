@@ -64,18 +64,18 @@
         "Info": "",
         "Refreshable": false,
         "RefreshInterval": 0,
-        "Premium": false
+        "Premium": true
       }
     },
     "Newport": {
-      "First Beach": {
-        "Image": "",
+      "Second Beach": {
+        "Image": "http://70.166.147.46:2533/axis-cgi/jpg/image.cgi",
         "Video": "",
-        "Web": "70.166.147.46:2533/mjpg/video.mjpg",
+        "Web": "",
         "Info": "",
-        "Refreshable": false,
-        "RefreshInterval": 0,
-        "Premium": false
+        "Refreshable": true,
+        "RefreshInterval": 3,
+        "Premium": true
       },
       "First Beach": {
         "Image": "",
