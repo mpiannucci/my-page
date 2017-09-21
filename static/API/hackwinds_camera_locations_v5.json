@@ -65,6 +65,24 @@
         "Refreshable": false,
         "RefreshInterval": 0,
         "Premium": true
+      },
+      "Ocean Mist": {
+        "Image": "",
+        "Video": "",
+        "Web": "http://www.oceanmist.net/surf_cam/local/camera.html",
+        "Info": "",
+        "Refreshable": false,
+        "RefreshInterval": 0,
+        "Premium": true
+      }, 
+      "Roy Carpenter's Beach": {
+        "Image": "",
+        "Video": "",
+        "Web": "http://184.179.85.67:7000/viewer/live/en/live.html",
+        "Info": "",
+        "Refreshable": false,
+        "RefreshInterval": 0,
+        "Premium": true
       }
     },
     "Newport": {
