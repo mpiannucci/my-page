@@ -10,7 +10,7 @@
         "RefreshInterval": 0,
         "Premium": false
       },
-      "Town Beach South": {
+      "Town Beach South Lot": {
         "Image": "http://108.34.179.41/axis-cgi/jpg/image.cgi?resolution=1280x720",
         "Video": "",
         "Web": "",
@@ -64,6 +64,15 @@
         "RefreshInterval": 0,
         "Premium": true
       }, 
+      "Town Beach Overview": {
+        "Image": "",
+        "Video": "",
+        "Web": "https://livestream.com/accounts/1864876/events/3190578/player?width=640&height=360&enableInfoAndActivity=true&autoPlay=true&mute=false",
+        "Info": "",
+        "Refreshable": false,
+        "RefreshInterval": 0,
+        "Premium": true
+      }
     },
     "South Kingstown": {
       "Matunuck": {
