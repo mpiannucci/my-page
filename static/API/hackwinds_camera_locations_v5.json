@@ -54,7 +54,16 @@
         "Refreshable": false,
         "RefreshInterval": 0,
         "Premium": true
-      }
+      }, 
+      "Bonnet": {
+        "Image": "",
+        "Video": "",
+        "Web": "https://e1-na3.angelcam.com/m3-na3/49218/playlist.m3u8?token=eyJhbGlhcyI6IjQ5MjE4IiwidGltZSI6MTUwNjAxODY5MDczNzI5NywidGltZW91dCI6MzYwMH0=.4ff4a4900863f36d52156882f300fa77978829a361f32d100977e3582438e8df",
+        "Info": "",
+        "Refreshable": false,
+        "RefreshInterval": 0,
+        "Premium": true
+      }, 
     },
     "South Kingstown": {
       "Matunuck": {
